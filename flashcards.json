@@ -264,7 +264,7 @@
         "definition": "Farther from surface of body",
         "example": "The muscles are deep to the skin."
     },
-     {
+    {
         "term": "Sagittal planes",
         "definition": "Planes that pass vertically through the body or organ and divide them into right and left sections."
     },
@@ -295,6 +295,6 @@
     {
         "term": "Cross-sections",
         "definition": "Sections produced by a plane running perpendicular to the long axis of a structure."
-    },
+    }
     
 ]

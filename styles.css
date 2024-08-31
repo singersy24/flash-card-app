@@ -71,6 +71,22 @@ body.dark-mode .flashcard .example {
     margin: 5px;
 }
 
+/* Style the Reveal button */
+.reveal-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reveal-button:hover {
+    background-color: #0056b3;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 600px) {
     #button-container {

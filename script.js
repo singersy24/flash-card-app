@@ -214,10 +214,17 @@ const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     resetCardVisibility();
-    // Re-display the current card to ensure it remains visible
-    const currentCard = flashcards[currentCardIndex];
-    if (currentCard) {
-        currentCard.style.display = 'block';
+    // Ensure the flashcard is not revealed when toggling dark mode
+    if (!cardRevealed) {
+        const currentCard = flashcards[currentCardIndex];
+        if (currentCard) {
+            const termElement = currentCard.querySelector('.term');
+            const buttonContainer = currentCard.querySelector('.button-container');
+            if (termElement && buttonContainer) {
+                termElement.style.display = 'none';
+                buttonContainer.style.display = 'none';
+            }
+        }
     }
 });
 

@@ -106,8 +106,9 @@ function showNextCard(cards, currentIndex) {
     buttonContainer.style.display = 'none';  // Ensure the buttons are hidden initially
     cardRevealed = false;
 
-    document.onclick = function (event) {
-        if (!currentCard.contains(event.target)) {
+    // Attach click event listener only to the card itself
+    currentCard.onclick = function (event) {
+        if (!cardRevealed && event.target.classList.contains('definition')) {
             revealCard(termElement, buttonContainer);
         }
     };
@@ -116,12 +117,12 @@ function showNextCard(cards, currentIndex) {
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');
 
     knowItButton.onclick = function (event) {
-        event.stopPropagation();
+        event.stopPropagation();  // Prevent event from bubbling up to the card
         markAsKnown();
     };
 
     dontKnowItButton.onclick = function (event) {
-        event.stopPropagation();
+        event.stopPropagation();  // Prevent event from bubbling up to the card
         markAsUnknown();
     };
 
@@ -216,9 +217,7 @@ function shuffle(array) {
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    if (!cardRevealed) {
-        resetCardVisibility();  // Ensure the current card visibility is reset only if not revealed
-    }
+    resetCardVisibility();  // Ensure the current card visibility is reset only if not revealed
 });
 
 const resetButton = document.querySelector('.reset-button');

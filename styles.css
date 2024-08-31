@@ -9,32 +9,25 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 10px auto; /* Center the flashcard horizontally */
-    padding: 10px; /* Further reduce padding for better mobile view */
+    padding: 15px; /* Adjust padding for better readability */
     width: 90%;
     max-width: 400px; /* Slightly smaller for better fit on mobile */
     text-align: center;
     transition: all 0.3s;
-    font-size: 1.1em; /* Keep font size moderate for readability */
+    font-size: 1.2em; /* Slightly larger font size */
     display: none; /* Initially hide all flashcards */
-}
-
-/* Example Styling */
-.flashcard .example {
-    margin-top: 10px;
-    font-style: italic;
-    color: #555;
 }
 
 .term {
     font-weight: bold;
-    font-size: 1.2em; /* Keep the term visible and readable */
+    font-size: 1.4em; /* Increase term size for visibility */
     margin-top: 15px;
     display: none; /* Initially hide the term */
 }
 
 .definition {
     margin-bottom: 15px;
-    font-size: 1.1em; /* Adjust font size for definition */
+    font-size: 1.2em; /* Slightly increase font size for definition */
     line-height: 1.4;
 }
 
@@ -47,8 +40,8 @@ body {
 /* Style the buttons to each take up half the width */
 .button-container .btn {
     flex: 1;
-    padding: 12px 0; /* Increase padding for easier tapping */
-    font-size: 1em; /* Adjust font size for clarity */
+    padding: 15px 0; /* Increase padding for easier tapping */
+    font-size: 1.1em; /* Increase font size */
     border-radius: 0; /* Remove border radius for clean split */
 }
 
@@ -56,34 +49,12 @@ body {
     border-right: 1px solid #ddd; /* Add a subtle border between buttons */
 }
 
-.dark-mode {
-    background-color: #333 !important;
-    color: #f4f4f4;
-}
-
-.dark-mode .flashcard {
-    background-color: #444;
-    color: #f4f4f4;
-    display: none; /* Ensure flashcards are hidden initially in dark mode */
-}
-
-body.dark-mode .flashcard .example {
-    color: #ccc;
-}
-
-/* Center the counters */
-#counters {
-    text-align: center;
-    margin-top: 15px;
-}
-
-/* Style the Reveal button */
 .reveal-button {
     display: block;
     width: 80%; /* Increase width for better visibility */
     margin: 15px auto; /* Center the button */
     padding: 12px; /* Adjust padding for easier tapping */
-    font-size: 1em; /* Adjust font size */
+    font-size: 1.1em; /* Adjust font size */
     background-color: #007bff;
     color: white;
     border: none;

@@ -133,7 +133,7 @@ function showNextCard(cards, currentIndex) {
             } else {
                 markAsKnown();
             }
-        } else if (event.key === 'Alt') {
+        } else if (event.ctrlKey) {
             markAsUnknown();
         }
     };

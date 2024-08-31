@@ -42,11 +42,8 @@ body {
     flex: 1;
     padding: 15px 0; /* Increase padding for easier tapping */
     font-size: 1.1em; /* Increase font size */
-    border-radius: 0; /* Remove border radius for clean split */
-}
-
-.button-container .btn:first-child {
-    border-right: 1px solid #ddd; /* Add a subtle border between buttons */
+    border-radius: 5px; /* Make buttons rounded */
+    margin: 0 5px; /* Add margin to separate buttons slightly */
 }
 
 .reveal-button {
@@ -58,7 +55,7 @@ body {
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners for consistency */
     cursor: pointer;
 }
 

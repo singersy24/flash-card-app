@@ -3,12 +3,19 @@ body {
     margin-bottom: 60px; /* Ensure space for bottom buttons on mobile */
 }
 
+.card-wrapper {
+    margin: 20px 0; /* Add margin to create space around the card */
+    width: 100%;
+    text-align: center;
+    cursor: pointer; /* Show a pointer cursor to indicate clickability */
+}
+
 .flashcard {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Center the flashcard horizontally */
+    margin: 0 auto; /* Center the flashcard horizontally */
     padding: 20px;
     width: 100%;
     max-width: 500px;
@@ -17,6 +24,7 @@ body {
     font-size: 1.2em;
     display: none; /* Initially hide all flashcards */
 }
+
 
 .term {
     font-weight: bold;

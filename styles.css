@@ -9,12 +9,12 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 20px auto; /* Center the flashcard horizontally */
-    padding: 20px; /* Moderate padding for better mobile view */
+    padding: 15px; /* Reduce padding for better mobile view */
     width: 100%;
-    max-width: 500px; /* Make the card smaller */
+    max-width: 450px; /* Make the card smaller */
     text-align: center;
     transition: all 0.3s;
-    font-size: 1.2em; /* Moderate font size for readability */
+    font-size: 1.1em; /* Moderate font size for readability */
     display: none; /* Initially hide all flashcards */
 }
 
@@ -27,27 +27,28 @@ body {
 
 .term {
     font-weight: bold;
-    font-size: 1.5em; /* Make the term moderate size */
-    margin-top: 20px;
+    font-size: 1.3em; /* Make the term smaller for readability */
+    margin-top: 15px;
     display: none; /* Initially hide the term */
 }
 
 .definition {
-    margin-bottom: 20px;
-    font-size: 1.2em; /* Adjust font size for definition */
+    margin-bottom: 15px;
+    font-size: 1.1em; /* Adjust font size for definition */
     line-height: 1.4;
 }
 
 .button-container {
     display: flex; /* Display buttons side by side */
-    margin-top: 20px;
+    justify-content: space-between; /* Ensure buttons are side by side */
+    margin-top: 15px;
 }
 
 /* Style the buttons to each take up half the width */
 .button-container .btn {
     flex: 1;
     padding: 10px 0; /* Reduce padding for better fit */
-    font-size: 1em; /* Adjust font size */
+    font-size: 0.9em; /* Adjust font size */
     border-radius: 0; /* Remove border radius for clean split */
 }
 
@@ -78,10 +79,10 @@ body.dark-mode .flashcard .example {
 /* Style the Reveal button */
 .reveal-button {
     display: block;
-    width: 200px; /* Fixed width for consistency */
-    margin: 20px auto; /* Center the button */
-    padding: 15px; /* Increase padding for better touch interaction */
-    font-size: 18px;
+    width: 150px; /* Slightly reduce width */
+    margin: 15px auto; /* Center the button */
+    padding: 10px; /* Reduce padding */
+    font-size: 16px; /* Reduce font size */
     background-color: #007bff;
     color: white;
     border: none;
@@ -127,7 +128,7 @@ body.dark-mode .flashcard .example {
     }
 
     body {
-        margin-bottom: 100px; /* Make space for the button bar */
+        margin-bottom: 80px; /* Make space for the button bar */
     }
 
     /* Adjust flashcard size for landscape mode */
@@ -137,11 +138,16 @@ body.dark-mode .flashcard .example {
         margin-bottom: 10px;
     }
 
+    /* Ensure the buttons remain side by side on mobile */
+    .button-container {
+        flex-direction: row; /* Ensure buttons are always side by side */
+    }
+
     /* Adjust Reveal button for mobile */
     .reveal-button {
-        padding: 15px;
-        font-size: 16px;
-        width: 100%; /* Ensure full width for easy clicking */
+        padding: 10px;
+        font-size: 14px;
+        width: 80%; /* Ensure the button is easier to find */
     }
 }
 
@@ -153,10 +159,10 @@ body.dark-mode .flashcard .example {
     }
 
     .flashcard {
-        max-width: 500px; /* Adjust card size for larger screens */
+        max-width: 450px; /* Adjust card size for larger screens */
     }
 
     .reveal-button {
-        width: 200px; /* Set a fixed width for the button */
+        width: 150px; /* Set a fixed width for the button */
     }
 }

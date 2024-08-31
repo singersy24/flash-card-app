@@ -41,6 +41,7 @@ function createFlashcards(cardsData) {
         flashcardElement.innerHTML = `
             <div class="definition">${cardData.definition}</div>
             <div class="term">${cardData.term}</div>
+            ${cardData.example ? `<div class="example">Example: ${cardData.example}</div>` : ''}
             <div class="button-container">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>

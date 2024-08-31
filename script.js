@@ -15,11 +15,11 @@ const reviewingLabel = document.getElementById('reviewing-label');
 
 async function loadFlashcards() {
     try {
-        const response = await fetch('flashcards.json');
+        const response = await fetch('flashcards.json?cachebuster=' + new Date().getTime());
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.json(); // Use json() to parse JSON data
+        const data = await response.json();
         console.log('Flashcards data:', data); // Log the JSON data
         allFlashcards = data;
         flashcards = allFlashcards.slice();  // Copy the original flashcards array
@@ -46,53 +46,45 @@ function displayFlashcards() {
             </div>
         `;
         flashcardsContainer.appendChild(flashcardElement);
-        flashcardElement.style.display = 'none';  // Hide all cards initially
+        console.log(`Flashcard created: ${card.term}`);  // Log creation of each flashcard
     });
 
     showNextCard(flashcards, currentCardIndex);
 }
 
-loadFlashcards();
-
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
 function showNextCard(cards, currentIndex) {
     if (currentIndex >= cards.length) {
-        if (missedCards.length > 0 && !reviewingMissedCards) {
-            alert('Reviewing missed cards.');
-            reviewingMissedCards = true;
-            currentCardIndex = 0;
-            flashcards = missedCards.slice(); // Use a copy of missedCards array
-            missedCards = []; // Clear missed cards array
-            reviewingLabel.style.display = 'block'; // Show the reviewing label
-            showNextCard(flashcards, currentCardIndex);
-        } else if (reviewingMissedCards && missedCards.length === 0) {
-            alert('You have reviewed all missed cards and got them correct!');
-            reviewingMissedCards = false;
-            reviewingLabel.style.display = 'none'; // Hide the reviewing label
-            resetFlashcards(); // Optionally reset all cards or end the session
-        } else if (reviewingMissedCards) {
-            currentCardIndex = 0;
-            flashcards = missedCards.slice(); // Reload missed cards
-            missedCards = []; // Clear missed cards array
-            showNextCard(flashcards, currentCardIndex);
-        } else {
-            alert('You have completed all the cards!');
-        }
+        handleEndOfCards();
         return;
     }
 
-    cards.forEach(card => card.style.display = 'none');
+    // Log to ensure we have cards and the current index is valid
+    console.log('Current index:', currentIndex, 'Total cards:', cards.length);
+
+    // Hide all cards before showing the next one
+    cards.forEach((card, i) => {
+        if (!card) {
+            console.error(`Card at index ${i} is undefined.`);
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
     const currentCard = cards[currentIndex];
+    if (!currentCard) {
+        console.error('Current card is undefined or null:', currentIndex);
+        return;
+    }
+
     currentCard.style.display = 'block';
 
     const termElement = currentCard.querySelector('.term');
     const buttonContainer = currentCard.querySelector('.button-container');
+
+    if (!termElement || !buttonContainer) {
+        console.error('Missing term or button container in the card:', currentCard);
+        return;
+    }
 
     termElement.style.display = 'none';
     buttonContainer.style.display = 'none';
@@ -125,21 +117,30 @@ function showNextCard(cards, currentIndex) {
         currentCard.style.display = 'none';
         showNextCard(cards, ++currentCardIndex);
     };
+}
 
-    document.onkeydown = function (event) {
-        if (event.key === ' ') {
-            event.preventDefault();
-            if (!cardRevealed) {
-                termElement.style.display = 'block';
-                buttonContainer.style.display = 'block';
-                cardRevealed = true;
-            } else {
-                knowItButton.click();
-            }
-        } else if (event.key === 'Shift') {
-            dontKnowItButton.click();
-        }
-    };
+function handleEndOfCards() {
+    if (missedCards.length > 0 && !reviewingMissedCards) {
+        alert('Reviewing missed cards.');
+        reviewingMissedCards = true;
+        currentCardIndex = 0;
+        flashcards = missedCards.slice(); // Use a copy of missedCards array
+        missedCards = []; // Clear missed cards array
+        reviewingLabel.style.display = 'block'; // Show the reviewing label
+        showNextCard(flashcards, currentCardIndex);
+    } else if (reviewingMissedCards && missedCards.length === 0) {
+        alert('You have reviewed all missed cards and got them correct!');
+        reviewingMissedCards = false;
+        reviewingLabel.style.display = 'none'; // Hide the reviewing label
+        resetFlashcards(); // Optionally reset all cards or end the session
+    } else if (reviewingMissedCards) {
+        currentCardIndex = 0;
+        flashcards = missedCards.slice(); // Reload missed cards
+        missedCards = []; // Clear missed cards array
+        showNextCard(flashcards, currentCardIndex);
+    } else {
+        alert('You have completed all the cards!');
+    }
 }
 
 function resetFlashcards() {
@@ -156,11 +157,25 @@ function resetFlashcards() {
     shuffle(flashcards);
     flashcards.forEach(card => {
         card.style.display = 'none';
-        card.querySelector('.term').style.display = 'none';
-        card.querySelector('.button-container').style.display = 'none';
+        const termElement = card.querySelector('.term');
+        const buttonContainer = card.querySelector('.button-container');
+
+        if (termElement && buttonContainer) {
+            termElement.style.display = 'none';
+            buttonContainer.style.display = 'none';
+        } else {
+            console.error('Missing elements in the card during reset.');
+        }
     });
 
     showNextCard(flashcards, currentCardIndex);
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }
 
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
@@ -190,3 +205,5 @@ function resetCardVisibility() {
         console.error('Missing elements in the current card during reset.');
     }
 }
+
+loadFlashcards();

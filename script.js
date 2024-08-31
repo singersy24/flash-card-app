@@ -203,8 +203,7 @@ function resetFlashcards() {
     flashcards = [];  // Clear the flashcards array
     createFlashcards(allFlashcards);  // Recreate the flashcards
     shuffle(flashcards);  // Shuffle them before displaying
-    resetCardVisibility();  // Ensure card visibility is reset properly
-    showNextCard(flashcards, currentCardIndex);
+    showNextCard(flashcards, currentCardIndex);  // Display the first card in unrevealed state
 }
 
 function shuffle(array) {
@@ -215,34 +214,4 @@ function shuffle(array) {
 }
 
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    resetCardVisibility();  // Ensure the current card visibility is reset
-});
-
-const resetButton = document.querySelector('.reset-button');
-resetButton.addEventListener('click', resetFlashcards);
-
-function resetCardVisibility() {
-    const currentCard = flashcards[currentCardIndex];
-    if (!currentCard) {
-        console.error('No current card found during reset.');
-        return;
-    }
-
-    const termElement = currentCard.querySelector('.term');
-    const buttonContainer = currentCard.querySelector('.button-container');
-
-    if (termElement && buttonContainer) {
-        termElement.style.display = 'none';  // Ensure term is hidden
-        buttonContainer.style.display = 'none';  // Ensure buttons are hidden
-        cardRevealed = false;  // Reset the card revealed state
-    } else {
-        console.error('Missing elements in the current card during reset.');
-    }
-
-    // Ensure that the flashcard itself is also visible
-    currentCard.style.display = 'block';  // Ensure current card is visible
-}
-
-loadFlashcards();
+darkModeToggle.addEventListener('click', () 

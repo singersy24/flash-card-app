@@ -96,11 +96,7 @@ function showNextCard(cards, currentIndex) {
     revealButton.style.display = 'block';  // Show the reveal button
 
     revealButton.onclick = function () {
-        const termElement = currentCard.querySelector('.term');
-        const buttonContainer = currentCard.querySelector('.button-container');
-        termElement.style.display = 'block';
-        buttonContainer.style.display = 'block';
-        revealButton.style.display = 'none';  // Hide the reveal button after revealing the term
+        revealCurrentCard();
     };
 
     const knowItButton = currentCard.querySelector('.know-it');
@@ -113,6 +109,26 @@ function showNextCard(cards, currentIndex) {
     dontKnowItButton.onclick = function () {
         markAsUnknown();
     };
+}
+
+document.body.addEventListener('click', function (event) {
+    // Check if the click was inside the button container, if so, ignore the click
+    const buttonContainer = document.getElementById('button-container');
+    if (!buttonContainer.contains(event.target)) {
+        // Trigger the reveal if the click is outside the button container
+        revealCurrentCard();
+    }
+});
+
+function revealCurrentCard() {
+    const currentCard = flashcards[currentCardIndex];
+    if (currentCard) {
+        const termElement = currentCard.querySelector('.term');
+        const buttonContainer = currentCard.querySelector('.button-container');
+        termElement.style.display = 'block';
+        buttonContainer.style.display = 'flex';
+        revealButton.style.display = 'none'; // Hide the reveal button after revealing the term
+    }
 }
 
 function markAsKnown() {

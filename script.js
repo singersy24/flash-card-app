@@ -13,6 +13,7 @@ const correctAnswersElement = document.getElementById('correct-answers');
 const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
 
+// Load flashcards from a JSON file
 async function loadFlashcards() {
     try {
         const response = await fetch('flashcards.json?cachebuster=' + new Date().getTime());
@@ -20,22 +21,21 @@ async function loadFlashcards() {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log('Flashcards data:', data); // Log the JSON data
         allFlashcards = data;
-        flashcards = [];  // Reset flashcards array
+        flashcards = [];
         totalCardsElement.innerText = allFlashcards.length;
-        createFlashcards(allFlashcards); // Create DOM elements for flashcards
-        shuffle(flashcards); // Shuffle the flashcards here
+        createFlashcards(allFlashcards);
+        shuffle(flashcards);
         displayFlashcards();
     } catch (error) {
         console.error('Error loading flashcards:', error);
     }
 }
 
+// Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {
-    flashcardsContainer.innerHTML = '';  // Clear any existing flashcards
-
-    cardsData.forEach((cardData, index) => {
+    flashcardsContainer.innerHTML = '';
+    cardsData.forEach((cardData) => {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
         flashcardElement.innerHTML = `
@@ -47,156 +47,111 @@ function createFlashcards(cardsData) {
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
+        flashcardElement.addEventListener('click', function(event) {
+            handleCardClick(event, flashcardElement);
+        });
         flashcardsContainer.appendChild(flashcardElement);
-        flashcards.push(flashcardElement); // Add the DOM element to the flashcards array
-        console.log(`Flashcard created: ${cardData.term}`);  // Log creation of each flashcard
+        flashcards.push(flashcardElement);
     });
 }
 
+// Display the flashcards
 function displayFlashcards() {
     if (flashcards.length === 0) {
         console.error('No flashcards available to display.');
         return;
     }
-
-    flashcards.forEach(card => {
-        if (card) {
-            card.style.display = 'none';  // Initially hide all cards
-        } else {
-            console.error('A card is undefined.');
-        }
-    });
-
-    showNextCard(flashcards, currentCardIndex);  // Show the first card
+    flashcards.forEach(card => card.style.display = 'none');
+    showNextCard(flashcards, currentCardIndex);
 }
 
-document.addEventListener('click', handleCardClick);
-
-function handleCardClick(event) {
+// Handle card click events
+function handleCardClick(event, flashcardElement) {
     if (!cardRevealed && !event.target.closest('.btn')) {
-        const currentCard = flashcards[currentCardIndex];
-        const termElement = currentCard.querySelector('.term');
-        const buttonContainer = currentCard.querySelector('.button-container');
+        const termElement = flashcardElement.querySelector('.term');
+        const buttonContainer = flashcardElement.querySelector('.button-container');
         revealCard(termElement, buttonContainer);
     }
 }
 
+// Show the next card in the sequence
 function showNextCard(cards, currentIndex) {
     if (currentIndex >= cards.length) {
         handleEndOfCards();
         return;
     }
 
-    console.log('Current index:', currentIndex, 'Total cards:', cards.length);
-
-    // Hide all cards before showing the next one
-    cards.forEach((card, i) => {
-        if (card) {
-            card.style.display = 'none';
-        } else {
-            console.error(`Card at index ${i} is undefined.`);
-        }
-    });
-
+    cards.forEach(card => card.style.display = 'none');
     const currentCard = cards[currentIndex];
-    if (!currentCard) {
-        console.error('Current card is undefined or null:', currentIndex);
-        return;
-    }
-
     currentCard.style.display = 'block';
-
-    const termElement = currentCard.querySelector('.term');
-    const buttonContainer = currentCard.querySelector('.button-container');
-
-    if (!termElement || !buttonContainer) {
-        console.error('Missing term or button container in the card:', currentCard);
-        return;
-    }
-
-    termElement.style.display = 'none';  // Ensure the term is hidden initially
-    buttonContainer.style.display = 'none';  // Ensure the buttons are hidden initially
-    cardRevealed = false;
 
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');
 
-    knowItButton.onclick = function (event) {
-        event.stopPropagation();  // Prevent event from bubbling up to the document
+    knowItButton.onclick = function(event) {
+        event.stopPropagation();
         markAsKnown();
     };
 
-    dontKnowItButton.onclick = function (event) {
-        event.stopPropagation();  // Prevent event from bubbling up to the document
+    dontKnowItButton.onclick = function(event) {
+        event.stopPropagation();
         markAsUnknown();
     };
 
-    // Add event listener for key presses
-    document.onkeydown = function (event) {
-        if (event.key === ' ') {
-            event.preventDefault();
-            if (!cardRevealed) {
-                revealCard(termElement, buttonContainer);
-            } else {
-                markAsKnown();
-            }
-        } else if (event.ctrlKey) {
-            event.preventDefault();
-            markAsUnknown();
-        }
-    };
+    cardRevealed = false;
 }
 
+// Reveal the card's term and buttons
 function revealCard(termElement, buttonContainer) {
     termElement.style.display = 'block';
     buttonContainer.style.display = 'block';
     cardRevealed = true;
 }
 
+// Mark the card as known and move to the next one
 function markAsKnown() {
     correctAnswers++;
     correctAnswersElement.innerText = correctAnswers;
-    const currentCard = flashcards[currentCardIndex];
-    currentCard.style.display = 'none';
     showNextCard(flashcards, ++currentCardIndex);
 }
 
+// Mark the card as unknown and move to the next one
 function markAsUnknown() {
     incorrectAnswers++;
     incorrectAnswersElement.innerText = incorrectAnswers;
-    const currentCard = flashcards[currentCardIndex];
-    missedCards.push(currentCard);
-    currentCard.style.display = 'none';
+    missedCards.push(flashcards[currentCardIndex]);
     showNextCard(flashcards, ++currentCardIndex);
 }
 
+// Handle the end of the flashcards sequence
 function handleEndOfCards() {
     if (missedCards.length > 0 && !reviewingMissedCards) {
         alert('Reviewing missed cards.');
         reviewingMissedCards = true;
         currentCardIndex = 0;
-        flashcards = missedCards.slice(); // Use a copy of missedCards array
-        missedCards = []; // Clear missed cards array
-        reviewingLabel.style.display = 'block'; // Show the reviewing label
-        shuffle(flashcards); // Shuffle the missed cards before reviewing
+        flashcards = missedCards.slice();
+        missedCards = [];
+        reviewingLabel.style.display = 'block';
+        shuffle(flashcards);
         showNextCard(flashcards, currentCardIndex);
     } else if (reviewingMissedCards && missedCards.length === 0) {
         alert('You have reviewed all missed cards and got them correct!');
         reviewingMissedCards = false;
-        reviewingLabel.style.display = 'none'; // Hide the reviewing label
-        resetFlashcards(); // Automatically reset all cards
+        reviewingLabel.style.display = 'none';
+        resetFlashcards();
     } else if (reviewingMissedCards) {
         currentCardIndex = 0;
-        flashcards = missedCards.slice(); // Reload missed cards
-        missedCards = []; // Clear missed cards array
-        shuffle(flashcards); // Shuffle the missed cards before reviewing
+        flashcards = missedCards.slice();
+        missedCards = [];
+        shuffle(flashcards);
         showNextCard(flashcards, currentCardIndex);
     } else {
         alert('You have completed all the cards!');
-        resetFlashcards(); // Automatically reset all cards
+        resetFlashcards();
     }
 }
 
+// Reset the flashcards for a new session
 function resetFlashcards() {
     correctAnswers = 0;
     incorrectAnswers = 0;
@@ -207,12 +162,13 @@ function resetFlashcards() {
     incorrectAnswersElement.innerText = incorrectAnswers;
     reviewingLabel.style.display = 'none';
 
-    flashcards = [];  // Clear the flashcards array
-    createFlashcards(allFlashcards);  // Recreate the flashcards
-    shuffle(flashcards);  // Shuffle them before displaying
-    showNextCard(flashcards, currentCardIndex);  // Display the first card in an unrevealed state
+    flashcards = [];
+    createFlashcards(allFlashcards);
+    shuffle(flashcards);
+    showNextCard(flashcards, currentCardIndex);
 }
 
+// Shuffle the flashcards array
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -220,35 +176,25 @@ function shuffle(array) {
     }
 }
 
+// Toggle dark mode and reset card visibility
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    resetCardVisibility();  // Ensure the current card visibility is reset only if not revealed
+    resetCardVisibility();
 });
 
-const resetButton = document.querySelector('.reset-button');
-resetButton.addEventListener('click', resetFlashcards);
-
+// Reset the visibility of the current card's term and buttons
 function resetCardVisibility() {
     const currentCard = flashcards[currentCardIndex];
-    if (!currentCard) {
-        console.error('No current card found during reset.');
-        return;
+    if (currentCard) {
+        const termElement = currentCard.querySelector('.term');
+        const buttonContainer = currentCard.querySelector('.button-container');
+        termElement.style.display = 'none';
+        buttonContainer.style.display = 'none';
+        cardRevealed = false;
+        currentCard.style.display = 'block';
     }
-
-    const termElement = currentCard.querySelector('.term');
-    const buttonContainer = currentCard.querySelector('.button-container');
-
-    if (termElement && buttonContainer) {
-        termElement.style.display = 'none';  // Ensure term is hidden
-        buttonContainer.style.display = 'none';  // Ensure buttons are hidden
-        cardRevealed = false;  // Reset the card revealed state
-    } else {
-        console.error('Missing elements in the current card during reset.');
-    }
-
-    // Ensure that the flashcard itself is also visible
-    currentCard.style.display = 'block';  // Ensure current card is visible
 }
 
+// Load the flashcards when the page is ready
 loadFlashcards();

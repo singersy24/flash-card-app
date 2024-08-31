@@ -9,12 +9,12 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 20px auto; /* Center the flashcard horizontally */
-    padding: 40px; /* Increase padding for larger card size */
+    padding: 20px; /* Moderate padding for better mobile view */
     width: 100%;
-    max-width: 700px; /* Make the card bigger */
+    max-width: 500px; /* Make the card smaller */
     text-align: center;
     transition: all 0.3s;
-    font-size: 1.5em; /* Increase font size */
+    font-size: 1.2em; /* Moderate font size for readability */
     display: none; /* Initially hide all flashcards */
 }
 
@@ -27,26 +27,32 @@ body {
 
 .term {
     font-weight: bold;
-    font-size: 2em; /* Make the term bigger */
+    font-size: 1.5em; /* Make the term moderate size */
     margin-top: 20px;
     display: none; /* Initially hide the term */
 }
 
 .definition {
     margin-bottom: 20px;
-    font-size: 1.5em; /* Increase the font size of the definition */
+    font-size: 1.2em; /* Adjust font size for definition */
     line-height: 1.4;
 }
 
 .button-container {
-    display: none; /* Initially hide the buttons */
+    display: flex; /* Display buttons side by side */
     margin-top: 20px;
 }
 
-/* Enlarge the buttons */
+/* Style the buttons to each take up half the width */
 .button-container .btn {
-    padding: 15px 30px; /* Increase padding for larger buttons */
-    font-size: 1.2em; /* Increase font size */
+    flex: 1;
+    padding: 10px 0; /* Reduce padding for better fit */
+    font-size: 1em; /* Adjust font size */
+    border-radius: 0; /* Remove border radius for clean split */
+}
+
+.button-container .btn:first-child {
+    border-right: 1px solid #ddd; /* Add a subtle border between buttons */
 }
 
 .dark-mode {
@@ -126,15 +132,15 @@ body.dark-mode .flashcard .example {
 
     /* Adjust flashcard size for landscape mode */
     .flashcard {
-        max-width: 80%; /* Make the flashcard wider in landscape */
+        max-width: 90%; /* Adjust the flashcard width for better mobile view */
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
     /* Adjust Reveal button for mobile */
     .reveal-button {
-        padding: 20px;
-        font-size: 20px;
+        padding: 15px;
+        font-size: 16px;
         width: 100%; /* Ensure full width for easy clicking */
     }
 }
@@ -147,10 +153,10 @@ body.dark-mode .flashcard .example {
     }
 
     .flashcard {
-        max-width: 700px; /* Adjust card size for larger screens */
+        max-width: 500px; /* Adjust card size for larger screens */
     }
 
     .reveal-button {
-        width: 100%; /* Full width on desktop as well */
+        width: 200px; /* Set a fixed width for the button */
     }
 }

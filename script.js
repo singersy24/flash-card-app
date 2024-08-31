@@ -1,16 +1,54 @@
-// Initialize variables for tracking progress
+let flashcards = [];
+let allFlashcards = [];
+let currentCardIndex = 0;
 let correctAnswers = 0;
 let incorrectAnswers = 0;
-let currentCardIndex = 0;
-let flashcards;
 let cardRevealed = false;
 let missedCards = [];
 let reviewingMissedCards = false;
 
+const flashcardsContainer = document.getElementById('flashcards-container');
 const totalCardsElement = document.getElementById('total-cards');
 const correctAnswersElement = document.getElementById('correct-answers');
 const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
+
+async function loadFlashcards() {
+    try {
+        const response = await fetch('flashcards.json');
+        const data = await response.json();
+        allFlashcards = data;
+        flashcards = allFlashcards.slice();  // Copy the original flashcards array
+        shuffle(flashcards);
+        totalCardsElement.innerText = allFlashcards.length;
+        displayFlashcards();
+    } catch (error) {
+        console.error('Error loading flashcards:', error);
+    }
+}
+
+function displayFlashcards() {
+    flashcardsContainer.innerHTML = '';  // Clear any existing flashcards
+
+    flashcards.forEach((card, index) => {
+        const flashcardElement = document.createElement('div');
+        flashcardElement.classList.add('flashcard');
+        flashcardElement.innerHTML = `
+            <div class="definition">${card.definition}</div>
+            <div class="term">${card.term}</div>
+            <div class="button-container">
+                <button class="btn btn-success know-it">Know it</button>
+                <button class="btn btn-danger dont-know-it">Don't know it</button>
+            </div>
+        `;
+        flashcardsContainer.appendChild(flashcardElement);
+        flashcardElement.style.display = 'none';  // Hide all cards initially
+    });
+
+    showNextCard(flashcards, currentCardIndex);
+}
+
+loadFlashcards();
 
 // Shuffle function to randomize the flashcards
 function shuffle(array) {
@@ -132,18 +170,15 @@ function resetFlashcards() {
     showNextCard(flashcards, currentCardIndex);
 }
 
-// Initialize the flashcards
-const flashcardsContainer = document.getElementById('flashcards-container');
-const allFlashcards = Array.from(flashcardsContainer.querySelectorAll('.flashcard'));  // Store the original set of all flashcards
-flashcards = allFlashcards.slice();  // Copy the original flashcards array
-
-shuffle(flashcards);
-
-flashcards.forEach(card => {
-    card.style.display = 'none';
+// Event listener for the dark mode toggle
+const darkModeToggle = document.querySelector('.dark-mode-toggle');
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    resetCardVisibility();  // Reset the current card visibility when toggling dark mode
 });
 
-showNextCard(flashcards, currentCardIndex);
+const resetButton = document.querySelector('.reset-button');
+resetButton.addEventListener('click', resetFlashcards);
 
 // Function to reset the visibility of the current card
 function resetCardVisibility() {
@@ -155,15 +190,3 @@ function resetCardVisibility() {
     buttonContainer.style.display = 'none';
     cardRevealed = false;
 }
-
-// Event listener for the dark mode toggle
-const darkModeToggle = document.querySelector('.dark-mode-toggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    resetCardVisibility();  // Reset the current card visibility when toggling dark mode
-});
-
-const resetButton = document.querySelector('.reset-button');
-resetButton.addEventListener('click', resetFlashcards);
-
-totalCardsElement.innerText = allFlashcards.length;

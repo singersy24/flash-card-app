@@ -25,6 +25,7 @@ async function loadFlashcards() {
         flashcards = [];  // Reset flashcards array
         totalCardsElement.innerText = allFlashcards.length;
         createFlashcards(allFlashcards); // Create DOM elements for flashcards
+        shuffle(flashcards); // Shuffle the flashcards here
         displayFlashcards();
     } catch (error) {
         console.error('Error loading flashcards:', error);
@@ -171,6 +172,7 @@ function handleEndOfCards() {
         flashcards = missedCards.slice(); // Use a copy of missedCards array
         missedCards = []; // Clear missed cards array
         reviewingLabel.style.display = 'block'; // Show the reviewing label
+        shuffle(flashcards); // Shuffle the missed cards before reviewing
         showNextCard(flashcards, currentCardIndex);
     } else if (reviewingMissedCards && missedCards.length === 0) {
         alert('You have reviewed all missed cards and got them correct!');
@@ -181,6 +183,7 @@ function handleEndOfCards() {
         currentCardIndex = 0;
         flashcards = missedCards.slice(); // Reload missed cards
         missedCards = []; // Clear missed cards array
+        shuffle(flashcards); // Shuffle the missed cards before reviewing
         showNextCard(flashcards, currentCardIndex);
     } else {
         alert('You have completed all the cards!');
@@ -199,7 +202,7 @@ function resetFlashcards() {
 
     flashcards = [];  // Clear the flashcards array
     createFlashcards(allFlashcards);  // Recreate the flashcards
-    shuffle(flashcards);
+    shuffle(flashcards);  // Shuffle them before displaying
     showNextCard(flashcards, currentCardIndex);
 }
 

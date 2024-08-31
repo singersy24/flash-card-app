@@ -1,6 +1,6 @@
 body {
     transition: background-color 0.3s, color 0.3s;
-    margin-bottom: 60px; /* Ensure space for bottom buttons on mobile */
+    margin-bottom: 80px; /* Ensure space for bottom buttons on mobile */
 }
 
 .flashcard {
@@ -8,13 +8,13 @@ body {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Center the flashcard horizontally */
-    padding: 15px; /* Reduce padding for better mobile view */
-    width: 100%;
-    max-width: 450px; /* Make the card smaller */
+    margin: 10px auto; /* Center the flashcard horizontally */
+    padding: 10px; /* Further reduce padding for better mobile view */
+    width: 90%;
+    max-width: 400px; /* Slightly smaller for better fit on mobile */
     text-align: center;
     transition: all 0.3s;
-    font-size: 1.1em; /* Moderate font size for readability */
+    font-size: 1.1em; /* Keep font size moderate for readability */
     display: none; /* Initially hide all flashcards */
 }
 
@@ -27,7 +27,7 @@ body {
 
 .term {
     font-weight: bold;
-    font-size: 1.3em; /* Make the term smaller for readability */
+    font-size: 1.2em; /* Keep the term visible and readable */
     margin-top: 15px;
     display: none; /* Initially hide the term */
 }
@@ -47,8 +47,8 @@ body {
 /* Style the buttons to each take up half the width */
 .button-container .btn {
     flex: 1;
-    padding: 10px 0; /* Reduce padding for better fit */
-    font-size: 0.9em; /* Adjust font size */
+    padding: 12px 0; /* Increase padding for easier tapping */
+    font-size: 1em; /* Adjust font size for clarity */
     border-radius: 0; /* Remove border radius for clean split */
 }
 
@@ -74,15 +74,16 @@ body.dark-mode .flashcard .example {
 /* Center the counters */
 #counters {
     text-align: center;
+    margin-top: 15px;
 }
 
 /* Style the Reveal button */
 .reveal-button {
     display: block;
-    width: 150px; /* Slightly reduce width */
+    width: 80%; /* Increase width for better visibility */
     margin: 15px auto; /* Center the button */
-    padding: 10px; /* Reduce padding */
-    font-size: 16px; /* Reduce font size */
+    padding: 12px; /* Adjust padding for easier tapping */
+    font-size: 1em; /* Adjust font size */
     background-color: #007bff;
     color: white;
     border: none;
@@ -98,12 +99,12 @@ body.dark-mode .flashcard .example {
 @media (max-width: 600px) {
     #button-container {
         position: fixed;
-        bottom: 10px;
+        bottom: 0;
         left: 0;
         right: 0;
         display: flex;
         justify-content: space-around;
-        padding: 10px;
+        padding: 12px 10px;
         background-color: #f8f9fa; /* Light background to ensure visibility */
         border-top: 1px solid #ddd; /* Subtle border to separate from content */
         z-index: 1000;
@@ -114,40 +115,21 @@ body.dark-mode .flashcard .example {
         border-top: 1px solid #333; /* Darker border in dark mode */
     }
 
-    .dark-mode .dark-mode-toggle, 
-    .dark-mode .reset-button, 
-    .dark-mode .review-button {
-        background-color: #555; /* Darker button background in dark mode */
-        color: #f4f4f4; /* Light text color in dark mode */
-    }
-
-    .dark-mode-toggle, .reset-button, .review-button {
+    .dark-mode-toggle, .reset-button {
         margin: 0 5px;
         flex: 1;
         text-align: center;
     }
 
     body {
-        margin-bottom: 80px; /* Make space for the button bar */
+        margin-bottom: 90px; /* Ensure sufficient space for the button bar */
     }
 
     /* Adjust flashcard size for landscape mode */
     .flashcard {
-        max-width: 90%; /* Adjust the flashcard width for better mobile view */
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    /* Ensure the buttons remain side by side on mobile */
-    .button-container {
-        flex-direction: row; /* Ensure buttons are always side by side */
-    }
-
-    /* Adjust Reveal button for mobile */
-    .reveal-button {
-        padding: 10px;
-        font-size: 14px;
-        width: 80%; /* Ensure the button is easier to find */
+        max-width: 100%; /* Adjust the flashcard width for better mobile view */
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 }
 

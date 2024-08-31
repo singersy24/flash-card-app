@@ -20,7 +20,12 @@
         <p class="lead">Click on each card to reveal the term.</p>
     </div>
 
-    <!-- Flashcards container is now above the counters -->
+    <!-- Reveal button moved above the flashcards container -->
+    <div class="text-center mt-3">
+        <button id="reveal-button" class="btn btn-primary reveal-button" style="display:none;">Reveal</button>
+    </div>
+
+    <!-- Flashcards container is now below the reveal button -->
     <div id="flashcards-container" class="d-flex flex-column align-items-center"></div>
 
     <!-- Counters section moved below flashcards and centered -->
@@ -29,11 +34,6 @@
         <p>Correct Answers: <span id="correct-answers">0</span></p>
         <p>Incorrect Answers: <span id="incorrect-answers">0</span></p>
         <p id="reviewing-label" class="font-weight-bold text-warning" style="display:none;">Reviewing Missed Cards</p>
-    </div>
-
-    <!-- Reveal button added below counters -->
-    <div class="text-center mt-3">
-        <button id="reveal-button" class="btn btn-primary reveal-button" style="display:none;">Reveal</button>
     </div>
 </div>
 

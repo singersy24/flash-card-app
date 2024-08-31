@@ -73,9 +73,11 @@ body.dark-mode .flashcard .example {
 
 /* Style the Reveal button */
 .reveal-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+    display: block;
+    width: 100%; /* Make the button full width within the flashcard */
+    margin-top: 20px;
+    padding: 15px; /* Increase padding for better touch interaction */
+    font-size: 18px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -130,6 +132,13 @@ body.dark-mode .flashcard .example {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
+    /* Adjust Reveal button for mobile */
+    .reveal-button {
+        padding: 20px;
+        font-size: 20px;
+        width: 100%; /* Ensure full width for easy clicking */
+    }
 }
 
 /* For larger screens (desktop), keep the buttons at the top */
@@ -141,5 +150,9 @@ body.dark-mode .flashcard .example {
 
     .flashcard {
         max-width: 500px;
+    }
+
+    .reveal-button {
+        width: 100%; /* Full width on desktop as well */
     }
 }

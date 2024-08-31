@@ -9,13 +9,14 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 20px auto; /* Center the flashcard horizontally */
-    padding: 20px;
+    padding: 40px; /* Increase padding for larger card size */
     width: 100%;
-    max-width: 500px;
+    max-width: 700px; /* Make the card bigger */
     text-align: center;
     transition: all 0.3s;
-    font-size: 1.2em;
+    font-size: 1.5em; /* Increase font size */
     display: none; /* Initially hide all flashcards */
+    cursor: pointer; /* Add cursor pointer to indicate clickable */
 }
 
 /* Example Styling */
@@ -27,20 +28,26 @@ body {
 
 .term {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 2em; /* Make the term bigger */
     margin-top: 20px;
     display: none; /* Initially hide the term */
 }
 
 .definition {
     margin-bottom: 20px;
-    font-size: 1.2em;
+    font-size: 1.5em; /* Increase the font size of the definition */
     line-height: 1.4;
 }
 
 .button-container {
     display: none; /* Initially hide the buttons */
     margin-top: 20px;
+}
+
+/* Enlarge the buttons */
+.button-container .btn {
+    padding: 15px 30px; /* Increase padding for larger buttons */
+    font-size: 1.2em; /* Increase font size */
 }
 
 .dark-mode {
@@ -56,6 +63,11 @@ body {
 
 body.dark-mode .flashcard .example {
     color: #ccc;
+}
+
+/* Center the counters */
+#counters {
+    text-align: center;
 }
 
 .dark-mode-toggle, .reset-button, .review-button {
@@ -149,7 +161,7 @@ body.dark-mode .flashcard .example {
     }
 
     .flashcard {
-        max-width: 500px;
+        max-width: 700px; /* Adjust card size for larger screens */
     }
 
     .reveal-button {

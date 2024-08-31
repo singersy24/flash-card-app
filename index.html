@@ -16,25 +16,17 @@
         <button class="btn btn-secondary reset-button">Reset</button>
     </div>
     <div class="text-center">
-        <h2 class="mb-4">Anatomy Flashcards</h2>
+        <h1 class="mb-4">Anatomy Flashcards</h1>
         <p class="lead">Click on each card to reveal the term.</p>
+        <div id="counters" class="mb-3">
+            <p>Total Cards: <span id="total-cards">0</span></p>
+            <p>Correct Answers: <span id="correct-answers">0</span></p>
+            <p>Incorrect Answers: <span id="incorrect-answers">0</span></p>
+            <p id="reviewing-label" class="font-weight-bold text-warning" style="display:none;">Reviewing Missed Cards</p>
+        </div>
     </div>
 
-    <!-- Flashcards container -->
     <div id="flashcards-container" class="d-flex flex-column align-items-center"></div>
-
-    <!-- Reveal button placed below flashcard and above counters -->
-    <div class="text-center mt-3">
-        <button id="reveal-button" class="btn btn-primary reveal-button" style="display:none;">Reveal</button>
-    </div>
-
-    <!-- Counters section moved below reveal button and centered -->
-    <div id="counters" class="text-center mt-3">
-        <p>Total Cards: <span id="total-cards">0</span></p>
-        <p>Correct Answers: <span id="correct-answers">0</span></p>
-        <p>Incorrect Answers: <span id="incorrect-answers">0</span></p>
-        <p id="reviewing-label" class="font-weight-bold text-warning" style="display:none;">Reviewing Missed Cards</p>
-    </div>
 </div>
 
 <!-- Bootstrap JS and dependencies -->

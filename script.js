@@ -11,6 +11,7 @@ const totalCardsElement = document.getElementById('total-cards');
 const correctAnswersElement = document.getElementById('correct-answers');
 const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
+const revealButton = document.getElementById('reveal-button');
 
 async function loadFlashcards() {
     try {
@@ -45,16 +46,6 @@ function createFlashcards(cardsData) {
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
-        
-        // Add event listener to reveal the term when clicking anywhere on the card
-        flashcardElement.addEventListener('click', function () {
-            const termElement = flashcardElement.querySelector('.term');
-            const buttonContainer = flashcardElement.querySelector('.button-container');
-            if (termElement.style.display === 'none') {
-                termElement.style.display = 'block';
-                buttonContainer.style.display = 'block';
-            }
-        });
 
         flashcardsContainer.appendChild(flashcardElement);
         flashcards.push(flashcardElement); // Add the DOM element to the flashcards array
@@ -102,9 +93,15 @@ function showNextCard(cards, currentIndex) {
     }
 
     currentCard.style.display = 'block';
+    revealButton.style.display = 'block';  // Show the reveal button
 
-    const termElement = currentCard.querySelector('.term');
-    const buttonContainer = currentCard.querySelector('.button-container');
+    revealButton.onclick = function () {
+        const termElement = currentCard.querySelector('.term');
+        const buttonContainer = currentCard.querySelector('.button-container');
+        termElement.style.display = 'block';
+        buttonContainer.style.display = 'block';
+        revealButton.style.display = 'none';  // Hide the reveal button after revealing the term
+    };
 
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');

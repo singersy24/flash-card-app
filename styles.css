@@ -1,118 +1,85 @@
-body {
-    transition: background-color 0.3s, color 0.3s;
-    margin-bottom: 60px; /* Ensure space for bottom buttons on mobile */
-}
-
+/* Flashcard Container */
 .flashcard {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 2px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Center the flashcard horizontally */
     padding: 20px;
-    width: 100%;
-    max-width: 500px;
+    margin: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: all 0.3s;
-    font-size: 1.2em;
-    display: none; /* Initially hide all flashcards */
+    transition: background-color 0.3s ease;
 }
 
-.term {
-    font-weight: bold;
+/* Term and Definition */
+.flashcard .term {
     font-size: 1.5em;
-    margin-top: 20px;
-    display: none; /* Initially hide the term */
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.definition {
-    margin-bottom: 20px;
+.flashcard .definition {
     font-size: 1.2em;
-    line-height: 1.4;
+    margin-bottom: 20px;
 }
 
-.button-container {
-    display: none; /* Initially hide the buttons */
+/* Example Styling */
+.flashcard .example {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Button Styling */
+.flashcard .button-container {
     margin-top: 20px;
 }
 
-.dark-mode {
-    background-color: #333 !important;
-    color: #f4f4f4;
-}
-
-.dark-mode .flashcard {
-    background-color: #444;
-    color: #f4f4f4;
-    display: none; /* Ensure flashcards are hidden initially in dark mode */
-}
-
-.dark-mode-toggle, .reset-button, .review-button {
-    background-color: #888;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+.flashcard .btn {
+    padding: 10px 20px;
+    font-size: 1em;
     cursor: pointer;
-    z-index: 1000;
-    transition: background-color 0.3s;
-    font-size: 0.9em;
+    border-radius: 5px;
+    border: none;
     margin: 5px;
 }
 
-/* Media query for mobile devices */
-@media (max-width: 600px) {
-    #button-container {
-        position: fixed;
-        bottom: 10px;
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: space-around;
-        padding: 10px;
-        background-color: #f8f9fa; /* Light background to ensure visibility */
-        border-top: 1px solid #ddd; /* Subtle border to separate from content */
-        z-index: 1000;
-    }
-
-    .dark-mode #button-container {
-        background-color: #444; /* Dark background for the bottom container in dark mode */
-        border-top: 1px solid #333; /* Darker border in dark mode */
-    }
-
-    .dark-mode .dark-mode-toggle, 
-    .dark-mode .reset-button, 
-    .dark-mode .review-button {
-        background-color: #555; /* Darker button background in dark mode */
-        color: #f4f4f4; /* Light text color in dark mode */
-    }
-
-    .dark-mode-toggle, .reset-button, .review-button {
-        margin: 0 5px;
-        flex: 1;
-        text-align: center;
-    }
-
-    body {
-        margin-bottom: 100px; /* Make space for the button bar */
-    }
-
-    /* Adjust flashcard size for landscape mode */
-    .flashcard {
-        max-width: 80%; /* Make the flashcard wider in landscape */
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+.flashcard .btn-success {
+    background-color: #28a745;
+    color: white;
 }
 
-/* For larger screens (desktop), keep the buttons at the top */
-@media (min-width: 601px) {
-    #button-container {
-        position: static;
-        display: block;
-    }
+.flashcard .btn-success:hover {
+    background-color: #218838;
+}
 
-    .flashcard {
-        max-width: 500px;
-    }
+.flashcard .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.flashcard .btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .flashcard {
+    background-color: #444;
+    border-color: #555;
+}
+
+body.dark-mode .flashcard .example {
+    color: #ccc;
+}
+
+body.dark-mode .btn-success {
+    background-color: #218838;
+}
+
+body.dark-mode .btn-danger {
+    background-color: #c82333;
 }

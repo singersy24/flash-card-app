@@ -214,6 +214,11 @@ const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     resetCardVisibility();
+    // Re-display the current card to ensure it remains visible
+    const currentCard = flashcards[currentCardIndex];
+    if (currentCard) {
+        currentCard.style.display = 'block';
+    }
 });
 
 const resetButton = document.querySelector('.reset-button');

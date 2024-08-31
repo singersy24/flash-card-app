@@ -52,7 +52,19 @@ function createFlashcards(cardsData) {
 }
 
 function displayFlashcards() {
-    flashcards.forEach(card => card.style.display = 'none');  // Initially hide all cards
+    if (flashcards.length === 0) {
+        console.error('No flashcards available to display.');
+        return;
+    }
+
+    flashcards.forEach(card => {
+        if (card) {
+            card.style.display = 'none';  // Initially hide all cards
+        } else {
+            console.error('A card is undefined.');
+        }
+    });
+
     showNextCard(flashcards, currentCardIndex);  // Show the first card
 }
 
@@ -62,15 +74,14 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
-    // Log to ensure we have cards and the current index is valid
     console.log('Current index:', currentIndex, 'Total cards:', cards.length);
 
     // Hide all cards before showing the next one
     cards.forEach((card, i) => {
-        if (!card) {
-            console.error(`Card at index ${i} is undefined.`);
-        } else {
+        if (card) {
             card.style.display = 'none';
+        } else {
+            console.error(`Card at index ${i} is undefined.`);
         }
     });
 

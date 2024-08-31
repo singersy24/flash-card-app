@@ -102,8 +102,8 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
-    termElement.style.display = 'none';
-    buttonContainer.style.display = 'none';
+    termElement.style.display = 'none';  // Ensure the term is hidden initially
+    buttonContainer.style.display = 'none';  // Ensure the buttons are hidden initially
     cardRevealed = false;
 
     document.onclick = function (event) {
@@ -241,7 +241,7 @@ function resetCardVisibility() {
         console.error('Missing elements in the current card during reset.');
     }
 
-    // Ensure that the flashcard itself is also hidden if necessary
+    // Ensure that the flashcard itself is also visible
     currentCard.style.display = 'block';  // Ensure current card is visible
 }
 

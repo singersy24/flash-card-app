@@ -101,7 +101,6 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
-    // Ensure the term and buttons are hidden when showing the next card
     termElement.style.display = 'none';
     buttonContainer.style.display = 'none';
     cardRevealed = false;
@@ -230,13 +229,13 @@ function resetCardVisibility() {
     const termElement = currentCard.querySelector('.term');
     const buttonContainer = currentCard.querySelector('.button-container');
 
-    // Ensure term and button container are hidden
-    termElement.style.display = 'none';
-    buttonContainer.style.display = 'none';
-    cardRevealed = false;
-
-    // Ensure the card itself is still visible
-    currentCard.style.display = 'block';
+    if (termElement && buttonContainer) {
+        termElement.style.display = 'none';
+        buttonContainer.style.display = 'none';
+        cardRevealed = false;
+    } else {
+        console.error('Missing elements in the current card during reset.');
+    }
 }
 
 loadFlashcards();

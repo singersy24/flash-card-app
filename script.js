@@ -106,23 +106,24 @@ function showNextCard(cards, currentIndex) {
     buttonContainer.style.display = 'none';  // Ensure the buttons are hidden initially
     cardRevealed = false;
 
-    // Attach click event listener only to the card itself
-    currentCard.onclick = function (event) {
-        if (!cardRevealed && event.target.classList.contains('definition')) {
+    // Attach click event listener to the entire document
+    document.addEventListener('click', (event) => {
+        // Only reveal the card if the click is not on a button
+        if (!cardRevealed && !event.target.closest('.btn')) {
             revealCard(termElement, buttonContainer);
         }
-    };
+    });
 
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');
 
     knowItButton.onclick = function (event) {
-        event.stopPropagation();  // Prevent event from bubbling up to the card
+        event.stopPropagation();  // Prevent event from bubbling up to the document
         markAsKnown();
     };
 
     dontKnowItButton.onclick = function (event) {
-        event.stopPropagation();  // Prevent event from bubbling up to the card
+        event.stopPropagation();  // Prevent event from bubbling up to the document
         markAsUnknown();
     };
 
@@ -204,7 +205,7 @@ function resetFlashcards() {
     flashcards = [];  // Clear the flashcards array
     createFlashcards(allFlashcards);  // Recreate the flashcards
     shuffle(flashcards);  // Shuffle them before displaying
-    showNextCard(flashcards, currentCardIndex);  // Display the first card in unrevealed state
+    showNextCard(flashcards, currentCardIndex);  // Display the first card in an unrevealed state
 }
 
 function shuffle(array) {

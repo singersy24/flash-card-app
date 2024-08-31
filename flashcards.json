@@ -198,6 +198,71 @@
     {
         "term": "Appendicular",
         "definition": "Pertaining to the extremities or limbs"
+    },
+    {
+        "term": "Superior",
+        "definition": "Above",
+        "example": "The head is superior to the neck."
+    },
+    {
+        "term": "Inferior",
+        "definition": "Below",
+        "example": "The neck is inferior to the head."
+    },
+    {
+        "term": "Anterior (Ventral)",
+        "definition": "Closer to front of body",
+        "example": "The lips are anterior to the teeth."
+    },
+    {
+        "term": "Posterior (Dorsal)",
+        "definition": "Closer to back of body",
+        "example": "The teeth are posterior to the lips."
+    },
+    {
+        "term": "Medial",
+        "definition": "Closer to midline of body",
+        "example": "The nose is medial to the eyes."
+    },
+    {
+        "term": "Lateral",
+        "definition": "Farther from midline of body",
+        "example": "The eyes are lateral to the nose."
+    },
+    {
+        "term": "Intermediate",
+        "definition": "Between two structures",
+        "example": "The elbow is intermediate between the shoulder and wrist."
+    },
+    {
+        "term": "Ipsilateral",
+        "definition": "On same side of body",
+        "example": "The right arm and right leg are ipsilateral."
+    },
+    {
+        "term": "Contralateral",
+        "definition": "On opposite sides of body",
+        "example": "The right arm and left arm are contralateral."
+    },
+    {
+        "term": "Proximal",
+        "definition": "Nearer to point of attachment of limb to trunk or nearer to the origin of a structure",
+        "example": "The elbow is proximal to the wrist."
+    },
+    {
+        "term": "Distal",
+        "definition": "Farther from point of attachment of limb to trunk or farther from the origin of a structure",
+        "example": "The wrist is distal to the elbow."
+    },
+    {
+        "term": "Superficial",
+        "definition": "Closer to surface of body",
+        "example": "The skin is superficial to the muscles."
+    },
+    {
+        "term": "Deep",
+        "definition": "Farther from surface of body",
+        "example": "The muscles are deep to the skin."
     }
     
 ]

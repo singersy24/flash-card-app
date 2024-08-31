@@ -45,15 +45,19 @@ body {
     border-radius: 5px; /* Make buttons rounded */
     margin: 0; /* Remove margin to align buttons properly */
     text-align: center;
-    background-color: #28a745; /* Default to success color */
-    color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.button-container .btn.danger {
-    background-color: #dc3545; /* Set the danger button color */
+.button-container .btn-success {
+    background-color: #28a745; /* Green for success */
+    color: #fff;
+}
+
+.button-container .btn-danger {
+    background-color: #dc3545; /* Red for danger */
+    color: #fff;
 }
 
 .button-container .btn:hover {

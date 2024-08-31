@@ -40,15 +40,24 @@ function createFlashcards(cardsData) {
         flashcardElement.innerHTML = `
             <div class="definition">${cardData.definition}</div>
             <div class="term" style="display: none;">${cardData.term}</div>
-            <button class="reveal-button">Reveal</button>
             <div class="button-container" style="display: none;">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
+        
+        // Add event listener to reveal the term when clicking anywhere on the card
+        flashcardElement.addEventListener('click', function () {
+            const termElement = flashcardElement.querySelector('.term');
+            const buttonContainer = flashcardElement.querySelector('.button-container');
+            if (termElement.style.display === 'none') {
+                termElement.style.display = 'block';
+                buttonContainer.style.display = 'block';
+            }
+        });
+
         flashcardsContainer.appendChild(flashcardElement);
         flashcards.push(flashcardElement); // Add the DOM element to the flashcards array
-        console.log(`Flashcard created: ${cardData.term}`);  // Log creation of each flashcard
     });
 }
 
@@ -96,19 +105,6 @@ function showNextCard(cards, currentIndex) {
 
     const termElement = currentCard.querySelector('.term');
     const buttonContainer = currentCard.querySelector('.button-container');
-    const revealButton = currentCard.querySelector('.reveal-button');
-
-    if (!termElement || !buttonContainer || !revealButton) {
-        console.error('Missing elements in the card:', currentCard);
-        return;
-    }
-
-    // Add event listener to reveal the term
-    revealButton.onclick = function () {
-        termElement.style.display = 'block';
-        buttonContainer.style.display = 'block';
-        revealButton.style.display = 'none';  // Hide the reveal button after revealing the term
-    };
 
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');

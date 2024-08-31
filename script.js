@@ -107,9 +107,7 @@ function showNextCard(cards, currentIndex) {
 
     document.onclick = function (event) {
         if (!currentCard.contains(event.target)) {
-            termElement.style.display = 'block';
-            buttonContainer.style.display = 'block';
-            cardRevealed = true;
+            revealCard(termElement, buttonContainer);
         }
     };
 
@@ -118,20 +116,50 @@ function showNextCard(cards, currentIndex) {
 
     knowItButton.onclick = function (event) {
         event.stopPropagation();
-        correctAnswers++;
-        correctAnswersElement.innerText = correctAnswers;
-        currentCard.style.display = 'none';
-        showNextCard(cards, ++currentCardIndex);
+        markAsKnown();
     };
 
     dontKnowItButton.onclick = function (event) {
         event.stopPropagation();
-        incorrectAnswers++;
-        incorrectAnswersElement.innerText = incorrectAnswers;
-        missedCards.push(currentCard);
-        currentCard.style.display = 'none';
-        showNextCard(cards, ++currentCardIndex);
+        markAsUnknown();
     };
+
+    // Add event listener for key presses
+    document.onkeydown = function (event) {
+        if (event.key === ' ') {
+            event.preventDefault();
+            if (!cardRevealed) {
+                revealCard(termElement, buttonContainer);
+            } else {
+                markAsKnown();
+            }
+        } else if (event.key === 'Alt') {
+            markAsUnknown();
+        }
+    };
+}
+
+function revealCard(termElement, buttonContainer) {
+    termElement.style.display = 'block';
+    buttonContainer.style.display = 'block';
+    cardRevealed = true;
+}
+
+function markAsKnown() {
+    correctAnswers++;
+    correctAnswersElement.innerText = correctAnswers;
+    const currentCard = flashcards[currentCardIndex];
+    currentCard.style.display = 'none';
+    showNextCard(flashcards, ++currentCardIndex);
+}
+
+function markAsUnknown() {
+    incorrectAnswers++;
+    incorrectAnswersElement.innerText = incorrectAnswers;
+    const currentCard = flashcards[currentCardIndex];
+    missedCards.push(currentCard);
+    currentCard.style.display = 'none';
+    showNextCard(flashcards, ++currentCardIndex);
 }
 
 function handleEndOfCards() {

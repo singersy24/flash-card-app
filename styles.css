@@ -35,15 +35,33 @@ body {
     display: flex; /* Display buttons side by side */
     justify-content: space-between; /* Ensure buttons are side by side */
     margin-top: 15px;
+    gap: 10px; /* Add space between the buttons */
 }
 
-/* Style the buttons to each take up half the width */
 .button-container .btn {
     flex: 1;
     padding: 15px 0; /* Increase padding for easier tapping */
     font-size: 1.1em; /* Increase font size */
     border-radius: 5px; /* Make buttons rounded */
-    margin: 0 5px; /* Add margin to separate buttons slightly */
+    margin: 0; /* Remove margin to align buttons properly */
+    text-align: center;
+    background-color: #28a745; /* Default to success color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container .btn.danger {
+    background-color: #dc3545; /* Set the danger button color */
+}
+
+.button-container .btn:hover {
+    opacity: 0.9; /* Slightly darken on hover */
+}
+
+.button-container .btn:active {
+    opacity: 0.8; /* Darken further on click */
 }
 
 .reveal-button {

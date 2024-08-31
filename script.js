@@ -92,11 +92,14 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
+    // Reset the state of the current card
+    resetCardState(currentCard);
+
     currentCard.style.display = 'block';
     revealButton.style.display = 'block';  // Show the reveal button
 
     revealButton.onclick = function () {
-        revealCurrentCard();
+        revealCurrentCard(currentCard);
     };
 
     const knowItButton = currentCard.querySelector('.know-it');
@@ -111,20 +114,28 @@ function showNextCard(cards, currentIndex) {
     };
 }
 
+function resetCardState(card) {
+    const termElement = card.querySelector('.term');
+    const buttonContainer = card.querySelector('.button-container');
+
+    // Hide the term and the buttons initially
+    termElement.style.display = 'none';
+    buttonContainer.style.display = 'none';
+}
+
 document.body.addEventListener('click', function (event) {
     // Check if the click was inside the button container, if so, ignore the click
     const buttonContainer = document.getElementById('button-container');
     if (!buttonContainer.contains(event.target)) {
         // Trigger the reveal if the click is outside the button container
-        revealCurrentCard();
+        revealCurrentCard(flashcards[currentCardIndex]);
     }
 });
 
-function revealCurrentCard() {
-    const currentCard = flashcards[currentCardIndex];
-    if (currentCard) {
-        const termElement = currentCard.querySelector('.term');
-        const buttonContainer = currentCard.querySelector('.button-container');
+function revealCurrentCard(card) {
+    if (card) {
+        const termElement = card.querySelector('.term');
+        const buttonContainer = card.querySelector('.button-container');
         termElement.style.display = 'block';
         buttonContainer.style.display = 'flex';
         revealButton.style.display = 'none'; // Hide the reveal button after revealing the term

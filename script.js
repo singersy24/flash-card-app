@@ -22,11 +22,8 @@ async function loadFlashcards() {
         }
         const data = await response.json();
         allFlashcards = data;
-        flashcards = [];
         totalCardsElement.innerText = allFlashcards.length;
-        createFlashcards(allFlashcards);
-        shuffle(flashcards);
-        displayFlashcards();
+        resetFlashcards(); // Call resetFlashcards here to initialize
     } catch (error) {
         console.error('Error loading flashcards:', error);
     }
@@ -170,10 +167,10 @@ function resetFlashcards() {
     incorrectAnswersElement.innerText = incorrectAnswers;
     reviewingLabel.style.display = 'none';
 
-    flashcards = [];
-    createFlashcards(allFlashcards);
-    shuffle(flashcards);
-    showNextCard(flashcards, currentCardIndex);
+    flashcards = [];  // Reset the flashcards array
+    createFlashcards(allFlashcards);  // Recreate the flashcards
+    shuffle(flashcards);  // Shuffle them before displaying
+    showNextCard(flashcards, currentCardIndex);  // Display the first card in an unrevealed state
 }
 
 // Shuffle the flashcards array
@@ -190,6 +187,10 @@ darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     resetCardVisibility();
 });
+
+// Add event listener for reset button
+const resetButton = document.querySelector('.reset-button');
+resetButton.addEventListener('click', resetFlashcards);
 
 // Reset the visibility of the current card's term and buttons
 function resetCardVisibility() {

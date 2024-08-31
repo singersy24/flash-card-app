@@ -70,6 +70,17 @@ function displayFlashcards() {
     showNextCard(flashcards, currentCardIndex);  // Show the first card
 }
 
+document.addEventListener('click', handleCardClick);
+
+function handleCardClick(event) {
+    if (!cardRevealed && !event.target.closest('.btn')) {
+        const currentCard = flashcards[currentCardIndex];
+        const termElement = currentCard.querySelector('.term');
+        const buttonContainer = currentCard.querySelector('.button-container');
+        revealCard(termElement, buttonContainer);
+    }
+}
+
 function showNextCard(cards, currentIndex) {
     if (currentIndex >= cards.length) {
         handleEndOfCards();
@@ -106,14 +117,6 @@ function showNextCard(cards, currentIndex) {
     termElement.style.display = 'none';  // Ensure the term is hidden initially
     buttonContainer.style.display = 'none';  // Ensure the buttons are hidden initially
     cardRevealed = false;
-
-    // Attach click event listener to the entire document
-    document.addEventListener('click', (event) => {
-        // Only reveal the card if the click is not on a button
-        if (!cardRevealed && !event.target.closest('.btn')) {
-            revealCard(termElement, buttonContainer);
-        }
-    });
 
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');

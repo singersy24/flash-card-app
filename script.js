@@ -16,7 +16,11 @@ const reviewingLabel = document.getElementById('reviewing-label');
 async function loadFlashcards() {
     try {
         const response = await fetch('flashcards.json');
-        const data = await response.json();
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json(); // Use json() to parse JSON data
+        console.log('Flashcards data:', data); // Log the JSON data
         allFlashcards = data;
         flashcards = allFlashcards.slice();  // Copy the original flashcards array
         shuffle(flashcards);
@@ -43,13 +47,13 @@ function displayFlashcards() {
         `;
         flashcardsContainer.appendChild(flashcardElement);
         flashcardElement.style.display = 'none';  // Hide all cards initially
-        console.log(`Flashcard created for term: ${card.term}`);  // Log creation of each flashcard
     });
 
     showNextCard(flashcards, currentCardIndex);
 }
 
-// Shuffle function to randomize the flashcards
+loadFlashcards();
+
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -57,7 +61,6 @@ function shuffle(array) {
     }
 }
 
-// Function to show the next flashcard
 function showNextCard(cards, currentIndex) {
     if (currentIndex >= cards.length) {
         if (missedCards.length > 0 && !reviewingMissedCards) {
@@ -74,7 +77,6 @@ function showNextCard(cards, currentIndex) {
             reviewingLabel.style.display = 'none'; // Hide the reviewing label
             resetFlashcards(); // Optionally reset all cards or end the session
         } else if (reviewingMissedCards) {
-            // Continue reviewing missed cards
             currentCardIndex = 0;
             flashcards = missedCards.slice(); // Reload missed cards
             missedCards = []; // Clear missed cards array
@@ -85,31 +87,12 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
+    cards.forEach(card => card.style.display = 'none');
     const currentCard = cards[currentIndex];
-    if (!currentCard) {
-        console.error('No card found at this index:', currentIndex);
-        return;
-    }
-
-    // Hide all cards before showing the next one
-    cards.forEach(card => {
-        if (card) {
-            card.style.display = 'none';
-        } else {
-            console.error('Undefined card in the array.');
-        }
-    });
-
     currentCard.style.display = 'block';
 
     const termElement = currentCard.querySelector('.term');
     const buttonContainer = currentCard.querySelector('.button-container');
-
-    // Check if termElement and buttonContainer exist
-    if (!termElement || !buttonContainer) {
-        console.error('Missing elements in the card:', currentCard);
-        return;
-    }
 
     termElement.style.display = 'none';
     buttonContainer.style.display = 'none';
@@ -123,7 +106,6 @@ function showNextCard(cards, currentIndex) {
         }
     };
 
-    // Handle "Know it" button click
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');
 
@@ -139,13 +121,12 @@ function showNextCard(cards, currentIndex) {
         event.stopPropagation();
         incorrectAnswers++;
         incorrectAnswersElement.innerText = incorrectAnswers;
-        missedCards.push(currentCard); // Push the entire card element to missedCards
+        missedCards.push(currentCard);
         currentCard.style.display = 'none';
         showNextCard(cards, ++currentCardIndex);
     };
 
-    // Define the function to handle key presses
-    function handleKeyPress(event) {
+    document.onkeydown = function (event) {
         if (event.key === ' ') {
             event.preventDefault();
             if (!cardRevealed) {
@@ -158,9 +139,7 @@ function showNextCard(cards, currentIndex) {
         } else if (event.key === 'Shift') {
             dontKnowItButton.click();
         }
-    }
-
-    document.onkeydown = handleKeyPress;
+    };
 }
 
 function resetFlashcards() {
@@ -171,9 +150,9 @@ function resetFlashcards() {
     reviewingMissedCards = false;
     correctAnswersElement.innerText = correctAnswers;
     incorrectAnswersElement.innerText = incorrectAnswers;
-    reviewingLabel.style.display = 'none'; // Hide the reviewing label
+    reviewingLabel.style.display = 'none';
 
-    flashcards = allFlashcards.slice();  // Reset flashcards to the original full set
+    flashcards = allFlashcards.slice();
     shuffle(flashcards);
     flashcards.forEach(card => {
         card.style.display = 'none';
@@ -184,17 +163,15 @@ function resetFlashcards() {
     showNextCard(flashcards, currentCardIndex);
 }
 
-// Event listener for the dark mode toggle
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    resetCardVisibility();  // Reset the current card visibility when toggling dark mode
+    resetCardVisibility();
 });
 
 const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', resetFlashcards);
 
-// Function to reset the visibility of the current card
 function resetCardVisibility() {
     const currentCard = flashcards[currentCardIndex];
     if (!currentCard) {
@@ -213,5 +190,3 @@ function resetCardVisibility() {
         console.error('Missing elements in the current card during reset.');
     }
 }
-
-loadFlashcards();

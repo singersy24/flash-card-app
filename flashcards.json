@@ -263,6 +263,38 @@
         "term": "Deep",
         "definition": "Farther from surface of body",
         "example": "The muscles are deep to the skin."
-    }
+    },
+     {
+        "term": "Sagittal planes",
+        "definition": "Planes that pass vertically through the body or organ and divide them into right and left sections."
+    },
+    {
+        "term": "Midsagittal plane",
+        "definition": "A sagittal plane that passes vertically through the midline and divides the body into equal right and left halves."
+    },
+    {
+        "term": "Parasagittal plane",
+        "definition": "A sagittal plane that divides the body into unequal right and left portions."
+    },
+    {
+        "term": "Frontal plane (Coronal plane)",
+        "definition": "A plane that passes vertically through the body and produces anterior and posterior sections."
+    },
+    {
+        "term": "Transverse plane",
+        "definition": "A plane that passes horizontally through the body and produces superior and inferior sections."
+    },
+    {
+        "term": "Oblique planes",
+        "definition": "Planes that pass through the body at an angle, forming oblique sections."
+    },
+    {
+        "term": "Longitudinal sections",
+        "definition": "Sections produced by a plane running along the long axis of a narrow structure such as a blood vessel, intestine, or long bone."
+    },
+    {
+        "term": "Cross-sections",
+        "definition": "Sections produced by a plane running perpendicular to the long axis of a structure."
+    },
     
 ]

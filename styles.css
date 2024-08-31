@@ -16,7 +16,6 @@ body {
     transition: all 0.3s;
     font-size: 1.5em; /* Increase font size */
     display: none; /* Initially hide all flashcards */
-    cursor: pointer; /* Add cursor pointer to indicate clickable */
 }
 
 /* Example Styling */
@@ -70,24 +69,11 @@ body.dark-mode .flashcard .example {
     text-align: center;
 }
 
-.dark-mode-toggle, .reset-button, .review-button {
-    background-color: #888;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000;
-    transition: background-color 0.3s;
-    font-size: 0.9em;
-    margin: 5px;
-}
-
 /* Style the Reveal button */
 .reveal-button {
     display: block;
-    width: 100%; /* Make the button full width within the flashcard */
-    margin-top: 20px;
+    width: 200px; /* Fixed width for consistency */
+    margin: 20px auto; /* Center the button */
     padding: 15px; /* Increase padding for better touch interaction */
     font-size: 18px;
     background-color: #007bff;

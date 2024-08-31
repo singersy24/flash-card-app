@@ -101,6 +101,7 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
+    // Ensure the term and buttons are hidden when showing the next card
     termElement.style.display = 'none';
     buttonContainer.style.display = 'none';
     cardRevealed = false;
@@ -214,18 +215,6 @@ const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     resetCardVisibility();
-    // Ensure the flashcard is not revealed when toggling dark mode
-    if (!cardRevealed) {
-        const currentCard = flashcards[currentCardIndex];
-        if (currentCard) {
-            const termElement = currentCard.querySelector('.term');
-            const buttonContainer = currentCard.querySelector('.button-container');
-            if (termElement && buttonContainer) {
-                termElement.style.display = 'none';
-                buttonContainer.style.display = 'none';
-            }
-        }
-    }
 });
 
 const resetButton = document.querySelector('.reset-button');
@@ -241,13 +230,10 @@ function resetCardVisibility() {
     const termElement = currentCard.querySelector('.term');
     const buttonContainer = currentCard.querySelector('.button-container');
 
-    if (termElement && buttonContainer) {
-        termElement.style.display = 'none';
-        buttonContainer.style.display = 'none';
-        cardRevealed = false;
-    } else {
-        console.error('Missing elements in the current card during reset.');
-    }
+    // Ensure term and button container are hidden
+    termElement.style.display = 'none';
+    buttonContainer.style.display = 'none';
+    cardRevealed = false;
 
     // Ensure the card itself is still visible
     currentCard.style.display = 'block';

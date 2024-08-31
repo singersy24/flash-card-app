@@ -38,11 +38,15 @@ function createFlashcards(cardsData) {
     cardsData.forEach((cardData) => {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
+        let exampleHTML = '';
+        if (cardData.example) {
+            exampleHTML = `<div class="example" style="display: none;">Example: ${cardData.example}</div>`;
+        }
         flashcardElement.innerHTML = `
             <div class="definition">${cardData.definition}</div>
-            <div class="term">${cardData.term}</div>
-            <div class="example" style="display: none;">Example: ${cardData.example}</div>
-            <div class="button-container">
+            <div class="term" style="display: none;">${cardData.term}</div>
+            ${exampleHTML}
+            <div class="button-container" style="display: none;">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
@@ -102,7 +106,7 @@ function showNextCard(cards, currentIndex) {
     cardRevealed = false;
 }
 
-// Reveal the card's term, example, and buttons
+// Reveal the card's term, example (if any), and buttons
 function revealCard(termElement, exampleElement, buttonContainer) {
     termElement.style.display = 'block';
     if (exampleElement) {

@@ -40,9 +40,8 @@ function createFlashcards(cardsData) {
         flashcardElement.classList.add('flashcard');
         flashcardElement.innerHTML = `
             <div class="definition">${cardData.definition}</div>
-            <div class="term" style="display: none;">${cardData.term}</div>
-            ${cardData.example ? `<div class="example" style="display: none;">Example: ${cardData.example}</div>` : ''}
-            <div class="button-container" style="display: none;">
+            <div class="term">${cardData.term}</div>
+            <div class="button-container">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
@@ -96,24 +95,25 @@ function showNextCard(cards, currentIndex) {
     currentCard.style.display = 'block';
 
     const termElement = currentCard.querySelector('.term');
-    const exampleElement = currentCard.querySelector('.example');
     const buttonContainer = currentCard.querySelector('.button-container');
 
     if (!termElement || !buttonContainer) {
-        console.error('Missing term, example, or button container in the card:', currentCard);
+        console.error('Missing term or button container in the card:', currentCard);
         return;
     }
 
     termElement.style.display = 'none';  // Ensure the term is hidden initially
-    if (exampleElement) exampleElement.style.display = 'none';  // Ensure the example is hidden initially
     buttonContainer.style.display = 'none';  // Ensure the buttons are hidden initially
     cardRevealed = false;
+
+    // Ensure we clear previous event listeners to avoid conflicts
+    document.onclick = null;
 
     // Attach click event listener to the entire document
     document.addEventListener('click', (event) => {
         // Only reveal the card if the click is not on a button
         if (!cardRevealed && !event.target.closest('.btn')) {
-            revealCard(termElement, exampleElement, buttonContainer);
+            revealCard(termElement, buttonContainer);
         }
     });
 
@@ -135,7 +135,7 @@ function showNextCard(cards, currentIndex) {
         if (event.key === ' ') {
             event.preventDefault();
             if (!cardRevealed) {
-                revealCard(termElement, exampleElement, buttonContainer);
+                revealCard(termElement, buttonContainer);
             } else {
                 markAsKnown();
             }
@@ -146,9 +146,8 @@ function showNextCard(cards, currentIndex) {
     };
 }
 
-function revealCard(termElement, exampleElement, buttonContainer) {
+function revealCard(termElement, buttonContainer) {
     termElement.style.display = 'block';
-    if (exampleElement) exampleElement.style.display = 'block';
     buttonContainer.style.display = 'block';
     cardRevealed = true;
 }
@@ -238,11 +237,9 @@ function resetCardVisibility() {
 
     const termElement = currentCard.querySelector('.term');
     const buttonContainer = currentCard.querySelector('.button-container');
-    const exampleElement = currentCard.querySelector('.example');
 
     if (termElement && buttonContainer) {
         termElement.style.display = 'none';  // Ensure term is hidden
-        if (exampleElement) exampleElement.style.display = 'none';  // Ensure example is hidden
         buttonContainer.style.display = 'none';  // Ensure buttons are hidden
         cardRevealed = false;  // Reset the card revealed state
     } else {

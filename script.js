@@ -134,6 +134,7 @@ function showNextCard(cards, currentIndex) {
                 markAsKnown();
             }
         } else if (event.ctrlKey) {
+            event.preventDefault();
             markAsUnknown();
         }
     };

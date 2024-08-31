@@ -237,8 +237,8 @@ function resetCardVisibility() {
         console.error('Missing elements in the current card during reset.');
     }
 
-    // Ensure that the flashcard itself is also hidden if necessary
-    currentCard.style.display = 'none';
+    // Ensure the card itself is still visible
+    currentCard.style.display = 'block';
 }
 
 loadFlashcards();

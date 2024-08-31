@@ -180,7 +180,7 @@ function handleEndOfCards() {
         alert('You have reviewed all missed cards and got them correct!');
         reviewingMissedCards = false;
         reviewingLabel.style.display = 'none'; // Hide the reviewing label
-        resetFlashcards(); // Optionally reset all cards or end the session
+        resetFlashcards(); // Automatically reset all cards
     } else if (reviewingMissedCards) {
         currentCardIndex = 0;
         flashcards = missedCards.slice(); // Reload missed cards
@@ -189,6 +189,7 @@ function handleEndOfCards() {
         showNextCard(flashcards, currentCardIndex);
     } else {
         alert('You have completed all the cards!');
+        resetFlashcards(); // Automatically reset all cards
     }
 }
 

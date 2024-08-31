@@ -33,6 +33,9 @@ async function loadFlashcards() {
 function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';
     cardsData.forEach((cardData) => {
+        const cardWrapper = document.createElement('div');
+        cardWrapper.classList.add('card-wrapper');
+        
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
         let exampleHTML = '';
@@ -48,11 +51,14 @@ function createFlashcards(cardsData) {
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
-        flashcardElement.addEventListener('click', function(event) {
+
+        cardWrapper.appendChild(flashcardElement);
+        cardWrapper.addEventListener('click', function(event) {
             handleCardClick(event, flashcardElement);
         });
-        flashcardsContainer.appendChild(flashcardElement);
-        flashcards.push(flashcardElement);
+        
+        flashcardsContainer.appendChild(cardWrapper);
+        flashcards.push(cardWrapper);
     });
 }
 
@@ -87,8 +93,9 @@ function showNextCard(cards, currentIndex) {
     const currentCard = cards[currentIndex];
     currentCard.style.display = 'block';
 
-    const knowItButton = currentCard.querySelector('.know-it');
-    const dontKnowItButton = currentCard.querySelector('.dont-know-it');
+    const flashcardElement = currentCard.querySelector('.flashcard');
+    const knowItButton = flashcardElement.querySelector('.know-it');
+    const dontKnowItButton = flashcardElement.querySelector('.dont-know-it');
 
     knowItButton.onclick = function(event) {
         event.stopPropagation();
@@ -196,9 +203,10 @@ resetButton.addEventListener('click', resetFlashcards);
 function resetCardVisibility() {
     const currentCard = flashcards[currentCardIndex];
     if (currentCard) {
-        const termElement = currentCard.querySelector('.term');
-        const exampleElement = currentCard.querySelector('.example');
-        const buttonContainer = currentCard.querySelector('.button-container');
+        const flashcardElement = currentCard.querySelector('.flashcard');
+        const termElement = flashcardElement.querySelector('.term');
+        const exampleElement = flashcardElement.querySelector('.example');
+        const buttonContainer = flashcardElement.querySelector('.button-container');
         termElement.style.display = 'none';
         if (exampleElement) {
             exampleElement.style.display = 'none';

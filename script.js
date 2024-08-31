@@ -3,6 +3,7 @@ let allFlashcards = [];
 let currentCardIndex = 0;
 let correctAnswers = 0;
 let incorrectAnswers = 0;
+let cardRevealed = false;
 let missedCards = [];
 let reviewingMissedCards = false;
 
@@ -11,7 +12,6 @@ const totalCardsElement = document.getElementById('total-cards');
 const correctAnswersElement = document.getElementById('correct-answers');
 const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
-const revealButton = document.getElementById('reveal-button');
 
 async function loadFlashcards() {
     try {
@@ -40,15 +40,16 @@ function createFlashcards(cardsData) {
         flashcardElement.classList.add('flashcard');
         flashcardElement.innerHTML = `
             <div class="definition">${cardData.definition}</div>
-            <div class="term" style="display: none;">${cardData.term}</div>
-            <div class="button-container" style="display: none;">
+            <div class="term">${cardData.term}</div>
+            ${cardData.example ? `<div class="example">Example: ${cardData.example}</div>` : ''}
+            <div class="button-container">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
-
         flashcardsContainer.appendChild(flashcardElement);
         flashcards.push(flashcardElement); // Add the DOM element to the flashcards array
+        console.log(`Flashcard created: ${cardData.term}`);  // Log creation of each flashcard
     });
 }
 
@@ -92,54 +93,61 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
-    // Reset the state of the current card
-    resetCardState(currentCard);
-
     currentCard.style.display = 'block';
-    revealButton.style.display = 'block';  // Show the reveal button
 
-    revealButton.onclick = function () {
-        revealCurrentCard(currentCard);
-    };
+    const termElement = currentCard.querySelector('.term');
+    const buttonContainer = currentCard.querySelector('.button-container');
+
+    if (!termElement || !buttonContainer) {
+        console.error('Missing term or button container in the card:', currentCard);
+        return;
+    }
+
+    termElement.style.display = 'none';  // Ensure the term is hidden initially
+    buttonContainer.style.display = 'none';  // Ensure the buttons are hidden initially
+    cardRevealed = false;
+
+    // Attach click event listener to the entire document
+    document.addEventListener('click', (event) => {
+        // Only reveal the card if the click is not on a button
+        if (!cardRevealed && !event.target.closest('.btn')) {
+            revealCard(termElement, buttonContainer);
+        }
+    });
 
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');
 
-    knowItButton.onclick = function () {
+    knowItButton.onclick = function (event) {
+        event.stopPropagation();  // Prevent event from bubbling up to the document
         markAsKnown();
     };
 
-    dontKnowItButton.onclick = function () {
+    dontKnowItButton.onclick = function (event) {
+        event.stopPropagation();  // Prevent event from bubbling up to the document
         markAsUnknown();
+    };
+
+    // Add event listener for key presses
+    document.onkeydown = function (event) {
+        if (event.key === ' ') {
+            event.preventDefault();
+            if (!cardRevealed) {
+                revealCard(termElement, buttonContainer);
+            } else {
+                markAsKnown();
+            }
+        } else if (event.ctrlKey) {
+            event.preventDefault();
+            markAsUnknown();
+        }
     };
 }
 
-function resetCardState(card) {
-    const termElement = card.querySelector('.term');
-    const buttonContainer = card.querySelector('.button-container');
-
-    // Hide the term and the buttons initially
-    termElement.style.display = 'none';
-    buttonContainer.style.display = 'none';
-}
-
-document.body.addEventListener('click', function (event) {
-    // Check if the click was inside the button container, if so, ignore the click
-    const buttonContainer = document.getElementById('button-container');
-    if (!buttonContainer.contains(event.target)) {
-        // Trigger the reveal if the click is outside the button container
-        revealCurrentCard(flashcards[currentCardIndex]);
-    }
-});
-
-function revealCurrentCard(card) {
-    if (card) {
-        const termElement = card.querySelector('.term');
-        const buttonContainer = card.querySelector('.button-container');
-        termElement.style.display = 'block';
-        buttonContainer.style.display = 'flex';
-        revealButton.style.display = 'none'; // Hide the reveal button after revealing the term
-    }
+function revealCard(termElement, buttonContainer) {
+    termElement.style.display = 'block';
+    buttonContainer.style.display = 'block';
+    cardRevealed = true;
 }
 
 function markAsKnown() {
@@ -231,6 +239,7 @@ function resetCardVisibility() {
     if (termElement && buttonContainer) {
         termElement.style.display = 'none';  // Ensure term is hidden
         buttonContainer.style.display = 'none';  // Ensure buttons are hidden
+        cardRevealed = false;  // Reset the card revealed state
     } else {
         console.error('Missing elements in the current card during reset.');
     }

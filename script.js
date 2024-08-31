@@ -43,12 +43,11 @@ function displayFlashcards() {
         `;
         flashcardsContainer.appendChild(flashcardElement);
         flashcardElement.style.display = 'none';  // Hide all cards initially
+        console.log(`Flashcard created for term: ${card.term}`);  // Log creation of each flashcard
     });
 
     showNextCard(flashcards, currentCardIndex);
 }
-
-loadFlashcards();
 
 // Shuffle function to randomize the flashcards
 function shuffle(array) {
@@ -86,21 +85,36 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
-    // Hide all cards before showing the next one
-    cards.forEach(card => card.style.display = 'none');
-
     const currentCard = cards[currentIndex];
+    if (!currentCard) {
+        console.error('No card found at this index:', currentIndex);
+        return;
+    }
+
+    // Hide all cards before showing the next one
+    cards.forEach(card => {
+        if (card) {
+            card.style.display = 'none';
+        } else {
+            console.error('Undefined card in the array.');
+        }
+    });
+
     currentCard.style.display = 'block';
 
     const termElement = currentCard.querySelector('.term');
     const buttonContainer = currentCard.querySelector('.button-container');
 
-    // Initially hide the term and button container
+    // Check if termElement and buttonContainer exist
+    if (!termElement || !buttonContainer) {
+        console.error('Missing elements in the card:', currentCard);
+        return;
+    }
+
     termElement.style.display = 'none';
     buttonContainer.style.display = 'none';
     cardRevealed = false;
 
-    // Set up the click event to reveal the card if clicked outside the flashcard
     document.onclick = function (event) {
         if (!currentCard.contains(event.target)) {
             termElement.style.display = 'block';
@@ -183,10 +197,21 @@ resetButton.addEventListener('click', resetFlashcards);
 // Function to reset the visibility of the current card
 function resetCardVisibility() {
     const currentCard = flashcards[currentCardIndex];
+    if (!currentCard) {
+        console.error('No current card found during reset.');
+        return;
+    }
+
     const termElement = currentCard.querySelector('.term');
     const buttonContainer = currentCard.querySelector('.button-container');
 
-    termElement.style.display = 'none';
-    buttonContainer.style.display = 'none';
-    cardRevealed = false;
+    if (termElement && buttonContainer) {
+        termElement.style.display = 'none';
+        buttonContainer.style.display = 'none';
+        cardRevealed = false;
+    } else {
+        console.error('Missing elements in the current card during reset.');
+    }
 }
+
+loadFlashcards();

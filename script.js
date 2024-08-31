@@ -15,8 +15,8 @@ const reviewingLabel = document.getElementById('reviewing-label');
 
 async function loadFlashcards() {
     try {
-        const response = await fetch('flashcards.json');
-        const data = await response.json();
+        const response = await fetch('flashcards.txt');
+        const data = await response.txt();
         allFlashcards = data;
         flashcards = allFlashcards.slice();  // Copy the original flashcards array
         shuffle(flashcards);

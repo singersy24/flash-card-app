@@ -41,7 +41,7 @@ function createFlashcards(cardsData) {
         flashcardElement.innerHTML = `
             <div class="definition">${cardData.definition}</div>
             <div class="term">${cardData.term}</div>
-            ${cardData.example ? `<div class="example">Example: ${cardData.example}</div>` : ''}
+            <div class="example" style="display: none;">Example: ${cardData.example}</div>
             <div class="button-container">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
@@ -69,8 +69,9 @@ function displayFlashcards() {
 function handleCardClick(event, flashcardElement) {
     if (!cardRevealed && !event.target.closest('.btn')) {
         const termElement = flashcardElement.querySelector('.term');
+        const exampleElement = flashcardElement.querySelector('.example');
         const buttonContainer = flashcardElement.querySelector('.button-container');
-        revealCard(termElement, buttonContainer);
+        revealCard(termElement, exampleElement, buttonContainer);
     }
 }
 
@@ -101,9 +102,12 @@ function showNextCard(cards, currentIndex) {
     cardRevealed = false;
 }
 
-// Reveal the card's term and buttons
-function revealCard(termElement, buttonContainer) {
+// Reveal the card's term, example, and buttons
+function revealCard(termElement, exampleElement, buttonContainer) {
     termElement.style.display = 'block';
+    if (exampleElement) {
+        exampleElement.style.display = 'block';
+    }
     buttonContainer.style.display = 'block';
     cardRevealed = true;
 }
@@ -188,8 +192,12 @@ function resetCardVisibility() {
     const currentCard = flashcards[currentCardIndex];
     if (currentCard) {
         const termElement = currentCard.querySelector('.term');
+        const exampleElement = currentCard.querySelector('.example');
         const buttonContainer = currentCard.querySelector('.button-container');
         termElement.style.display = 'none';
+        if (exampleElement) {
+            exampleElement.style.display = 'none';
+        }
         buttonContainer.style.display = 'none';
         cardRevealed = false;
         currentCard.style.display = 'block';

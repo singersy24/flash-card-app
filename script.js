@@ -62,11 +62,13 @@ function showNextCard(cards, currentIndex) {
     buttonContainer.style.display = 'none';
     cardRevealed = false;
 
-    // Set up the click event to toggle the term
-    currentCard.onclick = function () {
-        termElement.style.display = 'block';
-        buttonContainer.style.display = 'block';
-        cardRevealed = true;
+    // Set up the click event to reveal the card if clicked outside the flashcard
+    document.onclick = function (event) {
+        if (!currentCard.contains(event.target)) {
+            termElement.style.display = 'block';
+            buttonContainer.style.display = 'block';
+            cardRevealed = true;
+        }
     };
 
     // Handle "Know it" button click

@@ -22,34 +22,38 @@ async function loadFlashcards() {
         const data = await response.json();
         console.log('Flashcards data:', data); // Log the JSON data
         allFlashcards = data;
-        flashcards = allFlashcards.slice();  // Copy the original flashcards array
-        shuffle(flashcards);
+        flashcards = [];  // Reset flashcards array
         totalCardsElement.innerText = allFlashcards.length;
+        createFlashcards(allFlashcards); // Create DOM elements for flashcards
         displayFlashcards();
     } catch (error) {
         console.error('Error loading flashcards:', error);
     }
 }
 
-function displayFlashcards() {
+function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';  // Clear any existing flashcards
 
-    flashcards.forEach((card, index) => {
+    cardsData.forEach((cardData, index) => {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
         flashcardElement.innerHTML = `
-            <div class="definition">${card.definition}</div>
-            <div class="term">${card.term}</div>
+            <div class="definition">${cardData.definition}</div>
+            <div class="term">${cardData.term}</div>
             <div class="button-container">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
         flashcardsContainer.appendChild(flashcardElement);
-        console.log(`Flashcard created: ${card.term}`);  // Log creation of each flashcard
+        flashcards.push(flashcardElement); // Add the DOM element to the flashcards array
+        console.log(`Flashcard created: ${cardData.term}`);  // Log creation of each flashcard
     });
+}
 
-    showNextCard(flashcards, currentCardIndex);
+function displayFlashcards() {
+    flashcards.forEach(card => card.style.display = 'none');  // Initially hide all cards
+    showNextCard(flashcards, currentCardIndex);  // Show the first card
 }
 
 function showNextCard(cards, currentIndex) {
@@ -153,21 +157,9 @@ function resetFlashcards() {
     incorrectAnswersElement.innerText = incorrectAnswers;
     reviewingLabel.style.display = 'none';
 
-    flashcards = allFlashcards.slice();
+    flashcards = [];  // Clear the flashcards array
+    createFlashcards(allFlashcards);  // Recreate the flashcards
     shuffle(flashcards);
-    flashcards.forEach(card => {
-        card.style.display = 'none';
-        const termElement = card.querySelector('.term');
-        const buttonContainer = card.querySelector('.button-container');
-
-        if (termElement && buttonContainer) {
-            termElement.style.display = 'none';
-            buttonContainer.style.display = 'none';
-        } else {
-            console.error('Missing elements in the card during reset.');
-        }
-    });
-
     showNextCard(flashcards, currentCardIndex);
 }
 

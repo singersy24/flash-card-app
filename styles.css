@@ -75,6 +75,18 @@ body {
         z-index: 1000;
     }
 
+    .dark-mode #button-container {
+        background-color: #444; /* Dark background for the bottom container in dark mode */
+        border-top: 1px solid #333; /* Darker border in dark mode */
+    }
+
+    .dark-mode .dark-mode-toggle, 
+    .dark-mode .reset-button, 
+    .dark-mode .review-button {
+        background-color: #555; /* Darker button background in dark mode */
+        color: #f4f4f4; /* Light text color in dark mode */
+    }
+
     .dark-mode-toggle, .reset-button, .review-button {
         margin: 0 5px;
         flex: 1;

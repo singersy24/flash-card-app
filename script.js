@@ -17,8 +17,9 @@ async function loadFlashcards() {
     try {
         const response = await fetch('flashcards.json');
         const data = await response.json();
+        console.log('Flashcards loaded:', data);  // Log the loaded data
         allFlashcards = data;
-        flashcards = allFlashcards.slice();  // Copy the original flashcards array
+        flashcards = allFlashcards.slice();
         shuffle(flashcards);
         totalCardsElement.innerText = allFlashcards.length;
         displayFlashcards();
@@ -43,6 +44,38 @@ function displayFlashcards() {
         `;
         flashcardsContainer.appendChild(flashcardElement);
         flashcardElement.style.display = 'none';  // Hide all cards initially
+
+        const knowItButton = flashcardElement.querySelector('.know-it');
+        const dontKnowItButton = flashcardElement.querySelector('.dont-know-it');
+
+        // Set up event listeners for buttons
+        knowItButton.addEventListener('click', function(event) {
+            event.stopPropagation();
+            correctAnswers++;
+            correctAnswersElement.innerText = correctAnswers;
+            flashcardElement.style.display = 'none';
+            showNextCard(flashcards, ++currentCardIndex);
+        });
+
+        dontKnowItButton.addEventListener('click', function(event) {
+            event.stopPropagation();
+            incorrectAnswers++;
+            incorrectAnswersElement.innerText = incorrectAnswers;
+            missedCards.push(flashcardElement); // Push the entire card element to missedCards
+            flashcardElement.style.display = 'none';
+            showNextCard(flashcards, ++currentCardIndex);
+        });
+
+        // Set up event listener for clicking outside the flashcard
+        document.addEventListener('click', function(event) {
+            if (!flashcardElement.contains(event.target) && !cardRevealed) {
+                const termElement = flashcardElement.querySelector('.term');
+                const buttonContainer = flashcardElement.querySelector('.button-container');
+                termElement.style.display = 'block';
+                buttonContainer.style.display = 'block';
+                cardRevealed = true;
+            }
+        });
     });
 
     showNextCard(flashcards, currentCardIndex);
@@ -100,38 +133,8 @@ function showNextCard(cards, currentIndex) {
     buttonContainer.style.display = 'none';
     cardRevealed = false;
 
-    // Set up the click event to reveal the card if clicked outside the flashcard
-    document.onclick = function (event) {
-        if (!currentCard.contains(event.target)) {
-            termElement.style.display = 'block';
-            buttonContainer.style.display = 'block';
-            cardRevealed = true;
-        }
-    };
-
-    // Handle "Know it" button click
-    const knowItButton = currentCard.querySelector('.know-it');
-    const dontKnowItButton = currentCard.querySelector('.dont-know-it');
-
-    knowItButton.onclick = function (event) {
-        event.stopPropagation();
-        correctAnswers++;
-        correctAnswersElement.innerText = correctAnswers;
-        currentCard.style.display = 'none';
-        showNextCard(cards, ++currentCardIndex);
-    };
-
-    dontKnowItButton.onclick = function (event) {
-        event.stopPropagation();
-        incorrectAnswers++;
-        incorrectAnswersElement.innerText = incorrectAnswers;
-        missedCards.push(currentCard); // Push the entire card element to missedCards
-        currentCard.style.display = 'none';
-        showNextCard(cards, ++currentCardIndex);
-    };
-
-    // Define the function to handle key presses
-    function handleKeyPress(event) {
+    // Handle spacebar and shift key events for "Know it" and "Don't know it"
+    document.onkeydown = function(event) {
         if (event.key === ' ') {
             event.preventDefault();
             if (!cardRevealed) {
@@ -144,9 +147,7 @@ function showNextCard(cards, currentIndex) {
         } else if (event.key === 'Shift') {
             dontKnowItButton.click();
         }
-    }
-
-    document.onkeydown = handleKeyPress;
+    };
 }
 
 function resetFlashcards() {
@@ -183,10 +184,12 @@ resetButton.addEventListener('click', resetFlashcards);
 // Function to reset the visibility of the current card
 function resetCardVisibility() {
     const currentCard = flashcards[currentCardIndex];
-    const termElement = currentCard.querySelector('.term');
-    const buttonContainer = currentCard.querySelector('.button-container');
+    if (currentCard) {
+        const termElement = currentCard.querySelector('.term');
+        const buttonContainer = currentCard.querySelector('.button-container');
 
-    termElement.style.display = 'none';
-    buttonContainer.style.display = 'none';
-    cardRevealed = false;
+        termElement.style.display = 'none';
+        buttonContainer.style.display = 'none';
+        cardRevealed = false;
+    }
 }

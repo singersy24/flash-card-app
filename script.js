@@ -13,6 +13,14 @@ const correctAnswersElement = document.getElementById('correct-answers');
 const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
 
+document.getElementById('section-1').addEventListener('click', () => {
+    filterFlashcardsBySection(1);
+});
+
+document.getElementById('section-2').addEventListener('click', () => {
+    filterFlashcardsBySection(2);
+});
+
 // Load flashcards from a JSON file
 async function loadFlashcards() {
     try {
@@ -27,6 +35,12 @@ async function loadFlashcards() {
     } catch (error) {
         console.error('Error loading flashcards:', error);
     }
+}
+
+// Filter flashcards by the selected section
+function filterFlashcardsBySection(section) {
+    flashcards = allFlashcards.filter(card => card.section === section);
+    resetFlashcards(); // Recreate and display flashcards for the selected section
 }
 
 // Create flashcard elements and add them to the container
@@ -78,20 +92,14 @@ function handleCardClick(event, flashcardElement) {
 
 // Show the next card in the sequence
 function showNextCard(cards, currentIndex) {
-    // Hide all cards first
-    flashcards.forEach(card => card.style.display = 'none');
-
     if (currentIndex >= cards.length) {
         handleEndOfCards();
         return;
     }
 
-    // Show the current card
+    cards.forEach(card => card.style.display = 'none');
     const currentCard = cards[currentIndex];
     currentCard.style.display = 'block';
-
-    // Reset the visibility of the term and buttons
-    resetCardVisibility();
 
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');
@@ -106,7 +114,7 @@ function showNextCard(cards, currentIndex) {
         markAsUnknown();
     };
 
-    cardRevealed = false; // Ensure the card starts unrevealed
+    cardRevealed = false;
 }
 
 // Reveal the card's term, example (if any), and buttons
@@ -174,7 +182,7 @@ function resetFlashcards() {
     reviewingLabel.style.display = 'none';
 
     flashcards = [];  // Reset the flashcards array
-    createFlashcards(allFlashcards);  // Recreate the flashcards
+    createFlashcards(flashcards);  // Recreate the flashcards
     shuffle(flashcards);  // Shuffle them before displaying
     showNextCard(flashcards, currentCardIndex);  // Display the first card in an unrevealed state
 }
@@ -186,6 +194,17 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+// Toggle dark mode and reset card visibility
+const darkModeToggle = document.querySelector('.dark-mode-toggle');
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    resetCardVisibility();
+});
+
+// Add event listener for reset button
+const resetButton = document.querySelector('.reset-button');
+resetButton.addEventListener('click', resetFlashcards);
 
 // Reset the visibility of the current card's term and buttons
 function resetCardVisibility() {
@@ -203,43 +222,6 @@ function resetCardVisibility() {
         currentCard.style.display = 'block';
     }
 }
-
-// Event listener for keypresses
-document.addEventListener('keydown', (event) => {
-    if (event.key === ' ') {
-        event.preventDefault();
-        if (!cardRevealed) {
-            const currentCard = flashcards[currentCardIndex];
-            const termElement = currentCard.querySelector('.term');
-            const exampleElement = currentCard.querySelector('.example');
-            const buttonContainer = currentCard.querySelector('.button-container');
-            revealCard(termElement, exampleElement, buttonContainer);
-        }
-    }
-
-    if (event.key.toLowerCase() === 's') {
-        if (cardRevealed) {
-            markAsKnown();
-        }
-    }
-
-    if (event.key.toLowerCase() === 'l') {
-        if (cardRevealed) {
-            markAsUnknown();
-        }
-    }
-});
-
-// Toggle dark mode and reset card visibility
-const darkModeToggle = document.querySelector('.dark-mode-toggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    resetCardVisibility();
-});
-
-// Add event listener for reset button
-const resetButton = document.querySelector('.reset-button');
-resetButton.addEventListener('click', resetFlashcards);
 
 // Load the flashcards when the page is ready
 loadFlashcards();

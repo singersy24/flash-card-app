@@ -90,6 +90,9 @@ function showNextCard(cards, currentIndex) {
     const currentCard = cards[currentIndex];
     currentCard.style.display = 'block';
 
+    // Reset the visibility of the term and buttons
+    resetCardVisibility();
+
     const knowItButton = currentCard.querySelector('.know-it');
     const dontKnowItButton = currentCard.querySelector('.dont-know-it');
 
@@ -184,6 +187,23 @@ function shuffle(array) {
     }
 }
 
+// Reset the visibility of the current card's term and buttons
+function resetCardVisibility() {
+    const currentCard = flashcards[currentCardIndex];
+    if (currentCard) {
+        const termElement = currentCard.querySelector('.term');
+        const exampleElement = currentCard.querySelector('.example');
+        const buttonContainer = currentCard.querySelector('.button-container');
+        termElement.style.display = 'none';
+        if (exampleElement) {
+            exampleElement.style.display = 'none';
+        }
+        buttonContainer.style.display = 'none';
+        cardRevealed = false;
+        currentCard.style.display = 'block';
+    }
+}
+
 // Event listener for keypresses
 document.addEventListener('keydown', (event) => {
     if (event.key === ' ') {
@@ -220,23 +240,6 @@ darkModeToggle.addEventListener('click', () => {
 // Add event listener for reset button
 const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', resetFlashcards);
-
-// Reset the visibility of the current card's term and buttons
-function resetCardVisibility() {
-    const currentCard = flashcards[currentCardIndex];
-    if (currentCard) {
-        const termElement = currentCard.querySelector('.term');
-        const exampleElement = currentCard.querySelector('.example');
-        const buttonContainer = currentCard.querySelector('.button-container');
-        termElement.style.display = 'none';
-        if (exampleElement) {
-            exampleElement.style.display = 'none';
-        }
-        buttonContainer.style.display = 'none';
-        cardRevealed = false;
-        currentCard.style.display = 'block';
-    }
-}
 
 // Load the flashcards when the page is ready
 loadFlashcards();

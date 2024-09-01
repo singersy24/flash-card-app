@@ -103,7 +103,7 @@ function showNextCard(cards, currentIndex) {
         markAsUnknown();
     };
 
-    cardRevealed = false;
+    cardRevealed = false; // Ensure the card starts unrevealed
 }
 
 // Reveal the card's term, example (if any), and buttons

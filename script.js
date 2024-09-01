@@ -34,6 +34,7 @@ async function loadFlashcards() {
         console.log(data); // Verify data is loaded
         allFlashcards = data;
         totalCardsElement.innerText = allFlashcards.length;
+        resetFlashcards(); // Ensure this is called to show the initial cards
     } catch (error) {
         console.error('Error loading flashcards:', error);
     }
@@ -41,7 +42,11 @@ async function loadFlashcards() {
 
 // Filter flashcards by the selected section
 function filterFlashcardsBySection(section) {
-    flashcards = allFlashcards.filter(card => card.section === section);
+    flashcards = allFlashcards.filter(card => {
+        console.log(card.section, section); // Debugging output to check matching
+        return card.section === section;
+    });
+    console.log(flashcards); // Check if flashcards are being filtered correctly
     resetFlashcards(); // Recreate and display flashcards for the selected section
 }
 
@@ -164,8 +169,6 @@ function handleEndOfCards() {
         showNextCard(flashcards, currentCardIndex);
     } else if (flashcards.length === 0 || currentCardIndex >= flashcards.length) {
         alert('You have completed all the cards!');
-        // Don't call resetFlashcards here to avoid the infinite loop
-        // Instead, simply stop or reset indices and give the user a choice to start over if needed.
         currentCardIndex = 0; // Reset the index if user wants to review again
     } else {
         showNextCard(flashcards, currentCardIndex);

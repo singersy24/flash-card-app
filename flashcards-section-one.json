@@ -1,0 +1,300 @@
+[
+    {
+        "term": "Axial",
+        "definition": "Pertaining to the central part of the body, the head and trunk"
+    },
+    {
+        "term": "Cephalic",
+        "definition": "Pertaining to the head"
+    },
+    {
+        "term": "Cranial",
+        "definition": "Pertaining to the portion of the skull surrounding the brain"
+    },
+    {
+        "term": "Facial",
+        "definition": "Pertaining to the face"
+    },
+    {
+        "term": "Frontal",
+        "definition": "Pertaining to the forehead"
+    },
+    {
+        "term": "Orbital",
+        "definition": "Pertaining to the eye"
+    },
+    {
+        "term": "Otic",
+        "definition": "Pertaining to the ear"
+    },
+    {
+        "term": "Nasal",
+        "definition": "Pertaining to the nose"
+    },
+    {
+        "term": "Buccal",
+        "definition": "Pertaining to the cheek"
+    },
+    {
+        "term": "Oral",
+        "definition": "Pertaining to the mouth"
+    },
+    {
+        "term": "Mental",
+        "definition": "Pertaining to the chin"
+    },
+    {
+        "term": "Occipital",
+        "definition": "Pertaining to the back of head"
+    },
+    {
+        "term": "Cervical",
+        "definition": "Pertaining to the neck"
+    },
+    {
+        "term": "Thoracic",
+        "definition": "Pertaining to the chest"
+    },
+    {
+        "term": "Sternal",
+        "definition": "Pertaining to the breast bone"
+    },
+    {
+        "term": "Pectoral",
+        "definition": "Pertaining to the chest"
+    },
+    {
+        "term": "Mammary",
+        "definition": "Pertaining to the breast"
+    },
+    {
+        "term": "Abdominal",
+        "definition": "Pertaining to the abdomen"
+    },
+    {
+        "term": "Umbilical",
+        "definition": "Pertaining to the navel"
+    },
+    {
+        "term": "Coxal",
+        "definition": "Pertaining to the hip"
+    },
+    {
+        "term": "Pelvic",
+        "definition": "Pertaining to the pelvis"
+    },
+    {
+        "term": "Pubic",
+        "definition": "Pertaining to the genital area"
+    },
+    {
+        "term": "Dorsal",
+        "definition": "Pertaining to the back"
+    },
+    {
+        "term": "Scapular",
+        "definition": "Pertaining to the shoulder blade region"
+    },
+    {
+        "term": "Vertebral",
+        "definition": "Pertaining to the spinal column"
+    },
+    {
+        "term": "Lumbar",
+        "definition": "Pertaining to the area of the back between the lowest rib and buttocks"
+    },
+    {
+        "term": "Acromial",
+        "definition": "Pertaining to the highest point of the shoulder"
+    },
+    {
+        "term": "Axillary",
+        "definition": "Pertaining to the armpit"
+    },
+    {
+        "term": "Brachial",
+        "definition": "Pertaining to the arm"
+    },
+    {
+        "term": "Antebrachial",
+        "definition": "Pertaining to the forearm"
+    },
+    {
+        "term": "Antecubital",
+        "definition": "Pertaining to the anterior (front) surface of the elbow"
+    },
+    {
+        "term": "Olecranal",
+        "definition": "Pertaining to the posterior (back) surface of the elbow"
+    },
+    {
+        "term": "Carpal",
+        "definition": "Pertaining to the wrist"
+    },
+    {
+        "term": "Manual",
+        "definition": "Pertaining to the hand"
+    },
+    {
+        "term": "Palmar",
+        "definition": "Pertaining to the palm of the hand"
+    },
+    {
+        "term": "Digital",
+        "definition": "Pertaining to the digits (fingers)"
+    },
+    {
+        "term": "Inguinal",
+        "definition": "Pertaining to the groin where the thigh attaches to the pelvis"
+    },
+    {
+        "term": "Gluteal",
+        "definition": "Pertaining to the buttocks"
+    },
+    {
+        "term": "Femoral",
+        "definition": "Pertaining to the thigh"
+    },
+    {
+        "term": "Patellar",
+        "definition": "Pertaining to the anterior (front) surface of the knee"
+    },
+    {
+        "term": "Popliteal",
+        "definition": "Pertaining to the posterior (back) surface of the knee"
+    },
+    {
+        "term": "Crural",
+        "definition": "Pertaining to the anterior (front) surface of the leg"
+    },
+    {
+        "term": "Fibular",
+        "definition": "Pertaining to the lateral side of the leg"
+    },
+    {
+        "term": "Sural",
+        "definition": "Pertaining to the posterior (back) surface of the leg"
+    },
+    {
+        "term": "Tarsal",
+        "definition": "Pertaining to the ankle"
+    },
+    {
+        "term": "Pedal",
+        "definition": "Pertaining to the foot"
+    },
+    {
+        "term": "Plantar",
+        "definition": "Pertaining to the sole of foot"
+    },
+    {
+        "term": "Calcaneal",
+        "definition": "Pertaining to the heel"
+    },
+    {
+        "term": "Digital",
+        "definition": "Pertaining to the digits (toes)"
+    },
+    {
+        "term": "Appendicular",
+        "definition": "Pertaining to the extremities or limbs"
+    },
+    {
+        "term": "Superior",
+        "definition": "Above",
+        "example": "The head is superior to the neck."
+    },
+    {
+        "term": "Inferior",
+        "definition": "Below",
+        "example": "The neck is inferior to the head."
+    },
+    {
+        "term": "Anterior (Ventral)",
+        "definition": "Closer to front of body",
+        "example": "The lips are anterior to the teeth."
+    },
+    {
+        "term": "Posterior (Dorsal)",
+        "definition": "Closer to back of body",
+        "example": "The teeth are posterior to the lips."
+    },
+    {
+        "term": "Medial",
+        "definition": "Closer to midline of body",
+        "example": "The nose is medial to the eyes."
+    },
+    {
+        "term": "Lateral",
+        "definition": "Farther from midline of body",
+        "example": "The eyes are lateral to the nose."
+    },
+    {
+        "term": "Intermediate",
+        "definition": "Between two structures",
+        "example": "The elbow is intermediate between the shoulder and wrist."
+    },
+    {
+        "term": "Ipsilateral",
+        "definition": "On same side of body",
+        "example": "The right arm and right leg are ipsilateral."
+    },
+    {
+        "term": "Contralateral",
+        "definition": "On opposite sides of body",
+        "example": "The right arm and left arm are contralateral."
+    },
+    {
+        "term": "Proximal",
+        "definition": "Nearer to point of attachment of limb to trunk or nearer to the origin of a structure",
+        "example": "The elbow is proximal to the wrist."
+    },
+    {
+        "term": "Distal",
+        "definition": "Farther from point of attachment of limb to trunk or farther from the origin of a structure",
+        "example": "The wrist is distal to the elbow."
+    },
+    {
+        "term": "Superficial",
+        "definition": "Closer to surface of body",
+        "example": "The skin is superficial to the muscles."
+    },
+    {
+        "term": "Deep",
+        "definition": "Farther from surface of body",
+        "example": "The muscles are deep to the skin."
+    },
+    {
+        "term": "Sagittal planes",
+        "definition": "Planes that pass vertically through the body or organ and divide them into right and left sections."
+    },
+    {
+        "term": "Midsagittal plane",
+        "definition": "A sagittal plane that passes vertically through the midline and divides the body into equal right and left halves."
+    },
+    {
+        "term": "Parasagittal plane",
+        "definition": "A sagittal plane that divides the body into unequal right and left portions."
+    },
+    {
+        "term": "Frontal plane (Coronal plane)",
+        "definition": "A plane that passes vertically through the body and produces anterior and posterior sections."
+    },
+    {
+        "term": "Transverse plane",
+        "definition": "A plane that passes horizontally through the body and produces superior and inferior sections."
+    },
+    {
+        "term": "Oblique planes",
+        "definition": "Planes that pass through the body at an angle, forming oblique sections."
+    },
+    {
+        "term": "Longitudinal sections",
+        "definition": "Sections produced by a plane running along the long axis of a narrow structure such as a blood vessel, intestine, or long bone."
+    },
+    {
+        "term": "Cross-sections",
+        "definition": "Sections produced by a plane running perpendicular to the long axis of a structure."
+    }
+    
+]

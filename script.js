@@ -13,10 +13,10 @@ const correctAnswersElement = document.getElementById('correct-answers');
 const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
 
-// Load flashcards from a JSON file
-async function loadFlashcards() {
+// Function to load flashcards from a JSON file
+async function loadFlashcards(section) {
     try {
-        const response = await fetch('flashcards-section-one.json?cachebuster=' + new Date().getTime());
+        const response = await fetch(section + '?cachebuster=' + new Date().getTime());
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -28,6 +28,18 @@ async function loadFlashcards() {
         console.error('Error loading flashcards:', error);
     }
 }
+
+// Event listeners for section buttons
+const sectionOneButton = document.querySelector('.section-one-button');
+const sectionTwoButton = document.querySelector('.section-two-button');
+
+sectionOneButton.addEventListener('click', () => {
+    loadFlashcards('flashcards-section-one.json');
+});
+
+sectionTwoButton.addEventListener('click', () => {
+    loadFlashcards('flashcards-section-two.json');
+});
 
 // Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {

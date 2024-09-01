@@ -60,6 +60,19 @@ body {
     margin: 5px;
 }
 
+/* Flexbox layout for the counters */
+#counters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#counters > div {
+    text-align: center;
+    margin: 0 10px;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 600px) {
     #button-container {

@@ -1,0 +1,46 @@
+[
+    {
+        "term": "Cardiovascular System",
+        "definition": "Transports nutrients, chemical messengers, gases, and wastes in blood.\nMajor organs: heart and blood vessels"
+    },
+    {
+        "term": "Respiratory System",
+        "definition": "Adds oxygen to blood and removes carbon dioxide from blood; produces sound; maintains body fluid pH.\nMajor organs: nose, pharynx (throat), larynx, trachea, bronchi, lungs"
+    },
+    {
+        "term": "Digestive System",
+        "definition": "Breaks down food into units that can be absorbed into the blood; eliminates wastes and non-digestible fiber in food.\nMajor organs: mouth, salivary glands, pharynx, esophagus, stomach, intestines, pancreas, liver, gallbladder"
+    },
+    {
+        "term": "Urinary System",
+        "definition": "Removes nitrogenous wastes; maintains body fluid volume, pH, and electrolyte levels through urine production.\nMajor organs: kidneys, ureters, urinary bladder, urethra"
+    },
+    {
+        "term": "Integumentary System",
+        "definition": "Provides a protective barrier for the body and aids in production of vitamin D; eliminates some waste; contains sensory receptors for pain, touch, and temperature; fat provides insulation.\nMajor organs: skin and skin structures (hair, nails, sweat glands, oil glands)"
+    },
+    {
+        "term": "Lymphatic and Immune System",
+        "definition": "Returns fluid to blood; carries dietary lipids from GI tract to blood; detects and eliminates disease-causing organisms.\nMajor organs: lymphatic vessels, lymph nodes, spleen, thymus, bone marrow, tonsils"
+    },
+    {
+        "term": "Skeletal System",
+        "definition": "Protects major organs; provides levers and support for body movement; bone marrow contains stem cells that produce blood cells, and is site for maturation of lymphocytes.\nMajor organs: bones and cartilage"
+    },
+    {
+        "term": "Muscular System",
+        "definition": "Moves bones and maintains posture; major source of body heat.\nMajor organs: skeletal muscles and tendons"
+    },
+    {
+        "term": "Nervous System",
+        "definition": "Controls cell function with electrical signals; helps control body homeostasis.\nMajor organs: brain, spinal cord, nerves, and special sense organs"
+    },
+    {
+        "term": "Endocrine System",
+        "definition": "Controls cell function with hormones; helps control body homeostasis.\nMajor organs: hypothalamus, pituitary gland, pineal gland, thymus, thyroid gland, pancreas, adrenal glands, ovaries, testes"
+    },
+    {
+        "term": "Reproductive System",
+        "definition": "Produces gametes and sex hormones; female uterus provides environment for development of fetus.\nMajor organs in male: testes, ductus deferens, penis\nMajor organs in female: ovaries, uterine tubes, uterus, vagina"
+    }
+]

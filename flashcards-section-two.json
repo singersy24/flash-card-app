@@ -1,31 +1,83 @@
 [
     {
+        "term": "Abdominal Cavity",
+        "definition": "The superior portion of the abdominopelvic cavity, containing organs such as the stomach, liver, gallbladder, pancreas, spleen, small intestine, kidneys, appendix, and part of the large intestine."
+    },
+    {
+        "term": "Abdominopelvic Cavity",
+        "definition": "Consists of two continuous cavities: the abdominal cavity and the pelvic cavity."
+    },
+    {
+        "term": "Abdominopelvic Quadrants",
+        "definition": "The division of the abdominopelvic cavity into four quadrants formed by transverse and sagittal planes running through the umbilicus (navel)."
+    },
+    {
+        "term": "Abdominopelvic Regions",
+        "definition": "The division of the abdominopelvic cavity into nine regions using two vertical and two horizontal lines, forming a tic-tac-toe grid to locate organs."
+    },
+    {
+        "term": "Body Cavities",
+        "definition": "Spaces within the body that contain vital organs. The major body cavities are the cranial cavity, thoracic cavity, and abdominopelvic cavity."
+    },
+    {
         "term": "Cardiovascular System",
         "definition": "Transports nutrients, chemical messengers, gases, and wastes in blood.\nMajor organs: heart and blood vessels"
     },
     {
-        "term": "Respiratory System",
-        "definition": "Adds oxygen to blood and removes carbon dioxide from blood; produces sound; maintains body fluid pH.\nMajor organs: nose, pharynx (throat), larynx, trachea, bronchi, lungs"
+        "term": "Cranial Cavity",
+        "definition": "The cavity that contains the brain and is continuous with the vertebral canal that contains the spinal cord."
+    },
+    {
+        "term": "Diaphragm",
+        "definition": "A muscle that separates the thoracic cavity from the abdominopelvic cavity."
     },
     {
         "term": "Digestive System",
         "definition": "Breaks down food into units that can be absorbed into the blood; eliminates wastes and non-digestible fiber in food.\nMajor organs: mouth, salivary glands, pharynx, esophagus, stomach, intestines, pancreas, liver, gallbladder"
     },
     {
-        "term": "Urinary System",
-        "definition": "Removes nitrogenous wastes; maintains body fluid volume, pH, and electrolyte levels through urine production.\nMajor organs: kidneys, ureters, urinary bladder, urethra"
+        "term": "Endocrine System",
+        "definition": "Controls cell function with hormones; helps control body homeostasis.\nMajor organs: hypothalamus, pituitary gland, pineal gland, thymus, thyroid gland, pancreas, adrenal glands, ovaries, testes"
+    },
+    {
+        "term": "Epigastric Region",
+        "definition": "The upper central region of the abdominopelvic cavity, above the stomach."
+    },
+    {
+        "term": "Hypogastric (Pubic) Region",
+        "definition": "The lower central region of the abdominopelvic cavity, below the stomach."
     },
     {
         "term": "Integumentary System",
         "definition": "Provides a protective barrier for the body and aids in production of vitamin D; eliminates some waste; contains sensory receptors for pain, touch, and temperature; fat provides insulation.\nMajor organs: skin and skin structures (hair, nails, sweat glands, oil glands)"
     },
     {
+        "term": "Left Hypochondriac Region",
+        "definition": "The upper left region of the abdominopelvic cavity, beneath the ribs."
+    },
+    {
+        "term": "Left Inguinal (Iliac) Region",
+        "definition": "The lower left region of the abdominopelvic cavity, near the groin."
+    },
+    {
+        "term": "Left Lumbar Region",
+        "definition": "The middle left region of the abdominopelvic cavity, near the loins."
+    },
+    {
+        "term": "Left Lower Quadrant (LLQ)",
+        "definition": "The lower left quadrant of the abdominopelvic cavity."
+    },
+    {
+        "term": "Left Upper Quadrant (LUQ)",
+        "definition": "The upper left quadrant of the abdominopelvic cavity."
+    },
+    {
         "term": "Lymphatic and Immune System",
         "definition": "Returns fluid to blood; carries dietary lipids from GI tract to blood; detects and eliminates disease-causing organisms.\nMajor organs: lymphatic vessels, lymph nodes, spleen, thymus, bone marrow, tonsils"
     },
     {
-        "term": "Skeletal System",
-        "definition": "Protects major organs; provides levers and support for body movement; bone marrow contains stem cells that produce blood cells, and is site for maturation of lymphocytes.\nMajor organs: bones and cartilage"
+        "term": "Mediastinum",
+        "definition": "A central area within the thoracic cavity that extends from the neck to the diaphragm and from the sternum to the vertebral column. It contains the heart, thymus gland, esophagus, trachea, blood vessels, and bronchi."
     },
     {
         "term": "Muscular System",
@@ -36,99 +88,91 @@
         "definition": "Controls cell function with electrical signals; helps control body homeostasis.\nMajor organs: brain, spinal cord, nerves, and special sense organs"
     },
     {
-        "term": "Endocrine System",
-        "definition": "Controls cell function with hormones; helps control body homeostasis.\nMajor organs: hypothalamus, pituitary gland, pineal gland, thymus, thyroid gland, pancreas, adrenal glands, ovaries, testes"
-    },
-    {
-        "term": "Reproductive System",
-        "definition": "Produces gametes and sex hormones; female uterus provides environment for development of fetus.\nMajor organs in male: testes, ductus deferens, penis\nMajor organs in female: ovaries, uterine tubes, uterus, vagina"
-    },
-    {
-        "term": "Serous Membranes",
-        "definition": "Thin, clear, watery fluid membranes composed of two layers: a visceral layer that covers the organ and a parietal layer that attaches to and covers the ventral body wall. These two layers form one continuous sheet that folds to form a sac."
-    },
-    {
-        "term": "Visceral Layer",
-        "definition": "The layer of the serous membrane that covers the organ."
-    },
-    {
         "term": "Parietal Layer",
         "definition": "The layer of the serous membrane that attaches to and covers the ventral body wall."
     },
     {
-        "term": "Serous Fluid",
-        "definition": "A clear, watery fluid that prevents friction as the organs move within the ventral body cavity."
+        "term": "Pelvic Cavity",
+        "definition": "The inferior portion of the abdominopelvic cavity that contains part of the large intestine, rectum, urinary bladder, and reproductive organs."
     },
     {
-        "term": "Thoracic Serous Membranes",
-        "definition": "Includes the pleura (covering the lungs) and the pericardium (covering the heart)."
+        "term": "Pericardial Cavity",
+        "definition": "A small cavity within the thoracic cavity that surrounds the heart."
+    },
+    {
+        "term": "Peritoneal Cavity",
+        "definition": "The cavity within the abdominal cavity that contains most abdominal organs."
     },
     {
         "term": "Peritoneum",
         "definition": "The serous membrane that covers abdominal organs in the peritoneal cavity."
     },
     {
-        "term": "Retroperitoneal",
-        "definition": "Refers to organs located posterior to the peritoneum."
+        "term": "Pleural Cavities",
+        "definition": "Two cavities within the thoracic cavity that each contain a lung."
     },
     {
-        "term": "Abdominopelvic Regions",
-        "definition": "The division of the abdominopelvic cavity into nine regions using two vertical and two horizontal lines, forming a tic-tac-toe grid to locate organs."
+        "term": "Reproductive System",
+        "definition": "Produces gametes and sex hormones; female uterus provides environment for development of fetus.\nMajor organs in male: testes, ductus deferens, penis\nMajor organs in female: ovaries, uterine tubes, uterus, vagina"
+    },
+    {
+        "term": "Respiratory System",
+        "definition": "Adds oxygen to blood and removes carbon dioxide from blood; produces sound; maintains body fluid pH.\nMajor organs: nose, pharynx (throat), larynx, trachea, bronchi, lungs"
+    },
+    {
+        "term": "Retroperitoneal",
+        "definition": "Refers to organs located posterior to the peritoneum, including the pancreas, kidneys, adrenal glands, and portions of the large intestine."
     },
     {
         "term": "Right Hypochondriac Region",
         "definition": "The upper right region of the abdominopelvic cavity, beneath the ribs."
     },
     {
-        "term": "Epigastric Region",
-        "definition": "The upper central region of the abdominopelvic cavity, above the stomach."
-    },
-    {
-        "term": "Left Hypochondriac Region",
-        "definition": "The upper left region of the abdominopelvic cavity, beneath the ribs."
+        "term": "Right Inguinal (Iliac) Region",
+        "definition": "The lower right region of the abdominopelvic cavity, near the groin."
     },
     {
         "term": "Right Lumbar Region",
         "definition": "The middle right region of the abdominopelvic cavity, near the loins."
     },
     {
-        "term": "Umbilical Region",
-        "definition": "The central region of the abdominopelvic cavity, surrounding the navel."
-    },
-    {
-        "term": "Left Lumbar Region",
-        "definition": "The middle left region of the abdominopelvic cavity, near the loins."
-    },
-    {
-        "term": "Right Inguinal (Iliac) Region",
-        "definition": "The lower right region of the abdominopelvic cavity, near the groin."
-    },
-    {
-        "term": "Hypogastric (Pubic) Region",
-        "definition": "The lower central region of the abdominopelvic cavity, below the stomach."
-    },
-    {
-        "term": "Left Inguinal (Iliac) Region",
-        "definition": "The lower left region of the abdominopelvic cavity, near the groin."
-    },
-    {
-        "term": "Abdominopelvic Quadrants",
-        "definition": "The division of the abdominopelvic cavity into four quadrants formed by transverse and sagittal planes running through the umbilicus (navel)."
+        "term": "Right Lower Quadrant (RLQ)",
+        "definition": "The lower right quadrant of the abdominopelvic cavity."
     },
     {
         "term": "Right Upper Quadrant (RUQ)",
         "definition": "The upper right quadrant of the abdominopelvic cavity."
     },
     {
-        "term": "Left Upper Quadrant (LUQ)",
-        "definition": "The upper left quadrant of the abdominopelvic cavity."
+        "term": "Serous Fluid",
+        "definition": "A clear, watery fluid that prevents friction as the organs move within the ventral body cavity."
     },
     {
-        "term": "Right Lower Quadrant (RLQ)",
-        "definition": "The lower right quadrant of the abdominopelvic cavity."
+        "term": "Serous Membranes",
+        "definition": "Thin, clear, watery fluid membranes composed of two layers: a visceral layer that covers the organ and a parietal layer that attaches to and covers the ventral body wall. These two layers form one continuous sheet that folds to form a sac."
     },
     {
-        "term": "Left Lower Quadrant (LLQ)",
-        "definition": "The lower left quadrant of the abdominopelvic cavity."
+        "term": "Skeletal System",
+        "definition": "Protects major organs; provides levers and support for body movement; bone marrow contains stem cells that produce blood cells, and is site for maturation of lymphocytes.\nMajor organs: bones and cartilage"
+    },
+    {
+        "term": "Thoracic Cavity",
+        "definition": "A space enclosed by the ribs, sternum, and vertebral column. It contains the pericardial cavity and two pleural cavities."
+    },
+    {
+        "term": "Thoracic Serous Membranes",
+        "definition": "Includes the pleura (covering the lungs) and the pericardium (covering the heart)."
+    },
+    {
+        "term": "Umbilical Region",
+        "definition": "The central region of the abdominopelvic cavity, surrounding the navel."
+    },
+    {
+        "term": "Visceral Layer",
+        "definition": "The layer of the serous membrane that covers the organ."
+    },
+    {
+        "term": "Urinary System",
+        "definition": "Removes nitrogenous wastes; maintains body fluid volume, pH, and electrolyte levels through urine production.\nMajor organs: kidneys, ureters, urinary bladder, urethra"
     }
 ]

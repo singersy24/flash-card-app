@@ -1,7 +1,3 @@
-#button-container button {
-    margin: 5px;
-}
-
 body {
     transition: background-color 0.3s, color 0.3s;
     margin-bottom: 60px; /* Ensure space for bottom buttons on mobile */
@@ -21,6 +17,7 @@ body {
     font-size: 1.2em;
     display: none; /* Initially hide all flashcards */
 }
+
 
 .term {
     font-weight: bold;

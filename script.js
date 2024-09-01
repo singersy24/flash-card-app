@@ -6,8 +6,6 @@ let incorrectAnswers = 0;
 let cardRevealed = false;
 let missedCards = [];
 let reviewingMissedCards = false;
-let spacePressCount = 0;
-let spacePressTimer;
 
 const flashcardsContainer = document.getElementById('flashcards-container');
 const totalCardsElement = document.getElementById('total-cards');
@@ -200,21 +198,19 @@ function shuffle(array) {
 document.addEventListener('keydown', (event) => {
     if (event.key === ' ') {
         event.preventDefault();
-        spacePressCount++;
-        if (spacePressTimer) clearTimeout(spacePressTimer);
-        
-        spacePressTimer = setTimeout(() => {
-            if (spacePressCount === 1 && !cardRevealed) {
-                const currentCard = flashcards[currentCardIndex];
-                const termElement = currentCard.querySelector('.term');
-                const exampleElement = currentCard.querySelector('.example');
-                const buttonContainer = currentCard.querySelector('.button-container');
-                revealCard(termElement, exampleElement, buttonContainer);
-            } else if (spacePressCount === 2 && cardRevealed) {
-                markAsKnown();
-            }
-            spacePressCount = 0;
-        }, 300); // Set a short delay to distinguish between single and double space presses
+        if (!cardRevealed) {
+            const currentCard = flashcards[currentCardIndex];
+            const termElement = currentCard.querySelector('.term');
+            const exampleElement = currentCard.querySelector('.example');
+            const buttonContainer = currentCard.querySelector('.button-container');
+            revealCard(termElement, exampleElement, buttonContainer);
+        }
+    }
+
+    if (event.key.toLowerCase() === 's') {
+        if (cardRevealed) {
+            markAsKnown();
+        }
     }
 
     if (event.key.toLowerCase() === 'l') {

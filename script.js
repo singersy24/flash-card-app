@@ -78,23 +78,13 @@ function handleCardClick(event, flashcardElement) {
 
 // Show the next card in the sequence
 function showNextCard(cards, currentIndex) {
+    // Hide all cards first
+    flashcards.forEach(card => card.style.display = 'none');
+
     if (currentIndex >= cards.length) {
         handleEndOfCards();
         return;
     }
-
-    // Hide all cards first
-    cards.forEach(card => {
-        card.style.display = 'none';
-        const termElement = card.querySelector('.term');
-        const exampleElement = card.querySelector('.example');
-        const buttonContainer = card.querySelector('.button-container');
-        termElement.style.display = 'none';
-        if (exampleElement) {
-            exampleElement.style.display = 'none';
-        }
-        buttonContainer.style.display = 'none';
-    });
 
     // Show the current card
     const currentCard = cards[currentIndex];

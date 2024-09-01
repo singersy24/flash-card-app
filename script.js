@@ -15,10 +15,12 @@ const reviewingLabel = document.getElementById('reviewing-label');
 
 document.getElementById('section-1').addEventListener('click', () => {
     filterFlashcardsBySection(1);
+    console.log('Section 1 clicked'); // Verify button click
 });
 
 document.getElementById('section-2').addEventListener('click', () => {
     filterFlashcardsBySection(2);
+    console.log('Section 2 clicked'); // Verify button click
 });
 
 // Load flashcards from a JSON file
@@ -29,9 +31,9 @@ async function loadFlashcards() {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
+        console.log(data); // Verify data is loaded
         allFlashcards = data;
         totalCardsElement.innerText = allFlashcards.length;
-        resetFlashcards(); // Call resetFlashcards here to initialize
     } catch (error) {
         console.error('Error loading flashcards:', error);
     }
@@ -46,6 +48,7 @@ function filterFlashcardsBySection(section) {
 // Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';
+    console.log(cardsData); // Verify flashcards creation
     cardsData.forEach((cardData) => {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
@@ -68,6 +71,7 @@ function createFlashcards(cardsData) {
         flashcardsContainer.appendChild(flashcardElement);
         flashcards.push(flashcardElement);
     });
+    displayFlashcards(); // Make sure this function is called to display the cards
 }
 
 // Display the flashcards
@@ -144,7 +148,12 @@ function markAsUnknown() {
 
 // Handle the end of the flashcards sequence
 function handleEndOfCards() {
-    if (missedCards.length > 0 && !reviewingMissedCards) {
+    if (reviewingMissedCards && missedCards.length === 0) {
+        alert('You have reviewed all missed cards and got them correct!');
+        reviewingMissedCards = false;
+        reviewingLabel.style.display = 'none';
+        resetFlashcards();
+    } else if (!reviewingMissedCards && missedCards.length > 0) {
         alert('Reviewing missed cards.');
         reviewingMissedCards = true;
         currentCardIndex = 0;
@@ -153,20 +162,13 @@ function handleEndOfCards() {
         reviewingLabel.style.display = 'block';
         shuffle(flashcards);
         showNextCard(flashcards, currentCardIndex);
-    } else if (reviewingMissedCards && missedCards.length === 0) {
-        alert('You have reviewed all missed cards and got them correct!');
-        reviewingMissedCards = false;
-        reviewingLabel.style.display = 'none';
-        resetFlashcards();
-    } else if (reviewingMissedCards) {
-        currentCardIndex = 0;
-        flashcards = missedCards.slice();
-        missedCards = [];
-        shuffle(flashcards);
-        showNextCard(flashcards, currentCardIndex);
-    } else {
+    } else if (flashcards.length === 0 || currentCardIndex >= flashcards.length) {
         alert('You have completed all the cards!');
-        resetFlashcards();
+        // Don't call resetFlashcards here to avoid the infinite loop
+        // Instead, simply stop or reset indices and give the user a choice to start over if needed.
+        currentCardIndex = 0; // Reset the index if user wants to review again
+    } else {
+        showNextCard(flashcards, currentCardIndex);
     }
 }
 
@@ -184,7 +186,9 @@ function resetFlashcards() {
     flashcards = [];  // Reset the flashcards array
     createFlashcards(flashcards);  // Recreate the flashcards
     shuffle(flashcards);  // Shuffle them before displaying
-    showNextCard(flashcards, currentCardIndex);  // Display the first card in an unrevealed state
+    if (flashcards.length > 0) {
+        showNextCard(flashcards, currentCardIndex);  // Display the first card in an unrevealed state
+    }
 }
 
 // Shuffle the flashcards array

@@ -42,5 +42,93 @@
     {
         "term": "Reproductive System",
         "definition": "Produces gametes and sex hormones; female uterus provides environment for development of fetus.\nMajor organs in male: testes, ductus deferens, penis\nMajor organs in female: ovaries, uterine tubes, uterus, vagina"
+    },
+    {
+        "term": "Serous Membranes",
+        "definition": "Thin, clear, watery fluid membranes composed of two layers: a visceral layer that covers the organ and a parietal layer that attaches to and covers the ventral body wall. These two layers form one continuous sheet that folds to form a sac."
+    },
+    {
+        "term": "Visceral Layer",
+        "definition": "The layer of the serous membrane that covers the organ."
+    },
+    {
+        "term": "Parietal Layer",
+        "definition": "The layer of the serous membrane that attaches to and covers the ventral body wall."
+    },
+    {
+        "term": "Serous Fluid",
+        "definition": "A clear, watery fluid that prevents friction as the organs move within the ventral body cavity."
+    },
+    {
+        "term": "Thoracic Serous Membranes",
+        "definition": "Includes the pleura (covering the lungs) and the pericardium (covering the heart)."
+    },
+    {
+        "term": "Peritoneum",
+        "definition": "The serous membrane that covers abdominal organs in the peritoneal cavity."
+    },
+    {
+        "term": "Retroperitoneal",
+        "definition": "Refers to organs located posterior to the peritoneum."
+    },
+    {
+        "term": "Abdominopelvic Regions",
+        "definition": "The division of the abdominopelvic cavity into nine regions using two vertical and two horizontal lines, forming a tic-tac-toe grid to locate organs."
+    },
+    {
+        "term": "Right Hypochondriac Region",
+        "definition": "The upper right region of the abdominopelvic cavity, beneath the ribs."
+    },
+    {
+        "term": "Epigastric Region",
+        "definition": "The upper central region of the abdominopelvic cavity, above the stomach."
+    },
+    {
+        "term": "Left Hypochondriac Region",
+        "definition": "The upper left region of the abdominopelvic cavity, beneath the ribs."
+    },
+    {
+        "term": "Right Lumbar Region",
+        "definition": "The middle right region of the abdominopelvic cavity, near the loins."
+    },
+    {
+        "term": "Umbilical Region",
+        "definition": "The central region of the abdominopelvic cavity, surrounding the navel."
+    },
+    {
+        "term": "Left Lumbar Region",
+        "definition": "The middle left region of the abdominopelvic cavity, near the loins."
+    },
+    {
+        "term": "Right Inguinal (Iliac) Region",
+        "definition": "The lower right region of the abdominopelvic cavity, near the groin."
+    },
+    {
+        "term": "Hypogastric (Pubic) Region",
+        "definition": "The lower central region of the abdominopelvic cavity, below the stomach."
+    },
+    {
+        "term": "Left Inguinal (Iliac) Region",
+        "definition": "The lower left region of the abdominopelvic cavity, near the groin."
+    },
+    {
+        "term": "Abdominopelvic Quadrants",
+        "definition": "The division of the abdominopelvic cavity into four quadrants formed by transverse and sagittal planes running through the umbilicus (navel)."
+    },
+    {
+        "term": "Right Upper Quadrant (RUQ)",
+        "definition": "The upper right quadrant of the abdominopelvic cavity."
+    },
+    {
+        "term": "Left Upper Quadrant (LUQ)",
+        "definition": "The upper left quadrant of the abdominopelvic cavity."
+    },
+    {
+        "term": "Right Lower Quadrant (RLQ)",
+        "definition": "The lower right quadrant of the abdominopelvic cavity."
+    },
+    {
+        "term": "Left Lower Quadrant (LLQ)",
+        "definition": "The lower left quadrant of the abdominopelvic cavity."
     }
 ]

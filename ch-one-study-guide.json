@@ -1,0 +1,410 @@
+[
+    {
+        "term": "Abdominopelvic cavity",
+        "definition": "Consists of two continuous cavities: the abdominal cavity and the pelvic cavity."
+    },
+    {
+        "term": "Absorption",
+        "definition": "The process by which substances are taken up into cells or tissues."
+    },
+    {
+        "term": "Acidic",
+        "definition": "Having a pH less than 7; high in hydrogen ion concentration."
+    },
+    {
+        "term": "Active transport",
+        "definition": "The movement of molecules across a cell membrane from a region of lower concentration to a region of higher concentration, requiring energy."
+    },
+    {
+        "term": "An acid",
+        "definition": "A substance that increases the hydrogen ion concentration in a solution."
+    },
+    {
+        "term": "An element",
+        "definition": "A substance that cannot be broken down into simpler substances by chemical means."
+    },
+    {
+        "term": "Anatomist",
+        "definition": "A scientist who studies the structure of organisms and their parts."
+    },
+    {
+        "term": "Anions",
+        "definition": "Negatively charged ions."
+    },
+    {
+        "term": "Apoptosis",
+        "definition": "A process of programmed cell death."
+    },
+    {
+        "term": "ATP",
+        "definition": "A molecule that carries energy within cells for metabolism."
+    },
+    {
+        "term": "Atoms",
+        "definition": "The basic unit of a chemical element."
+    },
+    {
+        "term": "Basic",
+        "definition": "Having a pH greater than 7; low in hydrogen ion concentration."
+    },
+    {
+        "term": "Blood pH",
+        "definition": "The level of acidity or alkalinity in the blood, typically ranging from 7.35 to 7.45."
+    },
+    {
+        "term": "Cations",
+        "definition": "Positively charged ions."
+    },
+    {
+        "term": "Cellular adhesion molecules",
+        "definition": "Proteins located on the cell surface involved in binding with other cells or the extracellular matrix."
+    },
+    {
+        "term": "Chemistry",
+        "definition": "The study of the properties of substances and the changes they undergo."
+    },
+    {
+        "term": "Cilia",
+        "definition": "Hair-like structures that extend from the surface of many animal cells and are involved in movement or sensory functions."
+    },
+    {
+        "term": "Cytosol",
+        "definition": "The fluid component inside cells, excluding the organelles."
+    },
+    {
+        "term": "Decomposition reaction",
+        "definition": "A chemical reaction in which a single compound breaks down into two or more simpler products."
+    },
+    {
+        "term": "Denatured",
+        "definition": "A protein that has lost its shape and function due to heat or other factors."
+    },
+    {
+        "term": "Diaphragm",
+        "definition": "A muscle that separates the thoracic cavity from the abdominopelvic cavity."
+    },
+    {
+        "term": "Distal",
+        "definition": "Farther from the point of attachment or origin."
+    },
+    {
+        "term": "Dorsal",
+        "definition": "Pertaining to the back or posterior side of the body."
+    },
+    {
+        "term": "DNA",
+        "definition": "Deoxyribonucleic acid, the molecule that carries genetic information in all living organisms."
+    },
+    {
+        "term": "Electrolytes",
+        "definition": "Substances that dissociate into ions in solution and acquire the capacity to conduct electricity."
+    },
+    {
+        "term": "Electrons",
+        "definition": "Negatively charged particles that orbit the nucleus of an atom."
+    },
+    {
+        "term": "Epigastric",
+        "definition": "Pertaining to the upper middle region of the abdomen."
+    },
+    {
+        "term": "Exchange reaction",
+        "definition": "A chemical reaction in which parts of two compounds are exchanged to form two new compounds."
+    },
+    {
+        "term": "Excretion",
+        "definition": "The process by which waste products are removed from the body."
+    },
+    {
+        "term": "Facilitated diffusion",
+        "definition": "The process of spontaneous passive transport of molecules or ions across a biological membrane via specific transmembrane proteins."
+    },
+    {
+        "term": "Femoral region",
+        "definition": "The region of the thigh."
+    },
+    {
+        "term": "Flagella",
+        "definition": "Tail-like structures that propel cells, such as sperm, in a whip-like motion."
+    },
+    {
+        "term": "Fluid mosaic",
+        "definition": "A model that describes the structure of cell membranes as a mosaic of components that give the membrane a fluid character."
+    },
+    {
+        "term": "Fructose",
+        "definition": "A simple sugar (monosaccharide) found in many plants, where it is often bonded to glucose to form the disaccharide sucrose."
+    },
+    {
+        "term": "Glucose",
+        "definition": "A simple sugar that is an important energy source in living organisms."
+    },
+    {
+        "term": "Golgi apparatus",
+        "definition": "An organelle involved in the modification, packaging, and transport of proteins."
+    },
+    {
+        "term": "Homeostasis",
+        "definition": "The maintenance of a stable internal environment in an organism."
+    },
+    {
+        "term": "Hydrogen",
+        "definition": "A chemical element with the symbol H and atomic number 1."
+    },
+    {
+        "term": "Hydrogen bond",
+        "definition": "A weak bond between two molecules resulting from an electrostatic attraction between a proton in one molecule and an electronegative atom in the other."
+    },
+    {
+        "term": "Hydrogen ion",
+        "definition": "A positively charged ion (H+), often formed when an acid dissociates in water."
+    },
+    {
+        "term": "Hydroxide ions",
+        "definition": "Negatively charged ions (OH−) formed when a base dissociates in water."
+    },
+    {
+        "term": "Hypertonic",
+        "definition": "A solution that has a higher concentration of solutes compared to another solution, causing water to leave the cell."
+    },
+    {
+        "term": "Hypochondriac",
+        "definition": "Pertaining to the region of the abdomen just below the ribs."
+    },
+    {
+        "term": "Hypogastric",
+        "definition": "Pertaining to the lower middle region of the abdomen."
+    },
+    {
+        "term": "Hypotonic solution",
+        "definition": "A solution that has a lower concentration of solutes compared to another solution, causing water to enter the cell."
+    },
+    {
+        "term": "Inorganic molecules",
+        "definition": "Molecules that do not contain carbon-hydrogen bonds."
+    },
+    {
+        "term": "Integral protein",
+        "definition": "Proteins embedded within the lipid bilayer of a cell membrane."
+    },
+    {
+        "term": "Integumentary system",
+        "definition": "Provides a protective barrier for the body and aids in production of vitamin D; eliminates some waste; contains sensory receptors for pain, touch, and temperature."
+    },
+    {
+        "term": "Ionic bond",
+        "definition": "A chemical bond formed between two ions with opposite charges."
+    },
+    {
+        "term": "Isotonic solution",
+        "definition": "A solution with the same solute concentration as another solution, causing no net movement of water."
+    },
+    {
+        "term": "Lipids",
+        "definition": "A group of organic compounds that are fatty acids or their derivatives and are insoluble in water but soluble in organic solvents."
+    },
+    {
+        "term": "Lipogenesis",
+        "definition": "The process by which simple sugars are converted to fatty acids and stored as fat."
+    },
+    {
+        "term": "Lysosome",
+        "definition": "An organelle that contains digestive enzymes and breaks down waste materials and cellular debris."
+    },
+    {
+        "term": "Matter",
+        "definition": "Anything that has mass and takes up space."
+    },
+    {
+        "term": "Meiosis",
+        "definition": "A type of cell division that results in four daughter cells each with half the number of chromosomes of the parent cell, as in the production of gametes."
+    },
+    {
+        "term": "Metabolism",
+        "definition": "The chemical reactions that occur within a living organism to maintain life."
+    },
+    {
+        "term": "Mitochondrion",
+        "definition": "An organelle responsible for energy production within a cell."
+    },
+    {
+        "term": "Mitosis",
+        "definition": "A process of cell division that results in two identical daughter cells."
+    },
+    {
+        "term": "Monosaccharide",
+        "definition": "The simplest form of carbohydrates, consisting of a single sugar molecule such as glucose or fructose."
+    },
+    {
+        "term": "NaCl",
+        "definition": "Sodium chloride, also known as table salt."
+    },
+    {
+        "term": "Negative feedback mechanisms",
+        "definition": "Processes that reverse a change in a controlled condition to maintain homeostasis."
+    },
+    {
+        "term": "Neutrons",
+        "definition": "Subatomic particles found in the nucleus of an atom that have no electrical charge."
+    },
+    {
+        "term": "Nonpolar covalent bond",
+        "definition": "A type of covalent bond in which electrons are shared equally between two atoms."
+    },
+    {
+        "term": "Osmotic pressure",
+        "definition": "The pressure required to stop the flow of water across a selectively permeable membrane."
+    },
+    {
+        "term": "Pancreatitis",
+        "definition": "Inflammation of the pancreas."
+    },
+    {
+        "term": "Parietal pericardium",
+        "definition": "The outer layer of the pericardium, which surrounds the heart."
+    },
+    {
+        "term": "Parietal pleura",
+        "definition": "The outer layer of the pleura that lines the walls of the thoracic cavity."
+    },
+    {
+        "term": "Peripheral protein",
+        "definition": "Proteins that are located on the outer or inner surface of the lipid bilayer but are not embedded in it."
+    },
+    {
+        "term": "Phagocytosis",
+        "definition": "The process by which a cell engulfs particles such as bacteria or other foreign matter."
+    },
+    {
+        "term": "Phospholipid",
+        "definition": "A type of lipid molecule that is a major component of the cell membrane."
+    },
+    {
+        "term": "Phospholipid bilayer",
+        "definition": "The double layer of phospholipids that makes up the cell membrane."
+    },
+    {
+        "term": "pH scale",
+        "definition": "A scale used to specify the acidity or basicity of an aqueous solution."
+    },
+    {
+        "term": "Physiologist",
+        "definition": "A scientist who studies the functions and mechanisms in living organisms."
+    },
+    {
+        "term": "Polar covalent bond",
+        "definition": "A type of covalent bond in which electrons are shared unequally, resulting in a molecule with a slight electrical dipole moment."
+    },
+    {
+        "term": "Popliteal region",
+        "definition": "The region behind the knee."
+    },
+    {
+        "term": "Positive feedback mechanism",
+        "definition": "Processes that amplify a change in a controlled condition, often leading to a specific outcome."
+    },
+    {
+        "term": "Protons",
+        "definition": "Positively charged subatomic particles found in the nucleus of an atom."
+    },
+    {
+        "term": "Proximal",
+        "definition": "Closer to the point of attachment or origin."
+    },
+    {
+        "term": "Radioactive isotopes",
+        "definition": "Atoms that have an unstable nucleus and release radiation as they decay to a stable form."
+    },
+    {
+        "term": "Receptor protein",
+        "definition": "A protein that binds to specific molecules outside the cell, triggering a response within the cell."
+    },
+    {
+        "term": "Receptor-mediated endocytosis",
+        "definition": "A process by which cells absorb molecules by engulfing them, using receptor proteins to select specific substances."
+    },
+    {
+        "term": "Responsiveness",
+        "definition": "The ability to sense and react to stimuli."
+    },
+    {
+        "term": "Ribosomes",
+        "definition": "Cell structures responsible for protein synthesis."
+    },
+    {
+        "term": "Rough endoplasmic reticulum",
+        "definition": "Studded with ribosomes and involved in protein synthesis and modification."
+    },
+    {
+        "term": "Selectively permeable",
+        "definition": "A property of cell membranes that allows some substances to pass through, while others cannot."
+    },
+    {
+        "term": "Simple diffusion",
+        "definition": "The movement of molecules from an area of high concentration to an area of low concentration without the need for energy."
+    },
+    {
+        "term": "Smooth endoplasmic reticulum",
+        "definition": "Involved in lipid synthesis and detoxification of chemicals within the cell."
+    },
+    {
+        "term": "Sucrose",
+        "definition": "A disaccharide composed of glucose and fructose; commonly known as table sugar."
+    },
+    {
+        "term": "Synthesis reaction",
+        "definition": "A chemical reaction in which two or more simple substances combine to form a more complex substance."
+    },
+    {
+        "term": "Symbol Na+ represents",
+        "definition": "Sodium ion, which is positively charged due to the loss of one electron."
+    },
+    {
+        "term": "Superficial",
+        "definition": "Near the surface of the body."
+    },
+    {
+        "term": "Superior",
+        "definition": "Above or higher in position."
+    },
+    {
+        "term": "The basic unit of structure and function",
+        "definition": "The cell."
+    },
+    {
+        "term": "The nucleus",
+        "definition": "The central and most important part of a cell, containing the genetic material."
+    },
+    {
+        "term": "Thoracic cavity",
+        "definition": "A space enclosed by the ribs, sternum, and vertebral column. It contains the pericardial cavity and two pleural cavities."
+    },
+    {
+        "term": "Tissues",
+        "definition": "Groups of cells that work together to perform a specific function."
+    },
+    {
+        "term": "Triglycerides",
+        "definition": "A type of fat (lipid) found in your blood that your body uses for energy."
+    },
+    {
+        "term": "Ventral",
+        "definition": "Pertaining to the front or anterior side of the body."
+    },
+    {
+        "term": "Visceral pericardium",
+        "definition": "The inner layer of the pericardium that covers the surface of the heart."
+    },
+    {
+        "term": "Visceral pleura",
+        "definition": "The inner layer of the pleura that covers the lungs."
+    },
+    {
+        "term": "Water",
+        "definition": "A polar molecule essential for life, composed of hydrogen and oxygen (H2O)."
+    },
+    {
+        "term": "Why is there such variation in size and shape of cells",
+        "definition": "The variation in size and shape allows cells to perform different functions more efficiently."
+    }
+]

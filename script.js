@@ -30,7 +30,7 @@ async function loadFlashcards(section) {
 }
 
 // Event listeners for section buttons
-const sectionTwoButton = document.querySelector('.sg-one-button');
+const sgOneButton = document.querySelector('.sg-one-button');
 const sectionOneButton = document.querySelector('.section-one-button');
 const sectionTwoButton = document.querySelector('.section-two-button');
 

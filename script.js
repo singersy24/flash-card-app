@@ -13,7 +13,15 @@ const correctAnswersElement = document.getElementById('correct-answers');
 const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
 
-// Function to load flashcards from a JSON file
+// Event listeners for section buttons
+const sgOneButton = document.querySelector('.sg-one-button');
+const sectionOneButton = document.querySelector('.section-one-button');
+const sectionTwoButton = document.querySelector('.section-two-button');
+
+// Add all section buttons to an array
+const sectionButtons = [sgOneButton, sectionOneButton, sectionTwoButton];
+
+// Load flashcards from a JSON file
 async function loadFlashcards(section) {
     try {
         const response = await fetch(section + '?cachebuster=' + new Date().getTime());
@@ -29,22 +37,31 @@ async function loadFlashcards(section) {
     }
 }
 
-// Event listeners for section buttons
-const sgOneButton = document.querySelector('.sg-one-button');
-const sectionOneButton = document.querySelector('.section-one-button');
-const sectionTwoButton = document.querySelector('.section-two-button');
-
+// Event listeners for button clicks
 sgOneButton.addEventListener('click', () => {
     loadFlashcards('ch-one-study-guide.json');
+    setActiveButton(sgOneButton);
 });
 
 sectionOneButton.addEventListener('click', () => {
     loadFlashcards('flashcards-section-one.json');
+    setActiveButton(sectionOneButton);
 });
 
 sectionTwoButton.addEventListener('click', () => {
     loadFlashcards('flashcards-section-two.json');
+    setActiveButton(sectionTwoButton);
 });
+
+// Function to set the active button
+function setActiveButton(activeButton) {
+    sectionButtons.forEach(button => {
+        button.classList.remove('active-button');
+        button.classList.add('inactive-button');
+    });
+    activeButton.classList.add('active-button');
+    activeButton.classList.remove('inactive-button');
+}
 
 // Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {
@@ -95,7 +112,6 @@ function handleCardClick(event, flashcardElement) {
 
 // Show the next card in the sequence
 function showNextCard(cards, currentIndex) {
-    // Hide all cards first
     flashcards.forEach(card => card.style.display = 'none');
 
     if (currentIndex >= cards.length) {
@@ -103,11 +119,8 @@ function showNextCard(cards, currentIndex) {
         return;
     }
 
-    // Show the current card
     const currentCard = cards[currentIndex];
     currentCard.style.display = 'block';
-
-    // Reset the visibility of the term and buttons
     resetCardVisibility();
 
     const knowItButton = currentCard.querySelector('.know-it');
@@ -123,7 +136,7 @@ function showNextCard(cards, currentIndex) {
         markAsUnknown();
     };
 
-    cardRevealed = false; // Ensure the card starts unrevealed
+    cardRevealed = false;
 }
 
 // Reveal the card's term, example (if any), and buttons
@@ -136,14 +149,14 @@ function revealCard(termElement, exampleElement, buttonContainer) {
     cardRevealed = true;
 }
 
-// Mark the card as known and move to the next one
+// Mark the card as known
 function markAsKnown() {
     correctAnswers++;
     correctAnswersElement.innerText = correctAnswers;
     showNextCard(flashcards, ++currentCardIndex);
 }
 
-// Mark the card as unknown and move to the next one
+// Mark the card as unknown
 function markAsUnknown() {
     incorrectAnswers++;
     incorrectAnswersElement.innerText = incorrectAnswers;
@@ -151,7 +164,7 @@ function markAsUnknown() {
     showNextCard(flashcards, ++currentCardIndex);
 }
 
-// Handle the end of the flashcards sequence
+// Handle the end of the flashcards
 function handleEndOfCards() {
     if (missedCards.length > 0 && !reviewingMissedCards) {
         alert('Reviewing missed cards.');
@@ -167,19 +180,13 @@ function handleEndOfCards() {
         reviewingMissedCards = false;
         reviewingLabel.style.display = 'none';
         resetFlashcards();
-    } else if (reviewingMissedCards) {
-        currentCardIndex = 0;
-        flashcards = missedCards.slice();
-        missedCards = [];
-        shuffle(flashcards);
-        showNextCard(flashcards, currentCardIndex);
     } else {
         alert('You have completed all the cards!');
         resetFlashcards();
     }
 }
 
-// Reset the flashcards for a new session
+// Reset flashcards for a new session
 function resetFlashcards() {
     correctAnswers = 0;
     incorrectAnswers = 0;
@@ -190,10 +197,10 @@ function resetFlashcards() {
     incorrectAnswersElement.innerText = incorrectAnswers;
     reviewingLabel.style.display = 'none';
 
-    flashcards = [];  // Reset the flashcards array
-    createFlashcards(allFlashcards);  // Recreate the flashcards
-    shuffle(flashcards);  // Shuffle them before displaying
-    showNextCard(flashcards, currentCardIndex);  // Display the first card in an unrevealed state
+    flashcards = [];
+    createFlashcards(allFlashcards);
+    shuffle(flashcards);
+    showNextCard(flashcards, currentCardIndex);
 }
 
 // Shuffle the flashcards array
@@ -204,7 +211,7 @@ function shuffle(array) {
     }
 }
 
-// Reset the visibility of the current card's term and buttons
+// Reset card visibility
 function resetCardVisibility() {
     const currentCard = flashcards[currentCardIndex];
     if (currentCard) {
@@ -221,33 +228,7 @@ function resetCardVisibility() {
     }
 }
 
-// Event listener for keypresses
-document.addEventListener('keydown', (event) => {
-    if (event.key === ' ') {
-        event.preventDefault();
-        if (!cardRevealed) {
-            const currentCard = flashcards[currentCardIndex];
-            const termElement = currentCard.querySelector('.term');
-            const exampleElement = currentCard.querySelector('.example');
-            const buttonContainer = currentCard.querySelector('.button-container');
-            revealCard(termElement, exampleElement, buttonContainer);
-        }
-    }
-
-    if (event.key.toLowerCase() === 's') {
-        if (cardRevealed) {
-            markAsKnown();
-        }
-    }
-
-    if (event.key.toLowerCase() === 'l') {
-        if (cardRevealed) {
-            markAsUnknown();
-        }
-    }
-});
-
-// Toggle dark mode and reset card visibility
+// Toggle dark mode
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');

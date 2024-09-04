@@ -30,8 +30,13 @@ async function loadFlashcards(section) {
 }
 
 // Event listeners for section buttons
+const sectionTwoButton = document.querySelector('.sg-one-button');
 const sectionOneButton = document.querySelector('.section-one-button');
 const sectionTwoButton = document.querySelector('.section-two-button');
+
+sgOneButton.addEventListener('click', () => {
+    loadFlashcards('ch-one-studyguide.json');
+});
 
 sectionOneButton.addEventListener('click', () => {
     loadFlashcards('flashcards-section-one.json');

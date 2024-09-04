@@ -47,7 +47,11 @@ body {
     display: none; /* Ensure flashcards are hidden initially in dark mode */
 }
 
-.dark-mode-toggle, .reset-button,.sg-one-button .section-one-button, .section-two-button {
+.dark-mode-toggle,
+.reset-button,
+.sg-one-button,
+.section-one-button,
+.section-two-button {
     background-color: #888;
     color: white;
     padding: 10px;
@@ -58,6 +62,17 @@ body {
     transition: background-color 0.3s;
     font-size: 0.9em;
     margin: 5px;
+}
+
+/* Active and Inactive Button Styling */
+.active-button {
+    background-color: #007bff; /* Blue color for active button */
+    color: white;
+}
+
+.inactive-button {
+    background-color: #888; /* Gray color for inactive buttons */
+    color: white;
 }
 
 /* Flexbox layout for the counters */
@@ -93,16 +108,20 @@ body {
         border-top: 1px solid #333; /* Darker border in dark mode */
     }
 
-    .dark-mode .dark-mode-toggle, 
-    .dark-mode .reset-button, 
-    .dark-mode .sg-one-button
-    .dark-mode .section-one-button, 
+    .dark-mode .dark-mode-toggle,
+    .dark-mode .reset-button,
+    .dark-mode .sg-one-button,
+    .dark-mode .section-one-button,
     .dark-mode .section-two-button {
         background-color: #555; /* Darker button background in dark mode */
         color: #f4f4f4; /* Light text color in dark mode */
     }
 
-    .dark-mode-toggle, .reset-button,.sg-one-button, .section-one-button, .section-two-button {
+    .dark-mode-toggle,
+    .reset-button,
+    .sg-one-button,
+    .section-one-button,
+    .section-two-button {
         margin: 0 5px;
         flex: 1;
         text-align: center;

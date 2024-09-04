@@ -410,97 +410,97 @@
     {
     "term": "Muscular system",
     "definition": "A system of muscles that enables movement of the body and helps maintain posture."
-},
-{
-    "term": "A base",
-    "definition": "A substance that decreases the hydrogen ion concentration in a solution."
-},
-{
-    "term": "Organs",
-    "definition": "Structures made up of tissues that perform specific functions in an organism."
-},
-{
-    "term": "Organ systems",
-    "definition": "Groups of organs that work together to perform a complex function."
-},
-{
-    "term": "Help to maintain the life of an individual organism",
-    "definition": "A characteristic of organ systems working together to support essential functions of life."
-},
-{
-    "term": "Inferior",
-    "definition": "Lower in position, or closer to the feet."
-},
-{
-    "term": "Organic molecules",
-    "definition": "Molecules containing carbon and hydrogen, often associated with living organisms."
-},
-{
-    "term": "A covalent bond",
-    "definition": "A chemical bond that involves the sharing of electron pairs between atoms."
-},
-{
-    "term": "An ionic bond",
-    "definition": "A chemical bond formed between two ions with opposite charges."
-},
-{
-    "term": "Carbon atom",
-    "definition": "The basic unit of carbon, an essential element in organic molecules."
-},
-{
-    "term": "Oxygen",
-    "definition": "A chemical element essential for cellular respiration and the production of energy in organisms."
-},
-{
-    "term": "Nitrogen",
-    "definition": "A chemical element that is a key component of amino acids and nucleic acids."
-},
-{
-    "term": "Alkaline",
-    "definition": "Having a pH greater than 7; basic."
-},
-{
-    "term": "The pH scale",
-    "definition": "A scale used to specify the acidity or basicity of a solution, ranging from 0 to 14."
-},
-{
-    "term": "Lipid",
-    "definition": "A group of organic molecules that are hydrophobic, including fats, oils, and waxes."
-},
-{
-    "term": "Describes carbohydrates",
-    "definition": "Organic compounds made of carbon, hydrogen, and oxygen, which provide energy."
-},
-{
-    "term": "Amino acid",
-    "definition": "The building blocks of proteins, composed of an amino group, carboxyl group, and side chain."
-},
-{
-    "term": "Describes lipids",
-    "definition": "Organic molecules that are insoluble in water and include fats and oils."
-},
-{
-    "term": "Describes proteins",
-    "definition": "Complex molecules made of amino acids that perform various functions in living organisms."
-},
-{
-    "term": "Integral proteins",
-    "definition": "Proteins that are embedded within the cell membrane, often involved in transport."
-},
-{
-    "term": "Vesicles",
-    "definition": "Small membrane-bound sacs that transport substances within a cell."
-},
-{
-    "term": "Ribosome",
-    "definition": "A cellular structure that synthesizes proteins."
-},
-{
-    "term": "Concentration gradient",
-    "definition": "The gradual difference in concentration of solutes in a solution between two regions."
-},
-{
-    "term": "Subset of genes",
-    "definition": "A portion of the genome that encodes for specific proteins or traits."
-}
+    },
+    {
+        "term": "A base",
+        "definition": "A substance that decreases the hydrogen ion concentration in a solution."
+    },
+    {
+        "term": "Organs",
+        "definition": "Structures made up of tissues that perform specific functions in an organism."
+    },
+    {
+        "term": "Organ systems",
+        "definition": "Groups of organs that work together to perform a complex function."
+    },
+    {
+        "term": "Help to maintain the life of an individual organism",
+        "definition": "A characteristic of organ systems working together to support essential functions of life."
+    },
+    {
+        "term": "Inferior",
+        "definition": "Lower in position, or closer to the feet."
+    },
+    {
+        "term": "Organic molecules",
+        "definition": "Molecules containing carbon and hydrogen, often associated with living organisms."
+    },
+    {
+        "term": "A covalent bond",
+        "definition": "A chemical bond that involves the sharing of electron pairs between atoms."
+    },
+    {
+        "term": "An ionic bond",
+        "definition": "A chemical bond formed between two ions with opposite charges."
+    },
+    {
+        "term": "Carbon atom",
+        "definition": "The basic unit of carbon, an essential element in organic molecules."
+    },
+    {
+        "term": "Oxygen",
+        "definition": "A chemical element essential for cellular respiration and the production of energy in organisms."
+    },
+    {
+        "term": "Nitrogen",
+        "definition": "A chemical element that is a key component of amino acids and nucleic acids."
+    },
+    {
+        "term": "Alkaline",
+        "definition": "Having a pH greater than 7; basic."
+    },
+    {
+        "term": "The pH scale",
+        "definition": "A scale used to specify the acidity or basicity of a solution, ranging from 0 to 14."
+    },
+    {
+        "term": "Lipid",
+        "definition": "A group of organic molecules that are hydrophobic, including fats, oils, and waxes."
+    },
+    {
+        "term": "Describes carbohydrates",
+        "definition": "Organic compounds made of carbon, hydrogen, and oxygen, which provide energy."
+    },
+    {
+        "term": "Amino acid",
+        "definition": "The building blocks of proteins, composed of an amino group, carboxyl group, and side chain."
+    },
+    {
+        "term": "Describes lipids",
+        "definition": "Organic molecules that are insoluble in water and include fats and oils."
+    },
+    {
+        "term": "Describes proteins",
+        "definition": "Complex molecules made of amino acids that perform various functions in living organisms."
+    },
+    {
+        "term": "Integral proteins",
+        "definition": "Proteins that are embedded within the cell membrane, often involved in transport."
+    },
+    {
+        "term": "Vesicles",
+        "definition": "Small membrane-bound sacs that transport substances within a cell."
+    },
+    {
+        "term": "Ribosome",
+        "definition": "A cellular structure that synthesizes proteins."
+    },
+    {
+        "term": "Concentration gradient",
+        "definition": "The gradual difference in concentration of solutes in a solution between two regions."
+    },
+    {
+        "term": "Subset of genes",
+        "definition": "A portion of the genome that encodes for specific proteins or traits."
+    }
 ]

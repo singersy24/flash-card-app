@@ -35,7 +35,7 @@ const sectionOneButton = document.querySelector('.section-one-button');
 const sectionTwoButton = document.querySelector('.section-two-button');
 
 sgOneButton.addEventListener('click', () => {
-    loadFlashcards('ch-one-studyguide.json');
+    loadFlashcards('ch-one-study-guide.json');
 });
 
 sectionOneButton.addEventListener('click', () => {

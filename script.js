@@ -6,6 +6,7 @@ let incorrectAnswers = 0;
 let cardRevealed = false;
 let missedCards = [];
 let reviewingMissedCards = false;
+let isProcessing = false; // Debounce flag
 
 const flashcardsContainer = document.getElementById('flashcards-container');
 const totalCardsElement = document.getElementById('total-cards');
@@ -241,6 +242,8 @@ function resetCardVisibility() {
 
 // Add keydown event listener for keyboard controls
 document.addEventListener('keydown', function (event) {
+    if (isProcessing) return; // Prevent immediate double processing
+
     if (event.code === 'Space') {
         if (!cardRevealed) {
             // Reveal the card if not already revealed
@@ -250,7 +253,11 @@ document.addEventListener('keydown', function (event) {
             const buttonContainer = currentCard.querySelector('.button-container');
             revealCard(termElement, exampleElement, buttonContainer);
             cardRevealed = true; // Set the card as revealed
-        } else if (cardRevealed) {
+
+            // Add a short delay to avoid rapid double-pressing
+            isProcessing = true;
+            setTimeout(() => { isProcessing = false; }, 300); // 300ms delay
+        } else {
             // Mark as "Know it" if the card is already revealed
             markAsKnown();
             cardRevealed = false; // Reset revealed state after marking
@@ -261,6 +268,7 @@ document.addEventListener('keydown', function (event) {
         cardRevealed = false; // Reset revealed state after marking
     }
 });
+
 
 // Toggle dark mode
 const darkModeToggle = document.querySelector('.dark-mode-toggle');

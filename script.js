@@ -242,31 +242,33 @@ function resetCardVisibility() {
 
 // Add keydown event listener for keyboard controls
 document.addEventListener('keydown', function (event) {
-    if (isProcessing) return; // Prevent immediate double processing
+    // Prevent multiple quick presses by checking debounce flag
+    if (isProcessing) return; 
 
+    // Check if flashcards exist and there's a current card
     const currentCard = flashcards[currentCardIndex];
-    if (!currentCard) return; // Ensure there is a current card
+    if (!currentCard) return;
 
+    // Check for the spacebar key press to reveal the card
     if (event.code === 'Space') {
+        // If the card is not revealed, reveal it
         if (!cardRevealed) {
-            // Reveal the card if not already revealed
             const termElement = currentCard.querySelector('.term');
             const exampleElement = currentCard.querySelector('.example');
             const buttonContainer = currentCard.querySelector('.button-container');
+            
             revealCard(termElement, exampleElement, buttonContainer);
+            cardRevealed = true; // Update state to reflect the card has been revealed
 
-            // Add a short delay to avoid rapid double-pressing
+            // Set debounce flag to true to prevent immediate repeated actions
             isProcessing = true;
-            setTimeout(() => { isProcessing = false; }, 300); // 300ms delay
-        } else {
-            // Mark as "Know it" if the card is already revealed
-            markAsKnown();
-            isProcessing = false; // Reset debounce after action
+            setTimeout(() => { isProcessing = false; }, 300); // 300ms debounce
         }
-    } else if (event.code === 'KeyL' && cardRevealed) {
-        // Mark as "Don't know it" only if the card is revealed
-        markAsUnknown();
-        isProcessing = false; // Reset debounce after action
+    } 
+    // Check for pressing 'S' to mark as "Known"
+    else if (event.code === 'KeyS' && cardRevealed) {
+        markAsKnown();
+        cardRevealed = false; // Reset state after marking as known
     }
 });
 

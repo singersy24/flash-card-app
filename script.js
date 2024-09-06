@@ -255,16 +255,20 @@ resetButton.addEventListener('click', resetFlashcards);
 document.addEventListener('keydown', function(event) {
     // Only trigger on the first spacebar press (not key repeat) and if the card is not revealed
     if (event.code === 'Space' && !cardRevealed && !event.repeat) {
-        const currentCard = flashcards[currentCardIndex];
-        const termElement = currentCard.querySelector('.term');
-        const exampleElement = currentCard.querySelector('.example');
-        const buttonContainer = currentCard.querySelector('.button-container');
-        
-        // Reveal the card elements and prevent resetting
-        revealCard(termElement, exampleElement, buttonContainer);
-
-        // Ensure that card stays revealed
-        cardRevealed = true;
+        if (flashcards.length > 0 && currentCardIndex < flashcards.length) {  // Check if flashcards exist
+            const currentCard = flashcards[currentCardIndex];
+            const termElement = currentCard.querySelector('.term');
+            const exampleElement = currentCard.querySelector('.example');
+            const buttonContainer = currentCard.querySelector('.button-container');
+            
+            // Reveal the card elements and prevent resetting
+            revealCard(termElement, exampleElement, buttonContainer);
+            
+            // Ensure that card stays revealed
+            cardRevealed = true;
+        } else {
+            console.error('No flashcards available or invalid index.');
+        }
     }
 });
 
@@ -277,6 +281,3 @@ function revealCard(termElement, exampleElement, buttonContainer) {
     buttonContainer.style.display = 'block';  // Show the buttons
     cardRevealed = true;  // Mark the card as revealed
 }
-
-// Load the flashcards when the page is ready
-loadFlashcards();

@@ -240,47 +240,37 @@ function resetCardVisibility() {
     }
 }
 
+// Add keydown event listener for keyboard controls
 document.addEventListener('keydown', function (event) {
     // Prevent multiple quick presses by checking debounce flag
-    if (isProcessing) return;
+    if (isProcessing) return; 
 
     // Check if flashcards exist and there's a current card
     const currentCard = flashcards[currentCardIndex];
     if (!currentCard) return;
 
     // Check for the spacebar key press to reveal the card
-document.addEventListener('keyup', function (event) {
-    // Prevent multiple quick presses by checking debounce flag
-    if (isProcessing) return;
-
-    // Check if flashcards exist and there's a current card
-    const currentCard = flashcards[currentCardIndex];
-    if (!currentCard) return;
-
-    // Check for the spacebar key press to reveal the card
-    if (event.code === 'Space' && !isProcessing) {
+    if (event.code === 'Space') {
+        // If the card is not revealed, reveal it
         if (!cardRevealed) {
-            // Reveal the card content (term, example, buttons)
             const termElement = currentCard.querySelector('.term');
             const exampleElement = currentCard.querySelector('.example');
             const buttonContainer = currentCard.querySelector('.button-container');
-            revealCard(termElement, exampleElement, buttonContainer);
             
-            // Mark card as revealed and set debounce flag to prevent rapid reveal
-            cardRevealed = true;
+            revealCard(termElement, exampleElement, buttonContainer);
+            cardRevealed = true; // Update state to reflect the card has been revealed
+
+            // Set debounce flag to true to prevent immediate repeated actions
             isProcessing = true;
             setTimeout(() => { isProcessing = false; }, 300); // 300ms debounce
         }
-    }
-
-    // Check for pressing 'S' to mark as "Known" (after card is revealed)
-    if (event.code === 'KeyS' && cardRevealed) {
-        // Mark card as known
+    } 
+    // Check for pressing 'S' to mark as "Known"
+    else if (event.code === 'KeyS' && cardRevealed) {
         markAsKnown();
         cardRevealed = false; // Reset state after marking as known
     }
 });
-
 
 // Toggle dark mode
 const darkModeToggle = document.querySelector('.dark-mode-toggle');

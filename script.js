@@ -249,13 +249,16 @@ document.addEventListener('keydown', function (event) {
             const exampleElement = currentCard.querySelector('.example');
             const buttonContainer = currentCard.querySelector('.button-container');
             revealCard(termElement, exampleElement, buttonContainer);
-        } else {
-            // Mark as "Know it" if card is already revealed
+            cardRevealed = true; // Set the card as revealed
+        } else if (cardRevealed) {
+            // Mark as "Know it" if the card is already revealed
             markAsKnown();
+            cardRevealed = false; // Reset revealed state after marking
         }
     } else if (event.code === 'KeyL' && cardRevealed) {
         // Mark as "Don't know it" only if the card is revealed
         markAsUnknown();
+        cardRevealed = false; // Reset revealed state after marking
     }
 });
 

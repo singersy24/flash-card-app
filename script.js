@@ -251,10 +251,6 @@ darkModeToggle.addEventListener('click', () => {
 const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', resetFlashcards);
 
-// Add event listener for reset button
-const resetButton = document.querySelector('.reset-button');
-resetButton.addEventListener('click', resetFlashcards);
-
 // Add an event listener to detect spacebar press
 document.addEventListener('keydown', function(event) {
     if (event.code === 'Space' && !cardRevealed && !isProcessing) {

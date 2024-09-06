@@ -91,10 +91,6 @@ function createFlashcards(cardsData) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    flashcardsContainer.focus(); // Focus on the flashcard container when the page is ready
-});
-
 // Display the flashcards
 function displayFlashcards() {
     if (flashcards.length === 0) {
@@ -115,10 +111,34 @@ function handleCardClick(event, flashcardElement) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    flashcardsContainer.focus(); // Focus on the flashcard container when the page is ready
-});
+// Show the next card in the sequence
+function showNextCard(cards, currentIndex) {
+    flashcards.forEach(card => card.style.display = 'none');
 
+    if (currentIndex >= cards.length) {
+        handleEndOfCards();
+        return;
+    }
+
+    const currentCard = cards[currentIndex];
+    currentCard.style.display = 'block';
+    resetCardVisibility();
+
+    const knowItButton = currentCard.querySelector('.know-it');
+    const dontKnowItButton = currentCard.querySelector('.dont-know-it');
+
+    knowItButton.onclick = function(event) {
+        event.stopPropagation();
+        markAsKnown();
+    };
+
+    dontKnowItButton.onclick = function(event) {
+        event.stopPropagation();
+        markAsUnknown();
+    };
+
+    cardRevealed = false;
+}
 
 // Reveal the card's term, example (if any), and buttons
 function revealCard(termElement, exampleElement, buttonContainer) {
@@ -233,14 +253,9 @@ resetButton.addEventListener('click', resetFlashcards);
 
 // Add an event listener to detect spacebar press
 document.addEventListener('keydown', function(event) {
-    // Prevent the default action (like page scrolling) for spacebar
-    if (event.code === 'Space') {
-        event.preventDefault();
-    }
-
     // Only trigger on the first spacebar press (not key repeat) and if the card is not revealed
     if (event.code === 'Space' && !cardRevealed && !event.repeat) {
-        if (flashcards.length > 0 && currentCardIndex < flashcards.length) {
+        if (flashcards.length > 0 && currentCardIndex < flashcards.length) {  // Check if flashcards exist
             const currentCard = flashcards[currentCardIndex];
             const termElement = currentCard.querySelector('.term');
             const exampleElement = currentCard.querySelector('.example');

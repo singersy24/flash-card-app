@@ -253,8 +253,8 @@ document.addEventListener('keydown', function (event) {
             // Mark as "Know it" if card is already revealed
             markAsKnown();
         }
-    } else if (event.code === 'KeyL') {
-        // Mark as "Don't know it"
+    } else if (event.code === 'KeyL' && cardRevealed) {
+        // Mark as "Don't know it" only if the card is revealed
         markAsUnknown();
     }
 });

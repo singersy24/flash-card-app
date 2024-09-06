@@ -244,15 +244,16 @@ function resetCardVisibility() {
 document.addEventListener('keydown', function (event) {
     if (isProcessing) return; // Prevent immediate double processing
 
+    const currentCard = flashcards[currentCardIndex];
+    if (!currentCard) return; // Ensure there is a current card
+
     if (event.code === 'Space') {
         if (!cardRevealed) {
             // Reveal the card if not already revealed
-            const currentCard = flashcards[currentCardIndex];
             const termElement = currentCard.querySelector('.term');
             const exampleElement = currentCard.querySelector('.example');
             const buttonContainer = currentCard.querySelector('.button-container');
             revealCard(termElement, exampleElement, buttonContainer);
-            cardRevealed = true; // Set the card as revealed
 
             // Add a short delay to avoid rapid double-pressing
             isProcessing = true;
@@ -260,15 +261,14 @@ document.addEventListener('keydown', function (event) {
         } else {
             // Mark as "Know it" if the card is already revealed
             markAsKnown();
-            cardRevealed = false; // Reset revealed state after marking
+            isProcessing = false; // Reset debounce after action
         }
     } else if (event.code === 'KeyL' && cardRevealed) {
         // Mark as "Don't know it" only if the card is revealed
         markAsUnknown();
-        cardRevealed = false; // Reset revealed state after marking
+        isProcessing = false; // Reset debounce after action
     }
 });
-
 
 // Toggle dark mode
 const darkModeToggle = document.querySelector('.dark-mode-toggle');

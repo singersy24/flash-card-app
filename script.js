@@ -262,7 +262,6 @@ document.addEventListener('keydown', function (event) {
 
             // Set debounce flag to true to prevent immediate repeated actions
             isProcessing = true;
-            setTimeout(() => { isProcessing = false; }, 300); // 300ms debounce
         }
     } 
     // Check for pressing 'S' to mark as "Known"

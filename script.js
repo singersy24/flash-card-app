@@ -167,6 +167,7 @@ function markAsUnknown() {
 // Handle the end of the flashcards
 function handleEndOfCards() {
     if (missedCards.length > 0 && !reviewingMissedCards) {
+        // Start reviewing missed cards
         alert('Reviewing missed cards.');
         reviewingMissedCards = true;
         currentCardIndex = 0;
@@ -175,12 +176,22 @@ function handleEndOfCards() {
         reviewingLabel.style.display = 'block';
         shuffle(flashcards);
         showNextCard(flashcards, currentCardIndex);
+    } else if (reviewingMissedCards && missedCards.length > 0) {
+        // Still have missed cards after reviewing, keep going
+        alert('Continuing to review missed cards.');
+        currentCardIndex = 0;
+        flashcards = missedCards.slice();
+        missedCards = [];
+        shuffle(flashcards);
+        showNextCard(flashcards, currentCardIndex);
     } else if (reviewingMissedCards && missedCards.length === 0) {
+        // All missed cards reviewed correctly
         alert('You have reviewed all missed cards and got them correct!');
         reviewingMissedCards = false;
         reviewingLabel.style.display = 'none';
         resetFlashcards();
     } else {
+        // All cards completed
         alert('You have completed all the cards!');
         resetFlashcards();
     }

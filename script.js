@@ -239,6 +239,26 @@ function resetCardVisibility() {
     }
 }
 
+// Add keydown event listener for keyboard controls
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'Space') {
+        if (!cardRevealed) {
+            // Reveal the card if not already revealed
+            const currentCard = flashcards[currentCardIndex];
+            const termElement = currentCard.querySelector('.term');
+            const exampleElement = currentCard.querySelector('.example');
+            const buttonContainer = currentCard.querySelector('.button-container');
+            revealCard(termElement, exampleElement, buttonContainer);
+        } else {
+            // Mark as "Know it" if card is already revealed
+            markAsKnown();
+        }
+    } else if (event.code === 'KeyL') {
+        // Mark as "Don't know it"
+        markAsUnknown();
+    }
+});
+
 // Toggle dark mode
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {

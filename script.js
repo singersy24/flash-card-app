@@ -253,16 +253,30 @@ resetButton.addEventListener('click', resetFlashcards);
 
 // Add an event listener to detect spacebar press
 document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space' && !cardRevealed && !isProcessing) {
-        isProcessing = true; // Set debounce flag to avoid multiple triggers
+    // Only trigger on the first spacebar press (not key repeat) and if the card is not revealed
+    if (event.code === 'Space' && !cardRevealed && !event.repeat) {
         const currentCard = flashcards[currentCardIndex];
         const termElement = currentCard.querySelector('.term');
         const exampleElement = currentCard.querySelector('.example');
         const buttonContainer = currentCard.querySelector('.button-container');
+        
+        // Reveal the card elements and prevent resetting
         revealCard(termElement, exampleElement, buttonContainer);
-        setTimeout(() => isProcessing = false, 200); // Reset debounce flag after a short delay
+
+        // Ensure that card stays revealed
+        cardRevealed = true;
     }
 });
+
+// Reveal the card's term, example (if any), and buttons
+function revealCard(termElement, exampleElement, buttonContainer) {
+    termElement.style.display = 'block';  // Keep the term visible
+    if (exampleElement) {
+        exampleElement.style.display = 'block';  // Keep the example visible if it exists
+    }
+    buttonContainer.style.display = 'block';  // Show the buttons
+    cardRevealed = true;  // Mark the card as revealed
+}
 
 // Load the flashcards when the page is ready
 loadFlashcards();

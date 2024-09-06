@@ -258,6 +258,15 @@ document.addEventListener('keyup', function (event) {
     if (!currentCard) return;
 
     // Check for the spacebar key press to reveal the card
+document.addEventListener('keydown', function (event) {
+    // Prevent multiple quick presses by checking debounce flag
+    if (isProcessing) return;
+
+    // Check if flashcards exist and there's a current card
+    const currentCard = flashcards[currentCardIndex];
+    if (!currentCard) return;
+
+    // Check for the spacebar key press to reveal the card
     if (event.code === 'Space' && !isProcessing) {
         if (!cardRevealed) {
             // Reveal the card content (term, example, buttons)
@@ -280,7 +289,6 @@ document.addEventListener('keyup', function (event) {
         cardRevealed = false; // Reset state after marking as known
     }
 });
-
 
 // Toggle dark mode
 const darkModeToggle = document.querySelector('.dark-mode-toggle');

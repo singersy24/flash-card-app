@@ -240,37 +240,6 @@ function resetCardVisibility() {
     }
 }
 
-// Add keydown event listener for keyboard controls
-document.addEventListener('keydown', function (event) {
-    // Prevent multiple quick presses by checking debounce flag
-    if (isProcessing) return; 
-
-    // Check if flashcards exist and there's a current card
-    const currentCard = flashcards[currentCardIndex];
-    if (!currentCard) return;
-
-    // Check for the spacebar key press to reveal the card
-    if (event.code === 'Space') {
-        // If the card is not revealed, reveal it
-        if (!cardRevealed) {
-            const termElement = currentCard.querySelector('.term');
-            const exampleElement = currentCard.querySelector('.example');
-            const buttonContainer = currentCard.querySelector('.button-container');
-            
-            revealCard(termElement, exampleElement, buttonContainer);
-            cardRevealed = true; // Update state to reflect the card has been revealed
-
-            // Set debounce flag to true to prevent immediate repeated actions
-            isProcessing = true;
-        }
-    } 
-    // Check for pressing 'S' to mark as "Known"
-    else if (event.code === 'KeyS' && cardRevealed) {
-        markAsKnown();
-        cardRevealed = false; // Reset state after marking as known
-    }
-});
-
 // Toggle dark mode
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
@@ -281,6 +250,23 @@ darkModeToggle.addEventListener('click', () => {
 // Add event listener for reset button
 const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', resetFlashcards);
+
+// Add event listener for reset button
+const resetButton = document.querySelector('.reset-button');
+resetButton.addEventListener('click', resetFlashcards);
+
+// Add an event listener to detect spacebar press
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space' && !cardRevealed && !isProcessing) {
+        isProcessing = true; // Set debounce flag to avoid multiple triggers
+        const currentCard = flashcards[currentCardIndex];
+        const termElement = currentCard.querySelector('.term');
+        const exampleElement = currentCard.querySelector('.example');
+        const buttonContainer = currentCard.querySelector('.button-container');
+        revealCard(termElement, exampleElement, buttonContainer);
+        setTimeout(() => isProcessing = false, 200); // Reset debounce flag after a short delay
+    }
+});
 
 // Load the flashcards when the page is ready
 loadFlashcards();

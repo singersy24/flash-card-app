@@ -105,6 +105,22 @@ function createFlashcards(cardsData) {
     });
 }
 
+function renderFlashcard(card) {
+    const termElement = document.getElementById('flashcard-term');
+    const definitionElement = document.getElementById('flashcard-definition');
+    const imageElement = document.getElementById('flashcard-image');
+
+    termElement.textContent = card.term;
+    definitionElement.textContent = card.definition;
+
+    if (card.image) {
+        imageElement.src = card.image;
+        imageElement.style.display = 'block';
+    } else {
+        imageElement.style.display = 'none';
+    }
+}
+
 // Display the flashcards
 function displayFlashcards() {
     if (flashcards.length === 0) {

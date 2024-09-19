@@ -114,9 +114,9 @@ function renderFlashcard(card) {
     definitionElement.textContent = card.definition;
 
     if (card.image) {
-        console.log("Image source:", card.image);  // Debugging to check the image path
+        console.log("Image source:", card.image);  // Check if the image path is correct
         imageElement.src = card.image;  // Set the image source
-        imageElement.style.display = 'block';  // Make sure the image is displayed
+        imageElement.style.display = 'block';  // Ensure the image is displayed
     } else {
         imageElement.style.display = 'none';  // Hide the image if not present
     }

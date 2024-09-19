@@ -84,11 +84,21 @@ function createFlashcards(cardsData) {
     cardsData.forEach((cardData) => {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
+
+        // Create HTML for image if available
+        let imageHTML = '';
+        if (cardData.image) {
+            imageHTML = `<img src="${cardData.image}" alt="Flashcard Image" style="width:100%; max-height:300px; display:block;">`;
+        }
+
         let exampleHTML = '';
         if (cardData.example) {
             exampleHTML = `<div class="example" style="display: none;">Example: ${cardData.example}</div>`;
         }
+
+        // Set the innerHTML to include the image (if available), term, definition, and buttons
         flashcardElement.innerHTML = `
+            ${imageHTML}  <!-- Image added here -->
             <div class="definition">${cardData.definition}</div>
             <div class="term" style="display: none;">${cardData.term}</div>
             ${exampleHTML}
@@ -97,29 +107,14 @@ function createFlashcards(cardsData) {
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
+
         flashcardElement.addEventListener('click', function(event) {
             handleCardClick(event, flashcardElement);
         });
+
         flashcardsContainer.appendChild(flashcardElement);
         flashcards.push(flashcardElement);
     });
-}
-
-function renderFlashcard(card) {
-    const termElement = document.getElementById('flashcard-term');
-    const definitionElement = document.getElementById('flashcard-definition');
-    const imageElement = document.getElementById('flashcard-image');
-
-    termElement.textContent = card.term;
-    definitionElement.textContent = card.definition;
-
-    if (card.image) {
-        console.log("Image source:", card.image);  // Check if the image path is correct
-        imageElement.src = card.image;  // Set the image source
-        imageElement.style.display = 'block';  // Ensure the image is displayed
-    } else {
-        imageElement.style.display = 'none';  // Hide the image if not present
-    }
 }
 
 // Display the flashcards

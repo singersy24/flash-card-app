@@ -114,10 +114,10 @@ function renderFlashcard(card) {
     definitionElement.textContent = card.definition;
 
     if (card.image) {
-        imageElement.src = card.image;
-        imageElement.style.display = 'block';
+        imageElement.src = card.image;  // Set the image source
+        imageElement.style.display = 'block';  // Make sure the image is displayed
     } else {
-        imageElement.style.display = 'none';
+        imageElement.style.display = 'none';  // Hide the image if not present
     }
 }
 

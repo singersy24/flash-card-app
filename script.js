@@ -38,6 +38,20 @@ async function loadFlashcards(section) {
     }
 }
 
+// Show the next card in the sequence
+function showNextCard(cards, currentIndex) {
+    flashcards.forEach(card => card.style.display = 'none');
+
+    if (currentIndex >= cards.length) {
+        handleEndOfCards();
+        return;
+    }
+
+    const currentCard = cards[currentIndex];
+    currentCard.style.display = 'block';
+    renderFlashcard(allFlashcards[currentIndex]);  // Call renderFlashcard to update the card
+}
+
 // Event listeners for button clicks
 sgOneButton.addEventListener('click', () => {
     loadFlashcards('ch-one-study-guide.json');

@@ -78,6 +78,7 @@ function setActiveButton(activeButton) {
     activeButton.classList.remove('inactive-button');
 }
 
+// Function to create flashcards (handles both images and text)
 function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';
     cardsData.forEach((cardData) => {
@@ -134,37 +135,6 @@ function createFlashcards(cardsData) {
     });
 }
 
-        // Add a click event listener to toggle between term image and definition image
-        flashcardElement.addEventListener('click', function(event) {
-            const termImage = flashcardElement.querySelector('.term-image');
-            const definitionImage = flashcardElement.querySelector('.definition-image');
-
-            // Toggle visibility
-            if (termImage && definitionImage) {
-                if (termImage.style.display !== 'none') {
-                    termImage.style.display = 'none';  // Hide term image
-                    definitionImage.style.display = 'block';  // Show definition image
-                } else {
-                    termImage.style.display = 'block';  // Show term image
-                    definitionImage.style.display = 'none';  // Hide definition image
-                }
-            }
-        });
-
-        flashcardsContainer.appendChild(flashcardElement);
-        flashcards.push(flashcardElement);
-    });
-}
-
-        flashcardElement.addEventListener('click', function(event) {
-            handleCardClick(event, flashcardElement);
-        });
-
-        flashcardsContainer.appendChild(flashcardElement);
-        flashcards.push(flashcardElement);
-    });
-}
-
 // Display the flashcards
 function displayFlashcards() {
     if (flashcards.length === 0) {
@@ -175,74 +145,9 @@ function displayFlashcards() {
     showNextCard(flashcards, currentCardIndex);
 }
 
-// Handle card click events
-function handleCardClick(event, flashcardElement) {
-    if (!cardRevealed && !event.target.closest('.btn')) {
-        const termElement = flashcardElement.querySelector('.term');
-        const exampleElement = flashcardElement.querySelector('.example');
-        const buttonContainer = flashcardElement.querySelector('.button-container');
-        revealCard(termElement, exampleElement, buttonContainer);
-    }
-}
-
-// Show the next card in the sequence
-function showNextCard(cards, currentIndex) {
-    flashcards.forEach(card => card.style.display = 'none');
-
-    if (currentIndex >= cards.length) {
-        handleEndOfCards();
-        return;
-    }
-
-    const currentCard = cards[currentIndex];
-    currentCard.style.display = 'block';
-    resetCardVisibility();
-
-    const knowItButton = currentCard.querySelector('.know-it');
-    const dontKnowItButton = currentCard.querySelector('.dont-know-it');
-
-    knowItButton.onclick = function(event) {
-        event.stopPropagation();
-        markAsKnown();
-    };
-
-    dontKnowItButton.onclick = function(event) {
-        event.stopPropagation();
-        markAsUnknown();
-    };
-
-    cardRevealed = false;
-}
-
-// Reveal the card's term, example (if any), and buttons
-function revealCard(termElement, exampleElement, buttonContainer) {
-    termElement.style.display = 'block';
-    if (exampleElement) {
-        exampleElement.style.display = 'block';
-    }
-    buttonContainer.style.display = 'block';
-    cardRevealed = true;
-}
-
-// Mark the card as known
-function markAsKnown() {
-    correctAnswers++;
-    correctAnswersElement.innerText = correctAnswers;
-    showNextCard(flashcards, ++currentCardIndex);
-}
-
-// Mark the card as unknown
-function markAsUnknown() {
-    incorrectAnswers++;
-    incorrectAnswersElement.innerText = incorrectAnswers;
-    missedCards.push(flashcards[currentCardIndex]);
-    showNextCard(flashcards, ++currentCardIndex);
-}
-
 // Handle the end of the flashcards
 function handleEndOfCards() {
     if (missedCards.length > 0 && !reviewingMissedCards) {
-        // Start reviewing missed cards
         alert('Reviewing missed cards.');
         reviewingMissedCards = true;
         currentCardIndex = 0;
@@ -251,22 +156,12 @@ function handleEndOfCards() {
         reviewingLabel.style.display = 'block';
         shuffle(flashcards);
         showNextCard(flashcards, currentCardIndex);
-    } else if (reviewingMissedCards && missedCards.length > 0) {
-        // Still have missed cards after reviewing, keep going
-        alert('Continuing to review missed cards.');
-        currentCardIndex = 0;
-        flashcards = missedCards.slice();
-        missedCards = [];
-        shuffle(flashcards);
-        showNextCard(flashcards, currentCardIndex);
     } else if (reviewingMissedCards && missedCards.length === 0) {
-        // All missed cards reviewed correctly
         alert('You have reviewed all missed cards and got them correct!');
         reviewingMissedCards = false;
         reviewingLabel.style.display = 'none';
         resetFlashcards();
     } else {
-        // All cards completed
         alert('You have completed all the cards!');
         resetFlashcards();
     }
@@ -325,20 +220,15 @@ darkModeToggle.addEventListener('click', () => {
 const resetButton = document.querySelector('.reset-button');
 resetButton.addEventListener('click', resetFlashcards);
 
-// Add an event listener to detect spacebar press
+// Add event listener for spacebar press to reveal the card
 document.addEventListener('keydown', function(event) {
-    // Only trigger on the first spacebar press (not key repeat) and if the card is not revealed
     if (event.code === 'Space' && !cardRevealed && !event.repeat) {
-        if (flashcards.length > 0 && currentCardIndex < flashcards.length) {  // Check if flashcards exist
+        if (flashcards.length > 0 && currentCardIndex < flashcards.length) {
             const currentCard = flashcards[currentCardIndex];
             const termElement = currentCard.querySelector('.term');
             const exampleElement = currentCard.querySelector('.example');
             const buttonContainer = currentCard.querySelector('.button-container');
-            
-            // Reveal the card elements and prevent resetting
             revealCard(termElement, exampleElement, buttonContainer);
-            
-            // Ensure that card stays revealed
             cardRevealed = true;
         } else {
             console.error('No flashcards available or invalid index.');
@@ -348,10 +238,10 @@ document.addEventListener('keydown', function(event) {
 
 // Reveal the card's term, example (if any), and buttons
 function revealCard(termElement, exampleElement, buttonContainer) {
-    termElement.style.display = 'block';  // Keep the term visible
+    termElement.style.display = 'block';
     if (exampleElement) {
-        exampleElement.style.display = 'block';  // Keep the example visible if it exists
+        exampleElement.style.display = 'block';
     }
-    buttonContainer.style.display = 'block';  // Show the buttons
-    cardRevealed = true;  // Mark the card as revealed
+    buttonContainer.style.display = 'block';
+    cardRevealed = true;
 }

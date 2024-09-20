@@ -78,37 +78,48 @@ function setActiveButton(activeButton) {
     activeButton.classList.remove('inactive-button');
 }
 
-// Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';
     cardsData.forEach((cardData) => {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
 
-        // Create HTML for the two images (initial image and revealed image)
-        let imageHTML = '';
-        if (cardData.image && cardData.revealedImage) {
-            imageHTML = `
-                <img src="${cardData.image}" alt="Flashcard Initial Image" class="flashcard-image" style="width:100%; max-height:300px; display:block;">
-                <img src="${cardData.revealedImage}" alt="Flashcard Revealed Image" class="flashcard-revealed-image" style="width:100%; max-height:300px; display:none;">
-            `;
+        // Create HTML for the term image and definition image (both initially loaded)
+        let termImageHTML = '';
+        let definitionImageHTML = '';
+
+        if (cardData.termImage) {
+            termImageHTML = `<img src="${cardData.termImage}" alt="Term Image" class="term-image" style="width:100%; max-height:300px;">`;
         }
 
-        // Set the innerHTML to include the images (if available), term, definition, and buttons
+        if (cardData.definitionImage) {
+            definitionImageHTML = `<img src="${cardData.definitionImage}" alt="Definition Image" class="definition-image" style="width:100%; max-height:300px; display:none;">`;
+        }
+
+        // Set the innerHTML to include both images (term image visible, definition hidden)
         flashcardElement.innerHTML = `
-            ${imageHTML}  <!-- Two images added here -->
-            <div class="definition">${cardData.definition}</div>
-            <div class="term" style="display: none;">${cardData.term}</div>
+            ${termImageHTML}  <!-- Initially visible -->
+            ${definitionImageHTML} <!-- Initially hidden -->
             <div class="button-container" style="display: none;">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
 
-        // Add event listener to toggle images on click
+        // Add a click event listener to toggle between term image and definition image
         flashcardElement.addEventListener('click', function(event) {
-            if (!event.target.closest('.btn')) {
-                toggleImage(flashcardElement);
+            const termImage = flashcardElement.querySelector('.term-image');
+            const definitionImage = flashcardElement.querySelector('.definition-image');
+
+            // Toggle visibility
+            if (termImage && definitionImage) {
+                if (termImage.style.display !== 'none') {
+                    termImage.style.display = 'none';  // Hide term image
+                    definitionImage.style.display = 'block';  // Show definition image
+                } else {
+                    termImage.style.display = 'block';  // Show term image
+                    definitionImage.style.display = 'none';  // Hide definition image
+                }
             }
         });
 
@@ -117,18 +128,13 @@ function createFlashcards(cardsData) {
     });
 }
 
-// Function to toggle between the two images
-function toggleImage(flashcardElement) {
-    const initialImage = flashcardElement.querySelector('.flashcard-image');
-    const revealedImage = flashcardElement.querySelector('.flashcard-revealed-image');
+        flashcardElement.addEventListener('click', function(event) {
+            handleCardClick(event, flashcardElement);
+        });
 
-    if (initialImage.style.display === 'block') {
-        initialImage.style.display = 'none';
-        revealedImage.style.display = 'block';
-    } else {
-        initialImage.style.display = 'block';
-        revealedImage.style.display = 'none';
-    }
+        flashcardsContainer.appendChild(flashcardElement);
+        flashcards.push(flashcardElement);
+    });
 }
 
 // Display the flashcards

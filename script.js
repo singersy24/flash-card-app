@@ -49,7 +49,22 @@ function showNextCard(cards, currentIndex) {
 
     const currentCard = cards[currentIndex];
     currentCard.style.display = 'block';
-    renderFlashcard(allFlashcards[currentIndex]);  // Call renderFlashcard to update the card
+    resetCardVisibility();
+
+    const knowItButton = currentCard.querySelector('.know-it');
+    const dontKnowItButton = currentCard.querySelector('.dont-know-it');
+
+    knowItButton.onclick = function(event) {
+        event.stopPropagation();
+        markAsKnown();
+    };
+
+    dontKnowItButton.onclick = function(event) {
+        event.stopPropagation();
+        markAsUnknown();
+    };
+
+    cardRevealed = false;
 }
 
 // Event listeners for button clicks
@@ -85,23 +100,24 @@ function createFlashcards(cardsData) {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
 
-        // Create HTML for image if available
+        // Create HTML for the first image if available
         let imageHTML = '';
         if (cardData.image) {
-            imageHTML = `<img src="${cardData.image}" alt="Flashcard Image" style="width:100%; max-height:300px; display:block;">`;
+            imageHTML = `<img src="${cardData.image}" alt="Flashcard Image">`;
         }
 
-        let exampleHTML = '';
-        if (cardData.example) {
-            exampleHTML = `<div class="example" style="display: none;">Example: ${cardData.example}</div>`;
+        // Create HTML for the second image if available
+        let image2HTML = '';
+        if (cardData.image2) {
+            image2HTML = `<img class="second-image" src="${cardData.image2}" alt="Second Flashcard Image" style="display:none;">`;
         }
 
-        // Set the innerHTML to include the image (if available), term, definition, and buttons
+        // Set the innerHTML to include images, term, definition, and buttons
         flashcardElement.innerHTML = `
-            ${imageHTML}  <!-- Image added here -->
+            ${imageHTML}  <!-- First Image -->
+            ${image2HTML} <!-- Second Image (hidden initially) -->
             <div class="definition">${cardData.definition}</div>
             <div class="term" style="display: none;">${cardData.term}</div>
-            ${exampleHTML}
             <div class="button-container" style="display: none;">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
@@ -131,39 +147,20 @@ function displayFlashcards() {
 function handleCardClick(event, flashcardElement) {
     if (!cardRevealed && !event.target.closest('.btn')) {
         const termElement = flashcardElement.querySelector('.term');
-        const exampleElement = flashcardElement.querySelector('.example');
         const buttonContainer = flashcardElement.querySelector('.button-container');
-        revealCard(termElement, exampleElement, buttonContainer);
+        const image2Element = flashcardElement.querySelector('.second-image'); // Select the second image
+        revealCard(termElement, buttonContainer, image2Element);
     }
 }
 
-// Show the next card in the sequence
-function showNextCard(cards, currentIndex) {
-    flashcards.forEach(card => card.style.display = 'none');
-
-    if (currentIndex >= cards.length) {
-        handleEndOfCards();
-        return;
+// Reveal the card's term, second image, and buttons
+function revealCard(termElement, buttonContainer, image2Element) {
+    termElement.style.display = 'block';
+    if (image2Element) {
+        image2Element.style.display = 'block'; // Show the second image
     }
-
-    const currentCard = cards[currentIndex];
-    currentCard.style.display = 'block';
-    resetCardVisibility();
-
-    const knowItButton = currentCard.querySelector('.know-it');
-    const dontKnowItButton = currentCard.querySelector('.dont-know-it');
-
-    knowItButton.onclick = function(event) {
-        event.stopPropagation();
-        markAsKnown();
-    };
-
-    dontKnowItButton.onclick = function(event) {
-        event.stopPropagation();
-        markAsUnknown();
-    };
-
-    cardRevealed = false;
+    buttonContainer.style.display = 'block';
+    cardRevealed = true;
 }
 
 // Mark the card as known
@@ -244,11 +241,11 @@ function resetCardVisibility() {
     const currentCard = flashcards[currentCardIndex];
     if (currentCard) {
         const termElement = currentCard.querySelector('.term');
-        const exampleElement = currentCard.querySelector('.example');
         const buttonContainer = currentCard.querySelector('.button-container');
+        const image2Element = currentCard.querySelector('.second-image'); // Select the second image
         termElement.style.display = 'none';
-        if (exampleElement) {
-            exampleElement.style.display = 'none';
+        if (image2Element) {
+            image2Element.style.display = 'none'; // Hide the second image
         }
         buttonContainer.style.display = 'none';
         cardRevealed = false;
@@ -274,12 +271,12 @@ document.addEventListener('keydown', function(event) {
         if (flashcards.length > 0 && currentCardIndex < flashcards.length) {  // Check if flashcards exist
             const currentCard = flashcards[currentCardIndex];
             const termElement = currentCard.querySelector('.term');
-            const exampleElement = currentCard.querySelector('.example');
             const buttonContainer = currentCard.querySelector('.button-container');
-            
-            // Reveal the card elements and prevent resetting
-            revealCard(termElement, exampleElement, buttonContainer);
-            
+            const image2Element = currentCard.querySelector('.second-image'); // Select the second image
+
+            // Reveal the card elements
+            revealCard(termElement, buttonContainer, image2Element);
+
             // Ensure that card stays revealed
             cardRevealed = true;
         } else {
@@ -287,13 +284,3 @@ document.addEventListener('keydown', function(event) {
         }
     }
 });
-
-// Reveal the card's term, example (if any), and buttons
-function revealCard(termElement, exampleElement, buttonContainer) {
-    termElement.style.display = 'block';  // Keep the term visible
-    if (exampleElement) {
-        exampleElement.style.display = 'block';  // Keep the example visible if it exists
-    }
-    buttonContainer.style.display = 'block';  // Show the buttons
-    cardRevealed = true;  // Mark the card as revealed
-}

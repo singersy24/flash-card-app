@@ -79,16 +79,20 @@ function setActiveButton(activeButton) {
 }
 
 // Create flashcard elements and add them to the container
+// Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';
     cardsData.forEach((cardData) => {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
 
-        // Create HTML for image if available
+        // Create HTML for the two images (initial image and revealed image)
         let imageHTML = '';
-        if (cardData.image) {
-            imageHTML = `<img src="${cardData.image}" alt="Flashcard Image" style="width:100%; max-height:300px; display:block;">`;
+        if (cardData.image && cardData.revealedImage) {
+            imageHTML = `
+                <img src="${cardData.image}" alt="Flashcard Initial Image" class="flashcard-image" style="width:100%; max-height:300px; display:block;">
+                <img src="${cardData.revealedImage}" alt="Flashcard Revealed Image" class="flashcard-revealed-image" style="width:100%; max-height:300px; display:none;">
+            `;
         }
 
         let exampleHTML = '';
@@ -96,9 +100,9 @@ function createFlashcards(cardsData) {
             exampleHTML = `<div class="example" style="display: none;">Example: ${cardData.example}</div>`;
         }
 
-        // Set the innerHTML to include the image (if available), term, definition, and buttons
+        // Set the innerHTML to include the images (if available), term, definition, and buttons
         flashcardElement.innerHTML = `
-            ${imageHTML}  <!-- Image added here -->
+            ${imageHTML}  <!-- Two images added here -->
             <div class="definition">${cardData.definition}</div>
             <div class="term" style="display: none;">${cardData.term}</div>
             ${exampleHTML}
@@ -108,13 +112,30 @@ function createFlashcards(cardsData) {
             </div>
         `;
 
+        // Add event listener to toggle images on click
         flashcardElement.addEventListener('click', function(event) {
-            handleCardClick(event, flashcardElement);
+            if (!event.target.closest('.btn')) {
+                toggleImage(flashcardElement);
+            }
         });
 
         flashcardsContainer.appendChild(flashcardElement);
         flashcards.push(flashcardElement);
     });
+}
+
+// Function to toggle between the two images
+function toggleImage(flashcardElement) {
+    const initialImage = flashcardElement.querySelector('.flashcard-image');
+    const revealedImage = flashcardElement.querySelector('.flashcard-revealed-image');
+
+    if (initialImage.style.display === 'block') {
+        initialImage.style.display = 'none';
+        revealedImage.style.display = 'block';
+    } else {
+        initialImage.style.display = 'block';
+        revealedImage.style.display = 'none';
+    }
 }
 
 // Display the flashcards

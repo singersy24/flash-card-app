@@ -84,27 +84,55 @@ function createFlashcards(cardsData) {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
 
-        // Create HTML for the term image and definition image (both initially loaded)
-        let termImageHTML = '';
-        let definitionImageHTML = '';
+        // HTML for term (text or image) and definition (text or image)
+        let termHTML = '';
+        let definitionHTML = '';
 
+        // Check if the card has an image or text for the term
         if (cardData.termImage) {
-            termImageHTML = `<img src="${cardData.termImage}" alt="Term Image" class="term-image" style="width:100%; max-height:300px;">`;
+            termHTML = `<img src="${cardData.termImage}" alt="Term Image" class="term-content" style="width:100%; max-height:300px;">`;
+        } else if (cardData.term) {
+            termHTML = `<div class="term-content" style="font-weight: bold; font-size: 1.5em;">${cardData.term}</div>`;
         }
 
+        // Check if the card has an image or text for the definition
         if (cardData.definitionImage) {
-            definitionImageHTML = `<img src="${cardData.definitionImage}" alt="Definition Image" class="definition-image" style="width:100%; max-height:300px; display:none;">`;
+            definitionHTML = `<img src="${cardData.definitionImage}" alt="Definition Image" class="definition-content" style="width:100%; max-height:300px; display:none;">`;
+        } else if (cardData.definition) {
+            definitionHTML = `<div class="definition-content" style="display:none; font-size: 1.2em;">${cardData.definition}</div>`;
         }
 
-        // Set the innerHTML to include both images (term image visible, definition hidden)
+        // Set the innerHTML to include term and definition (either text or image)
         flashcardElement.innerHTML = `
-            ${termImageHTML}  <!-- Initially visible -->
-            ${definitionImageHTML} <!-- Initially hidden -->
+            ${termHTML}  <!-- Initially visible (term) -->
+            ${definitionHTML} <!-- Initially hidden (definition) -->
             <div class="button-container" style="display: none;">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
+
+        // Add a click event listener to toggle between term and definition
+        flashcardElement.addEventListener('click', function(event) {
+            const termContent = flashcardElement.querySelector('.term-content');
+            const definitionContent = flashcardElement.querySelector('.definition-content');
+
+            // Toggle visibility
+            if (termContent && definitionContent) {
+                if (termContent.style.display !== 'none') {
+                    termContent.style.display = 'none';  // Hide term content
+                    definitionContent.style.display = 'block';  // Show definition content
+                } else {
+                    termContent.style.display = 'block';  // Show term content
+                    definitionContent.style.display = 'none';  // Hide definition content
+                }
+            }
+        });
+
+        flashcardsContainer.appendChild(flashcardElement);
+        flashcards.push(flashcardElement);
+    });
+}
 
         // Add a click event listener to toggle between term image and definition image
         flashcardElement.addEventListener('click', function(event) {

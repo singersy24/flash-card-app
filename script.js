@@ -79,7 +79,6 @@ function setActiveButton(activeButton) {
 }
 
 // Create flashcard elements and add them to the container
-// Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';
     cardsData.forEach((cardData) => {
@@ -95,22 +94,28 @@ function createFlashcards(cardsData) {
             `;
         }
 
-        let exampleHTML = '';
-        if (cardData.example) {
-            exampleHTML = `<div class="example" style="display: none;">Example: ${cardData.example}</div>`;
-        }
-
         // Set the innerHTML to include the images (if available), term, definition, and buttons
         flashcardElement.innerHTML = `
             ${imageHTML}  <!-- Two images added here -->
             <div class="definition">${cardData.definition}</div>
             <div class="term" style="display: none;">${cardData.term}</div>
-            ${exampleHTML}
             <div class="button-container" style="display: none;">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
+
+        // Add event listener to toggle images on click
+        flashcardElement.addEventListener('click', function(event) {
+            if (!event.target.closest('.btn')) {
+                handleCardClick(flashcardElement);
+            }
+        });
+
+        flashcardsContainer.appendChild(flashcardElement);
+        flashcards.push(flashcardElement);
+    });
+}
 
         // Add event listener to toggle images on click
         flashcardElement.addEventListener('click', function(event) {

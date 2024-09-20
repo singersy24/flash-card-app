@@ -108,18 +108,6 @@ function createFlashcards(cardsData) {
         // Add event listener to toggle images on click
         flashcardElement.addEventListener('click', function(event) {
             if (!event.target.closest('.btn')) {
-                handleCardClick(flashcardElement);
-            }
-        });
-
-        flashcardsContainer.appendChild(flashcardElement);
-        flashcards.push(flashcardElement);
-    });
-}
-
-        // Add event listener to toggle images on click
-        flashcardElement.addEventListener('click', function(event) {
-            if (!event.target.closest('.btn')) {
                 toggleImage(flashcardElement);
             }
         });

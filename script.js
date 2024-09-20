@@ -78,35 +78,55 @@ function setActiveButton(activeButton) {
     activeButton.classList.remove('inactive-button');
 }
 
-// Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';
     cardsData.forEach((cardData) => {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
 
-        // Create HTML for image if available
-        let imageHTML = '';
-        if (cardData.image) {
-            imageHTML = `<img src="${cardData.image}" alt="Flashcard Image" style="width:100%; max-height:300px; display:block;">`;
+        // Create HTML for the term image and definition image (both initially loaded)
+        let termImageHTML = '';
+        let definitionImageHTML = '';
+
+        if (cardData.termImage) {
+            termImageHTML = `<img src="${cardData.termImage}" alt="Term Image" class="term-image" style="width:100%; max-height:300px;">`;
         }
 
-        let exampleHTML = '';
-        if (cardData.example) {
-            exampleHTML = `<div class="example" style="display: none;">Example: ${cardData.example}</div>`;
+        if (cardData.definitionImage) {
+            definitionImageHTML = `<img src="${cardData.definitionImage}" alt="Definition Image" class="definition-image" style="width:100%; max-height:300px; display:none;">`;
         }
 
-        // Set the innerHTML to include the image (if available), term, definition, and buttons
+        // Set the innerHTML to include both images (term image visible, definition hidden)
         flashcardElement.innerHTML = `
-            ${imageHTML}  <!-- Image added here -->
-            <div class="definition">${cardData.definition}</div>
-            <div class="term" style="display: none;">${cardData.term}</div>
-            ${exampleHTML}
+            ${termImageHTML}  <!-- Initially visible -->
+            ${definitionImageHTML} <!-- Initially hidden -->
             <div class="button-container" style="display: none;">
                 <button class="btn btn-success know-it">Know it</button>
                 <button class="btn btn-danger dont-know-it">Don't know it</button>
             </div>
         `;
+
+        // Add a click event listener to toggle between term image and definition image
+        flashcardElement.addEventListener('click', function(event) {
+            const termImage = flashcardElement.querySelector('.term-image');
+            const definitionImage = flashcardElement.querySelector('.definition-image');
+
+            // Toggle visibility
+            if (termImage && definitionImage) {
+                if (termImage.style.display !== 'none') {
+                    termImage.style.display = 'none';  // Hide term image
+                    definitionImage.style.display = 'block';  // Show definition image
+                } else {
+                    termImage.style.display = 'block';  // Show term image
+                    definitionImage.style.display = 'none';  // Hide definition image
+                }
+            }
+        });
+
+        flashcardsContainer.appendChild(flashcardElement);
+        flashcards.push(flashcardElement);
+    });
+}
 
         flashcardElement.addEventListener('click', function(event) {
             handleCardClick(event, flashcardElement);

@@ -36,6 +36,14 @@ body {
     margin-top: 20px;
 }
 
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Adjust as needed */
+    display: block;
+    margin: 0 auto;
+}
+
 .dark-mode {
     background-color: #333 !important;
     color: #f4f4f4;
@@ -44,7 +52,6 @@ body {
 .dark-mode .flashcard {
     background-color: #444;
     color: #f4f4f4;
-    display: none; /* Ensure flashcards are hidden initially in dark mode */
 }
 
 .dark-mode-toggle,
@@ -133,7 +140,7 @@ body {
 
     /* Adjust flashcard size for landscape mode */
     .flashcard {
-        max-width: 80%; /* Make the flashcard wider in landscape */
+        max-width: 90%; /* Make the flashcard wider in landscape */
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -147,6 +154,6 @@ body {
     }
 
     .flashcard {
-        max-width: 500px;
+        max-width: 600px; /* Increase max-width for larger images */
     }
 }

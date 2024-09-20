@@ -166,16 +166,6 @@ function showNextCard(cards, currentIndex) {
     cardRevealed = false;
 }
 
-// Reveal the card's term, example (if any), and buttons
-function revealCard(termElement, exampleElement, buttonContainer) {
-    termElement.style.display = 'block';
-    if (exampleElement) {
-        exampleElement.style.display = 'block';
-    }
-    buttonContainer.style.display = 'block';
-    cardRevealed = true;
-}
-
 // Mark the card as known
 function markAsKnown() {
     correctAnswers++;

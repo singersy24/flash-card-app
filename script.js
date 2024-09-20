@@ -49,7 +49,22 @@ function showNextCard(cards, currentIndex) {
 
     const currentCard = cards[currentIndex];
     currentCard.style.display = 'block';
-    renderFlashcard(allFlashcards[currentIndex]);  // Call renderFlashcard to update the card
+    resetCardVisibility();
+
+    const knowItButton = currentCard.querySelector('.know-it');
+    const dontKnowItButton = currentCard.querySelector('.dont-know-it');
+
+    knowItButton.onclick = function(event) {
+        event.stopPropagation();
+        markAsKnown();
+    };
+
+    dontKnowItButton.onclick = function(event) {
+        event.stopPropagation();
+        markAsUnknown();
+    };
+
+    cardRevealed = false;
 }
 
 // Event listeners for button clicks

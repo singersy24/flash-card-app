@@ -103,13 +103,13 @@ function createFlashcards(cardsData) {
         // Create HTML for the first image if available
         let imageHTML = '';
         if (cardData.image) {
-            imageHTML = `<img src="${cardData.image}" alt="Flashcard Image">`;
+            imageHTML = `<img class="first-image" src="${cardData.image}" alt="Flashcard Image" width="300">`;
         }
 
         // Create HTML for the second image if available
         let image2HTML = '';
         if (cardData.image2) {
-            image2HTML = `<img class="second-image" src="${cardData.image2}" alt="Second Flashcard Image" style="display:none;">`;
+            image2HTML = `<img class="second-image" src="${cardData.image2}" alt="Second Flashcard Image" width="300" style="display:none;">`;
         }
 
         // Set the innerHTML to include images, term, definition, and buttons
@@ -148,17 +148,23 @@ function handleCardClick(event, flashcardElement) {
     if (!cardRevealed && !event.target.closest('.btn')) {
         const termElement = flashcardElement.querySelector('.term');
         const buttonContainer = flashcardElement.querySelector('.button-container');
+        const image1Element = flashcardElement.querySelector('.first-image'); // Select the first image
         const image2Element = flashcardElement.querySelector('.second-image'); // Select the second image
-        revealCard(termElement, buttonContainer, image2Element);
+        revealCard(termElement, buttonContainer, image2Element, image1Element);
     }
 }
 
 // Reveal the card's term, second image, and buttons
-function revealCard(termElement, buttonContainer, image2Element) {
-    termElement.style.display = 'block';
-    if (image2Element) {
-        image2Element.style.display = 'block'; // Show the second image
+function revealCard(termElement, buttonContainer, image2Element, image1Element) {
+    // Hide the first image
+    if (image1Element) {
+        image1Element.style.display = 'none';
     }
+    // Show the second image
+    if (image2Element) {
+        image2Element.style.display = 'block';
+    }
+    termElement.style.display = 'block';
     buttonContainer.style.display = 'block';
     cardRevealed = true;
 }
@@ -242,11 +248,18 @@ function resetCardVisibility() {
     if (currentCard) {
         const termElement = currentCard.querySelector('.term');
         const buttonContainer = currentCard.querySelector('.button-container');
+        const image1Element = currentCard.querySelector('.first-image'); // Select the first image
         const image2Element = currentCard.querySelector('.second-image'); // Select the second image
-        termElement.style.display = 'none';
-        if (image2Element) {
-            image2Element.style.display = 'none'; // Hide the second image
+
+        // Show the first image
+        if (image1Element) {
+            image1Element.style.display = 'block';
         }
+        // Hide the second image
+        if (image2Element) {
+            image2Element.style.display = 'none';
+        }
+        termElement.style.display = 'none';
         buttonContainer.style.display = 'none';
         cardRevealed = false;
         currentCard.style.display = 'block';
@@ -272,10 +285,11 @@ document.addEventListener('keydown', function(event) {
             const currentCard = flashcards[currentCardIndex];
             const termElement = currentCard.querySelector('.term');
             const buttonContainer = currentCard.querySelector('.button-container');
+            const image1Element = currentCard.querySelector('.first-image'); // Select the first image
             const image2Element = currentCard.querySelector('.second-image'); // Select the second image
 
             // Reveal the card elements
-            revealCard(termElement, buttonContainer, image2Element);
+            revealCard(termElement, buttonContainer, image2Element, image1Element);
 
             // Ensure that card stays revealed
             cardRevealed = true;

@@ -93,6 +93,8 @@ function setActiveButton(activeButton) {
     activeButton.classList.remove('inactive-button');
 }
 
+// ... [Other parts of your code remain unchanged] ...
+
 // Create flashcard elements and add them to the container
 function createFlashcards(cardsData) {
     flashcardsContainer.innerHTML = '';
@@ -103,13 +105,13 @@ function createFlashcards(cardsData) {
         // Create HTML for the first image if available
         let imageHTML = '';
         if (cardData.image) {
-            imageHTML = `<img class="first-image" src="${cardData.image}" alt="Flashcard Image" width="300">`;
+            imageHTML = `<img class="first-image responsive-image" src="${cardData.image}" alt="Flashcard Image">`;
         }
 
         // Create HTML for the second image if available
         let image2HTML = '';
         if (cardData.image2) {
-            image2HTML = `<img class="second-image" src="${cardData.image2}" alt="Second Flashcard Image" width="300" style="display:none;">`;
+            image2HTML = `<img class="second-image responsive-image" src="${cardData.image2}" alt="Second Flashcard Image" style="display:none;">`;
         }
 
         // Set the innerHTML to include images, term, definition, and buttons

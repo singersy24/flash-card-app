@@ -78,10 +78,10 @@ sectionOneButton.addEventListener('click', () => {
     setActiveButton(sectionOneButton);
 });
 
-//sectionTwoButton.addEventListener('click', () => {
-//  loadFlashcards('flashcards-section-two.json');
-//  setActiveButton(sectionTwoButton);
-//});
+sectionTwoButton.addEventListener('click', () => {
+  loadFlashcards('flashcards-section-two.json');
+  setActiveButton(sectionTwoButton);
+});
 
 // Function to set the active button
 function setActiveButton(activeButton) {

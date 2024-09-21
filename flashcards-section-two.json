@@ -1,178 +1,208 @@
+```json
 [
     {
-        "term": "Abdominal Cavity",
-        "definition": "The superior portion of the abdominopelvic cavity, containing organs such as the stomach, liver, gallbladder, pancreas, spleen, small intestine, kidneys, appendix, and part of the large intestine."
+        "term": "Tissue",
+        "definition": "A group of cells that are similar in structure and perform a common function."
     },
     {
-        "term": "Abdominopelvic Cavity",
-        "definition": "Consists of two continuous cavities: the abdominal cavity and the pelvic cavity."
+        "term": "Histology",
+        "definition": "The microscopic study of the structure and function of tissues."
     },
     {
-        "term": "Abdominopelvic Quadrants",
-        "definition": "The division of the abdominopelvic cavity into four quadrants formed by transverse and sagittal planes running through the umbilicus (navel)."
+        "term": "Epithelial Tissue",
+        "definition": "Covers body surfaces, lines internal organs and cavities, and forms glands."
     },
     {
-        "term": "Abdominopelvic Regions",
-        "definition": "The division of the abdominopelvic cavity into nine regions using two vertical and two horizontal lines, forming a tic-tac-toe grid to locate organs."
+        "term": "Connective Tissue",
+        "definition": "Supports, binds, and protects other tissues and organs; includes bone, blood, and cartilage."
     },
     {
-        "term": "Body Cavities",
-        "definition": "Spaces within the body that contain vital organs. The major body cavities are the cranial cavity, thoracic cavity, and abdominopelvic cavity."
+        "term": "Muscle Tissue",
+        "definition": "Composed of cells that have the ability to contract and generate force for movement."
     },
     {
-        "term": "Cardiovascular System",
-        "definition": "Transports nutrients, chemical messengers, gases, and wastes in blood.\nMajor organs: heart and blood vessels"
+        "term": "Nervous Tissue",
+        "definition": "Contains neurons and neuroglia; responsible for transmitting nerve impulses."
     },
     {
-        "term": "Cranial Cavity",
-        "definition": "The cavity that contains the brain and is continuous with the vertebral canal that contains the spinal cord."
+        "term": "Intercellular Junctions",
+        "definition": "Structures that connect the cell membranes of adjacent cells, such as tight junctions, desmosomes, and gap junctions."
     },
     {
-        "term": "Diaphragm",
-        "definition": "A muscle that separates the thoracic cavity from the abdominopelvic cavity."
+        "term": "Tight Junction",
+        "definition": "A type of intercellular junction where adjacent cell membranes fuse, preventing the passage of substances between cells."
     },
     {
-        "term": "Digestive System",
-        "definition": "Breaks down food into units that can be absorbed into the blood; eliminates wastes and non-digestible fiber in food.\nMajor organs: mouth, salivary glands, pharynx, esophagus, stomach, intestines, pancreas, liver, gallbladder"
+        "term": "Desmosome",
+        "definition": "A type of intercellular junction that acts like a 'spot weld' to hold cells together, providing mechanical strength."
     },
     {
-        "term": "Endocrine System",
-        "definition": "Controls cell function with hormones; helps control body homeostasis.\nMajor organs: hypothalamus, pituitary gland, pineal gland, thymus, thyroid gland, pancreas, adrenal glands, ovaries, testes"
+        "term": "Gap Junction",
+        "definition": "An intercellular junction with tubular channels that allow direct communication between the cytoplasm of adjacent cells."
     },
     {
-        "term": "Epigastric Region",
-        "definition": "The upper central region of the abdominopelvic cavity, above the stomach."
+        "term": "Simple Squamous Epithelium",
+        "definition": "A single layer of flat cells that facilitates diffusion and filtration; found in air sacs of lungs and capillaries."
     },
     {
-        "term": "Hypogastric (Pubic) Region",
-        "definition": "The lower central region of the abdominopelvic cavity, below the stomach."
+        "term": "Simple Cuboidal Epithelium",
+        "definition": "A single layer of cube-shaped cells involved in secretion and absorption; lines kidney tubules and glands."
     },
     {
-        "term": "Integumentary System",
-        "definition": "Provides a protective barrier for the body and aids in production of vitamin D; eliminates some waste; contains sensory receptors for pain, touch, and temperature; fat provides insulation.\nMajor organs: skin and skin structures (hair, nails, sweat glands, oil glands)"
+        "term": "Simple Columnar Epithelium",
+        "definition": "A single layer of elongated cells; functions in protection, secretion, and absorption; lines the uterus and digestive tract."
     },
     {
-        "term": "Left Hypochondriac Region",
-        "definition": "The upper left region of the abdominopelvic cavity, beneath the ribs."
+        "term": "Microvilli",
+        "definition": "Tiny, finger-like projections on epithelial cells that increase surface area for absorption."
     },
     {
-        "term": "Left Inguinal (Iliac) Region",
-        "definition": "The lower left region of the abdominopelvic cavity, near the groin."
+        "term": "Goblet Cell",
+        "definition": "A specialized epithelial cell that secretes mucus to protect and lubricate surfaces."
     },
     {
-        "term": "Left Lumbar Region",
-        "definition": "The middle left region of the abdominopelvic cavity, near the loins."
+        "term": "Pseudostratified Columnar Epithelium",
+        "definition": "Appears layered due to nuclei at different levels but is a single layer; often ciliated; lines respiratory passages."
     },
     {
-        "term": "Left Lower Quadrant (LLQ)",
-        "definition": "The lower left quadrant of the abdominopelvic cavity."
+        "term": "Stratified Squamous Epithelium",
+        "definition": "Multiple layers of flat cells that protect underlying tissues; forms the outer layer of skin and lines cavities."
     },
     {
-        "term": "Left Upper Quadrant (LUQ)",
-        "definition": "The upper left quadrant of the abdominopelvic cavity."
+        "term": "Keratinization",
+        "definition": "The process where cells fill with keratin protein, die, and form a tough, protective layer."
     },
     {
-        "term": "Lymphatic and Immune System",
-        "definition": "Returns fluid to blood; carries dietary lipids from GI tract to blood; detects and eliminates disease-causing organisms.\nMajor organs: lymphatic vessels, lymph nodes, spleen, thymus, bone marrow, tonsils"
+        "term": "Transitional Epithelium",
+        "definition": "Specialized to stretch; lines the urinary bladder and ureters."
     },
     {
-        "term": "Mediastinum",
-        "definition": "A central area within the thoracic cavity that extends from the neck to the diaphragm and from the sternum to the vertebral column. It contains the heart, thymus gland, esophagus, trachea, blood vessels, and bronchi."
+        "term": "Glandular Epithelium",
+        "definition": "Composed of cells specialized to produce and secrete substances into ducts or body fluids."
     },
     {
-        "term": "Muscular System",
-        "definition": "Moves bones and maintains posture; major source of body heat.\nMajor organs: skeletal muscles and tendons"
+        "term": "Exocrine Gland",
+        "definition": "A gland that secretes its products into ducts that open onto surfaces."
     },
     {
-        "term": "Nervous System",
-        "definition": "Controls cell function with electrical signals; helps control body homeostasis.\nMajor organs: brain, spinal cord, nerves, and special sense organs"
+        "term": "Endocrine Gland",
+        "definition": "A gland that secretes hormones directly into the bloodstream."
     },
     {
-        "term": "Parietal Layer",
-        "definition": "The layer of the serous membrane that attaches to and covers the ventral body wall."
+        "term": "Merocrine Gland",
+        "definition": "Secretes products by exocytosis without losing cellular material; includes salivary and sweat glands."
     },
     {
-        "term": "Pelvic Cavity",
-        "definition": "The inferior portion of the abdominopelvic cavity that contains part of the large intestine, rectum, urinary bladder, and reproductive organs."
+        "term": "Apocrine Gland",
+        "definition": "Loses small portions of its cell bodies during secretion; examples include mammary glands."
     },
     {
-        "term": "Pericardial Cavity",
-        "definition": "A small cavity within the thoracic cavity that surrounds the heart."
+        "term": "Holocrine Gland",
+        "definition": "Releases entire cells filled with secretory products; an example is sebaceous glands."
     },
     {
-        "term": "Peritoneal Cavity",
-        "definition": "The cavity within the abdominal cavity that contains most abdominal organs."
+        "term": "Fibroblast",
+        "definition": "The most common type of fixed cell in connective tissue; produces fibers by secreting proteins."
     },
     {
-        "term": "Peritoneum",
-        "definition": "The serous membrane that covers abdominal organs in the peritoneal cavity."
+        "term": "Macrophage",
+        "definition": "A wandering cell specialized for phagocytosis; clears foreign particles from tissues."
     },
     {
-        "term": "Pleural Cavities",
-        "definition": "Two cavities within the thoracic cavity that each contain a lung."
+        "term": "Mast Cell",
+        "definition": "A large cell near blood vessels; releases heparin to prevent blood clotting and histamine to promote inflammation."
     },
     {
-        "term": "Reproductive System",
-        "definition": "Produces gametes and sex hormones; female uterus provides environment for development of fetus.\nMajor organs in male: testes, ductus deferens, penis\nMajor organs in female: ovaries, uterine tubes, uterus, vagina"
+        "term": "Collagen Fiber",
+        "definition": "Thick, thread-like fibers with great tensile strength; found in tendons and ligaments."
     },
     {
-        "term": "Respiratory System",
-        "definition": "Adds oxygen to blood and removes carbon dioxide from blood; produces sound; maintains body fluid pH.\nMajor organs: nose, pharynx (throat), larynx, trachea, bronchi, lungs"
+        "term": "Elastic Fiber",
+        "definition": "Composed of elastin protein; stretchy and flexible fibers found in vocal cords and air passages."
     },
     {
-        "term": "Retroperitoneal",
-        "definition": "Refers to organs located posterior to the peritoneum, including the pancreas, kidneys, adrenal glands, and portions of the large intestine."
+        "term": "Reticular Fiber",
+        "definition": "Thin collagen fibers forming delicate supportive networks in tissues like the spleen."
     },
     {
-        "term": "Right Hypochondriac Region",
-        "definition": "The upper right region of the abdominopelvic cavity, beneath the ribs."
+        "term": "Areolar Connective Tissue",
+        "definition": "Forms delicate, thin membranes; binds skin to underlying organs and fills spaces between muscles."
     },
     {
-        "term": "Right Inguinal (Iliac) Region",
-        "definition": "The lower right region of the abdominopelvic cavity, near the groin."
+        "term": "Adipose Tissue",
+        "definition": "Stores fat, insulates, and cushions organs; found beneath the skin and around kidneys and heart."
     },
     {
-        "term": "Right Lumbar Region",
-        "definition": "The middle right region of the abdominopelvic cavity, near the loins."
+        "term": "Dense Regular Connective Tissue",
+        "definition": "Contains closely packed collagen fibers; forms tendons and ligaments; poor blood supply slows healing."
     },
     {
-        "term": "Right Lower Quadrant (RLQ)",
-        "definition": "The lower right quadrant of the abdominopelvic cavity."
+        "term": "Dense Irregular Connective Tissue",
+        "definition": "Thicker, interwoven collagen fibers; found in the dermis and provides strength in multiple directions."
     },
     {
-        "term": "Right Upper Quadrant (RUQ)",
-        "definition": "The upper right quadrant of the abdominopelvic cavity."
+        "term": "Cartilage",
+        "definition": "A rigid connective tissue providing support and frameworks; cells are chondrocytes in lacunae."
     },
     {
-        "term": "Serous Fluid",
-        "definition": "A clear, watery fluid that prevents friction as the organs move within the ventral body cavity."
+        "term": "Hyaline Cartilage",
+        "definition": "Most common type; has fine collagen fibers; found on ends of bones, nose, and respiratory passages."
     },
     {
-        "term": "Serous Membranes",
-        "definition": "Thin, clear, watery fluid membranes composed of two layers: a visceral layer that covers the organ and a parietal layer that attaches to and covers the ventral body wall. These two layers form one continuous sheet that folds to form a sac."
+        "term": "Elastic Cartilage",
+        "definition": "Contains elastic fibers; provides flexible framework for the external ear and parts of the larynx."
     },
     {
-        "term": "Skeletal System",
-        "definition": "Protects major organs; provides levers and support for body movement; bone marrow contains stem cells that produce blood cells, and is site for maturation of lymphocytes.\nMajor organs: bones and cartilage"
+        "term": "Fibrocartilage",
+        "definition": "Very tough with many collagen fibers; acts as a shock absorber in intervertebral discs and knees."
     },
     {
-        "term": "Thoracic Cavity",
-        "definition": "A space enclosed by the ribs, sternum, and vertebral column. It contains the pericardial cavity and two pleural cavities."
+        "term": "Bone Tissue",
+        "definition": "Most rigid connective tissue; supports and protects; contains mineral salts and collagen."
     },
     {
-        "term": "Thoracic Serous Membranes",
-        "definition": "Includes the pleura (covering the lungs) and the pericardium (covering the heart)."
+        "term": "Osteocyte",
+        "definition": "A mature bone cell located in a lacuna within the bone matrix."
     },
     {
-        "term": "Umbilical Region",
-        "definition": "The central region of the abdominopelvic cavity, surrounding the navel."
+        "term": "Blood",
+        "definition": "Connective tissue composed of cells suspended in plasma; transports substances throughout the body."
     },
     {
-        "term": "Visceral Layer",
-        "definition": "The layer of the serous membrane that covers the organ."
+        "term": "Serous Membrane",
+        "definition": "Lines body cavities not open to the outside; secretes serous fluid for lubrication."
     },
     {
-        "term": "Urinary System",
-        "definition": "Removes nitrogenous wastes; maintains body fluid volume, pH, and electrolyte levels through urine production.\nMajor organs: kidneys, ureters, urinary bladder, urethra"
+        "term": "Mucous Membrane",
+        "definition": "Lines cavities and tubes open to the outside; secretes mucus for protection."
+    },
+    {
+        "term": "Cutaneous Membrane",
+        "definition": "Another term for skin; covers the external surface of the body."
+    },
+    {
+        "term": "Synovial Membrane",
+        "definition": "Composed entirely of connective tissue; lines joint cavities and secretes synovial fluid."
+    },
+    {
+        "term": "Skeletal Muscle Tissue",
+        "definition": "Voluntary muscle attached to bones; striated with multiple nuclei."
+    },
+    {
+        "term": "Smooth Muscle Tissue",
+        "definition": "Involuntary muscle found in walls of hollow organs; spindle-shaped cells without striations."
+    },
+    {
+        "term": "Cardiac Muscle Tissue",
+        "definition": "Found only in the heart; involuntary, striated, branched cells connected by intercalated discs."
+    },
+    {
+        "term": "Neuron",
+        "definition": "A nerve cell that senses changes and transmits nerve impulses; composed of dendrites, a cell body, and an axon."
+    },
+    {
+        "term": "Neuroglia",
+        "definition": "Supporting cells in nervous tissue; nourish neurons and help with signal transmission."
     }
 ]
+```

@@ -68,19 +68,19 @@ function showNextCard(cards, currentIndex) {
 }
 
 // Event listeners for button clicks
-sgOneButton.addEventListener('click', () => {
-    loadFlashcards('ch-one-study-guide.json');
-    setActiveButton(sgOneButton);
-});
+// sgOneButton.addEventListener('click', () => {
+//     loadFlashcards('ch-one-study-guide.json');
+//     setActiveButton(sgOneButton);
+// });
 
 sectionOneButton.addEventListener('click', () => {
     loadFlashcards('flashcards-section-one.json');
     setActiveButton(sectionOneButton);
 });
 
-sectionTwoButton.addEventListener('click', () => {
-    loadFlashcards('flashcards-section-two.json');
-    setActiveButton(sectionTwoButton);
+//sectionTwoButton.addEventListener('click', () => {
+//  loadFlashcards('flashcards-section-two.json');
+//  setActiveButton(sectionTwoButton);
 });
 
 // Function to set the active button

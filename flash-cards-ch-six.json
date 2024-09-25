@@ -1,0 +1,230 @@
+[
+    {
+        "term": "Integumentary System",
+        "definition": "The skin and its accessory structures, including hair, nails, sensory receptors, arrector pili muscles, and glands."
+    },
+    {
+        "term": "Skin",
+        "definition": "The largest organ of the body by weight, composed of the epidermis and dermis layers."
+    },
+    {
+        "term": "Epidermis",
+        "definition": "The outer layer of the skin made up of stratified squamous epithelium; it lacks blood vessels."
+    },
+    {
+        "term": "Dermis",
+        "definition": "The inner layer of the skin consisting of connective tissue with collagen and elastic fibers, smooth muscle, nervous tissue, and blood vessels."
+    },
+    {
+        "term": "Subcutaneous Layer (Hypodermis)",
+        "definition": "A layer beneath the skin composed of areolar and adipose tissue that binds the skin to underlying organs."
+    },
+    {
+        "term": "Stratum Basale",
+        "definition": "The deepest layer of the epidermis containing dividing cells that give rise to new keratinocytes."
+    },
+    {
+        "term": "Keratinization",
+        "definition": "The process by which epidermal cells fill with keratin protein, harden, and die as they move toward the skin surface."
+    },
+    {
+        "term": "Stratum Corneum",
+        "definition": "The outermost layer of the epidermis composed of dead, flattened, keratinized cells."
+    },
+    {
+        "term": "Melanocytes",
+        "definition": "Specialized cells in the epidermis that produce the pigment melanin."
+    },
+    {
+        "term": "Melanin",
+        "definition": "A dark pigment that provides skin color and absorbs ultraviolet radiation to protect underlying cells."
+    },
+    {
+        "term": "Dendritic Cells (Langerhans Cells)",
+        "definition": "Phagocytic cells in the epidermis that help protect the skin from pathogens by initiating immune responses."
+    },
+    {
+        "term": "Tactile Cells (Merkel Cells)",
+        "definition": "Cells in the stratum basale that respond to light touch sensations."
+    },
+    {
+        "term": "Dermal Papillae",
+        "definition": "Projections of the dermis that interlock with the epidermis, increasing surface area for nutrient exchange and forming fingerprints."
+    },
+    {
+        "term": "Hair Follicle",
+        "definition": "A tubelike depression in the skin where hair develops from epidermal stem cells."
+    },
+    {
+        "term": "Sebaceous Glands",
+        "definition": "Holocrine glands associated with hair follicles that secrete sebum to keep hair and skin soft and waterproof."
+    },
+    {
+        "term": "Sebum",
+        "definition": "An oily mixture of fatty material and cellular debris produced by sebaceous glands."
+    },
+    {
+        "term": "Sweat (Sudoriferous) Glands",
+        "definition": "Exocrine glands in the skin that secrete sweat to help regulate body temperature and excrete waste."
+    },
+    {
+        "term": "Merocrine (Eccrine) Sweat Glands",
+        "definition": "The most numerous sweat glands that respond to elevated body temperature and secrete a watery sweat."
+    },
+    {
+        "term": "Apocrine Sweat Glands",
+        "definition": "Glands that become active at puberty and secrete sweat during emotional stress, pain, or sexual arousal."
+    },
+    {
+        "term": "Ceruminous Glands",
+        "definition": "Modified apocrine sweat glands in the ear canal that secrete cerumen (ear wax)."
+    },
+    {
+        "term": "Mammary Glands",
+        "definition": "Modified sweat glands in the breasts that secrete milk during pregnancy and lactation."
+    },
+    {
+        "term": "Arrector Pili Muscle",
+        "definition": "A bundle of smooth muscle fibers attached to each hair follicle that contracts to cause goosebumps."
+    },
+    {
+        "term": "Nail",
+        "definition": "A protective covering on the ends of fingers and toes composed of keratinized epidermal cells."
+    },
+    {
+        "term": "Lunula",
+        "definition": "The whitish, half-moon-shaped region at the base of the nail plate where cell division occurs."
+    },
+    {
+        "term": "Callus",
+        "definition": "A thickened area of skin that forms in response to repeated friction or pressure."
+    },
+    {
+        "term": "Albinism",
+        "definition": "An inherited condition characterized by a lack of melanin pigment in the skin, hair, and eyes."
+    },
+    {
+        "term": "Cyanosis",
+        "definition": "A bluish discoloration of the skin resulting from low oxygen concentration in the blood."
+    },
+    {
+        "term": "Dermatology",
+        "definition": "The medical specialty focused on diagnosing and treating skin disorders."
+    },
+    {
+        "term": "Vitamin D Synthesis",
+        "definition": "A process initiated in the skin where sunlight converts a precursor molecule into inactive vitamin D, later activated by the liver and kidneys."
+    },
+    {
+        "term": "Hyperthermia",
+        "definition": "An abnormally high body temperature, often caused by prolonged exposure to heat."
+    },
+    {
+        "term": "Hypothermia",
+        "definition": "An abnormally low body temperature resulting from prolonged exposure to cold."
+    },
+    {
+        "term": "Inflammation",
+        "definition": "A tissue response to injury or stress, characterized by redness, heat, swelling, and pain."
+    },
+    {
+        "term": "Granulation",
+        "definition": "New connective tissue and microscopic blood vessels that form on the surfaces of a wound during the healing process."
+    },
+    {
+        "term": "First-Degree Burn (Superficial Partial-Thickness)",
+        "definition": "A burn affecting only the epidermis, causing redness and pain without blistering."
+    },
+    {
+        "term": "Second-Degree Burn (Deep Partial-Thickness)",
+        "definition": "A burn damaging the epidermis and part of the dermis, leading to blistering and possible scarring."
+    },
+    {
+        "term": "Third-Degree Burn (Full-Thickness)",
+        "definition": "A severe burn destroying the epidermis, dermis, and accessory structures, often requiring skin grafts."
+    },
+    {
+        "term": "Rule of Nines",
+        "definition": "A method used to estimate the percentage of body surface area affected by burns."
+    },
+    {
+        "term": "Pressure Ulcer (Decubitus Ulcer)",
+        "definition": "An injury to the skin and underlying tissue resulting from prolonged pressure on the skin."
+    },
+    {
+        "term": "Keratin",
+        "definition": "A tough, fibrous protein accumulating in epidermal cells during keratinization, making the skin waterproof."
+    },
+    {
+        "term": "Desmosomes",
+        "definition": "Specialized junctions that fasten cells together in strong sheets within the epidermis."
+    },
+    {
+        "term": "Stratum Lucidum",
+        "definition": "A translucent layer of the epidermis found only in thick skin areas like the palms and soles."
+    },
+    {
+        "term": "Eumelanin",
+        "definition": "A brownish-black pigment contributing to dark hair and skin color."
+    },
+    {
+        "term": "Pheomelanin",
+        "definition": "A reddish-yellow pigment found in certain areas like the lips and responsible for red hair."
+    },
+    {
+        "term": "Hair Shaft",
+        "definition": "The portion of hair that extends above the skin surface, composed of dead, keratinized cells."
+    },
+    {
+        "term": "Hair Papilla",
+        "definition": "A projection of connective tissue at the base of the hair follicle containing blood vessels that nourish growing hair."
+    },
+    {
+        "term": "Cutaneous Carcinoma",
+        "definition": "A type of skin cancer originating from epithelial cells."
+    },
+    {
+        "term": "Cutaneous Melanoma",
+        "definition": "A type of skin cancer arising from melanocytes, often more serious due to its ability to spread."
+    },
+    {
+        "term": "Basement Membrane",
+        "definition": "A thin, nonliving layer anchoring the epidermis to the dermis."
+    },
+    {
+        "term": "Dermis Layers",
+        "definition": "The papillary layer (areolar connective tissue) and the reticular layer (dense irregular connective tissue) of the dermis."
+    },
+    {
+        "term": "Hair Matrix",
+        "definition": "The region of dividing cells in the hair bulb responsible for hair growth."
+    },
+    {
+        "term": "Acne",
+        "definition": "A skin condition resulting from excess sebum secretion clogging sebaceous glands, leading to inflammation."
+    },
+    {
+        "term": "Cerumen",
+        "definition": "Ear wax produced by ceruminous glands, helping to prevent entry of foreign substances into the ear canal."
+    },
+    {
+        "term": "Skin Functions",
+        "definition": "Protection, sensation, vitamin D synthesis, body temperature regulation, and excretion."
+    },
+    {
+        "term": "Age Spots (Liver Spots)",
+        "definition": "Pigmented spots on the skin due to oxidation of fats in secretory cells, common in aging skin."
+    },
+    {
+        "term": "Sweat",
+        "definition": "A fluid composed mainly of water and salts, secreted by sweat glands to help cool the body and excrete waste."
+    },
+    {
+        "term": "Alopecia",
+        "definition": "Hair loss resulting from genetics, hormonal changes, medical conditions, or aging."
+    },
+    {
+        "term": "Goosebumps",
+        "definition": "The raised areas on the skin caused by contraction of arrector pili muscles attached to hair follicles."
+    }
+]

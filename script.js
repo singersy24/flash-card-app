@@ -67,11 +67,11 @@ function showNextCard(cards, currentIndex) {
     cardRevealed = false;
 }
 
-// Event listeners for button clicks
-// sgOneButton.addEventListener('click', () => {
-//     loadFlashcards('flashcards-ch-six.json');
-//     setActiveButton(sgOneButton);
-// });
+ Event listeners for button clicks
+ sgOneButton.addEventListener('click', () => {
+     loadFlashcards('flashcards-ch-six.json');
+     setActiveButton(sgOneButton);
+ });
 
 sectionOneButton.addEventListener('click', () => {
     loadFlashcards('flashcards-section-one.json');

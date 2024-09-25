@@ -69,7 +69,7 @@ function showNextCard(cards, currentIndex) {
 
 // Event listeners for button clicks
 // sgOneButton.addEventListener('click', () => {
-//     loadFlashcards('ch-one-study-guide.json');
+//     loadFlashcards('flashcards-ch-six.json');
 //     setActiveButton(sgOneButton);
 // });
 

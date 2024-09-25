@@ -67,7 +67,7 @@ function showNextCard(cards, currentIndex) {
     cardRevealed = false;
 }
 
- Event listeners for button clicks
+// Event listeners for button clicks
  sgOneButton.addEventListener('click', () => {
      loadFlashcards('flashcards-ch-six.json');
      setActiveButton(sgOneButton);

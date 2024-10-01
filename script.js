@@ -90,9 +90,9 @@ labSevenButton.addEventListener('click', () => {
     setActiveButton(labSevenButton);
 });
 
-labSevenButton.addEventListener('click', () => {
+labEightButton.addEventListener('click', () => {
     loadFlashcards('flashcards-lab-eight.json');
-    setActiveButton(labSevenButton);
+    setActiveButton(labEightButton);
 });
 
 // Function to set the active button

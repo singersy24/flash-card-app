@@ -83,7 +83,7 @@ sectionOneButton.addEventListener('click', () => {
 
 sectionTwoButton.addEventListener('click', () => {
   loadFlashcards('flashcards-ch-eight.json');
-  setActiveButton(sectionTwoButton);
+  setActiveButton(chEightButton);
 });
 
 labSevenButton.addEventListener('click', () => {

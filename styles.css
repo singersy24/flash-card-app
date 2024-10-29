@@ -125,7 +125,7 @@ body {
     .dark-mode .lab-8-button,
     .dark-mode .lab-9-button,
     .dark-mode .section-one-button,
-    .dark-mode .section-two-button {
+    .dark-mode .ch-8-button {
         background-color: #555; /* Darker button background in dark mode */
         color: #f4f4f4; /* Light text color in dark mode */
     }
@@ -137,7 +137,7 @@ body {
     .lab-8-button,
     .lab-9-button,
     .section-one-button,
-    .section-two-button {
+    .ch-8-button {
         margin: 0 5px;
         flex: 1;
         text-align: center;

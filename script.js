@@ -91,11 +91,6 @@ labSevenButton.addEventListener('click', () => {
     setActiveButton(labSevenButton);
 });
 
-labEightButton.addEventListener('click', () => {
-    loadFlashcards('flashcards-lab-eight.json');
-    setActiveButton(labEightButton);
-});
-
 labNineButton.addEventListener('click', () => {
     loadFlashcards('flashcards-lab-nine.json');
     setActiveButton(labNineButton);

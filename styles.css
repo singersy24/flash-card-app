@@ -57,7 +57,7 @@ body {
 .dark-mode-toggle,
 .reset-button,
 .ch-9-button,
-.section-one-button,
+.ch-10-button,
 .ch-8-button {
     background-color: #888;
     color: white;
@@ -118,7 +118,7 @@ body {
     .dark-mode .dark-mode-toggle,
     .dark-mode .reset-button,
     .dark-mode .ch-9-button,
-    .dark-mode .section-one-button,
+    .dark-mode .ch-10-button,
     .dark-mode .ch-8-button {
         background-color: #555; /* Darker button background in dark mode */
         color: #f4f4f4; /* Light text color in dark mode */
@@ -127,7 +127,7 @@ body {
     .dark-mode-toggle,
     .reset-button,
     .ch-9-button,
-    .section-one-button,
+    .ch-10-button,
     .ch-8-button {
         margin: 0 5px;
         flex: 1;

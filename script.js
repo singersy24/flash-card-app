@@ -18,7 +18,7 @@ const reviewingLabel = document.getElementById('reviewing-label');
 const chEightButton = document.querySelector('.ch-8-button');
 const chNineButton = document.querySelector('.ch-9-button');
 const chTenButton = document.querySelector('.ch-10-button');
-const labElevenButton = document.querySelector('.ch-11-button');
+const labElevenButton = document.querySelector('.lab-11-button');
 
 
 

@@ -1,1 +1,170 @@
-
+[
+    {
+        "term": "Neuron",
+        "definition": "A nerve cell; the basic building block of the nervous system responsible for transmitting information through electrical and chemical signals."
+    },
+    {
+        "term": "Neuroglia",
+        "definition": "Supporting cells in the nervous system that provide structure, nutrition, and insulation to neurons."
+    },
+    {
+        "term": "Central Nervous System (CNS)",
+        "definition": "Consists of the brain and spinal cord; integrates sensory information and coordinates body functions."
+    },
+    {
+        "term": "Peripheral Nervous System (PNS)",
+        "definition": "Composed of nerves outside the CNS, including sensory and motor divisions that connect the CNS to limbs and organs."
+    },
+    {
+        "term": "Sensory Neuron",
+        "definition": "Afferent neurons that carry sensory information from receptors to the CNS."
+    },
+    {
+        "term": "Motor Neuron",
+        "definition": "Efferent neurons that carry impulses from the CNS to effectors like muscles and glands."
+    },
+    {
+        "term": "Interneuron",
+        "definition": "Neurons that relay signals between sensory and motor neurons within the CNS."
+    },
+    {
+        "term": "Synapse",
+        "definition": "A junction where information is transmitted from one neuron to another or to an effector cell."
+    },
+    {
+        "term": "Neurotransmitter",
+        "definition": "Chemical messenger that transmits signals across a synapse from one neuron to a target cell."
+    },
+    {
+        "term": "Resting Membrane Potential",
+        "definition": "The voltage difference across the neuron membrane at rest, typically around -70 mV."
+    },
+    {
+        "term": "Action Potential",
+        "definition": "A rapid change in electrical charge across the neuron's membrane, allowing the transmission of a signal."
+    },
+    {
+        "term": "Axon",
+        "definition": "The long extension of a neuron that transmits impulses away from the cell body to other cells."
+    },
+    {
+        "term": "Dendrite",
+        "definition": "Branches of a neuron that receive messages from other neurons and conduct impulses toward the cell body."
+    },
+    {
+        "term": "Myelin",
+        "definition": "Fatty substance that insulates axons, speeding up nerve impulses."
+    },
+    {
+        "term": "Node of Ranvier",
+        "definition": "Gaps in the myelin sheath of axons where action potentials are regenerated, enabling saltatory conduction."
+    },
+    {
+        "term": "Saltatory Conduction",
+        "definition": "Rapid transmission of a nerve impulse along a myelinated axon, jumping from one node of Ranvier to the next."
+    },
+    {
+        "term": "Astrocyte",
+        "definition": "Star-shaped glial cell in the CNS that supports neurons and helps form the blood-brain barrier."
+    },
+    {
+        "term": "Oligodendrocyte",
+        "definition": "Glial cell in the CNS that produces myelin for axons."
+    },
+    {
+        "term": "Schwann Cell",
+        "definition": "Glial cell in the PNS that produces myelin around axons, aiding in nerve regeneration."
+    },
+    {
+        "term": "Microglia",
+        "definition": "Small glial cells in the CNS that act as immune cells, removing debris and pathogens."
+    },
+    {
+        "term": "Ependymal Cell",
+        "definition": "Glial cells lining the ventricles of the brain and central canal of the spinal cord, involved in producing cerebrospinal fluid."
+    },
+    {
+        "term": "Polarization",
+        "definition": "Condition where there is a difference in electrical charge between the inside and outside of a cell membrane."
+    },
+    {
+        "term": "Depolarization",
+        "definition": "Process where the neuron's membrane potential becomes less negative, moving closer to zero."
+    },
+    {
+        "term": "Hyperpolarization",
+        "definition": "When the membrane potential becomes more negative than the resting potential."
+    },
+    {
+        "term": "Refractory Period",
+        "definition": "Period following an action potential when a neuron cannot initiate another action potential."
+    },
+    {
+        "term": "Absolute Refractory Period",
+        "definition": "Time during which no action potential can be initiated, regardless of the stimulus strength."
+    },
+    {
+        "term": "Relative Refractory Period",
+        "definition": "Time during which a stronger than normal stimulus is needed to elicit an action potential."
+    },
+    {
+        "term": "Excitatory Postsynaptic Potential (EPSP)",
+        "definition": "A postsynaptic potential that depolarizes the neuron, making it more likely to fire an action potential."
+    },
+    {
+        "term": "Inhibitory Postsynaptic Potential (IPSP)",
+        "definition": "A postsynaptic potential that hyperpolarizes the neuron, making it less likely to fire an action potential."
+    },
+    {
+        "term": "Acetylcholine",
+        "definition": "A neurotransmitter involved in muscle contraction and autonomic functions."
+    },
+    {
+        "term": "Dopamine",
+        "definition": "A neurotransmitter involved in reward, motivation, and motor control; associated with Parkinson's disease."
+    },
+    {
+        "term": "Serotonin",
+        "definition": "A neurotransmitter involved in mood regulation, sleep, and appetite."
+    },
+    {
+        "term": "Blood-Brain Barrier",
+        "definition": "A selective barrier formed by astrocytes that protects the CNS from harmful substances in the blood."
+    },
+    {
+        "term": "Convergence",
+        "definition": "Process where multiple neurons synapse onto a single neuron, allowing it to integrate information."
+    },
+    {
+        "term": "Divergence",
+        "definition": "Process where a single neuron synapses onto multiple neurons, allowing one signal to reach multiple targets."
+    },
+    {
+        "term": "Facilitation",
+        "definition": "When repeated stimulation makes a neuron more responsive to subsequent stimulation."
+    },
+    {
+        "term": "Neuronal Pool",
+        "definition": "Groups of interconnected neurons in the CNS that process information together for specific functions."
+    },
+    {
+        "term": "Ganglion",
+        "definition": "A cluster of neuron cell bodies in the peripheral nervous system."
+    },
+    {
+        "term": "Synaptic Cleft",
+        "definition": "The gap between neurons at a synapse across which neurotransmitters are transmitted."
+    },
+    {
+        "term": "Norepinephrine",
+        "definition": "A neurotransmitter involved in arousal, alertness, and the fight-or-flight response."
+    },
+    {
+        "term": "Substance P",
+        "definition": "A neurotransmitter involved in transmitting pain signals in the nervous system."
+    },
+    {
+        "term": "Endorphins",
+        "definition": "Neurotransmitters that act as natural painkillers and mood enhancers."
+    }
+]

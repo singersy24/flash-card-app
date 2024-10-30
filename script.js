@@ -15,12 +15,12 @@ const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
 
 // Event listeners for section buttons
-const sectionOneButton = document.querySelector('.section-one-button');
+const chTenButton = document.querySelector('.ch-10-button');
 const chEightButton = document.querySelector('.ch-8-button');
 const chNineButton = document.querySelector('.ch-9-button');
 
 // Add all section buttons to an array
-const sectionButtons = [sectionOneButton, chEightButton, chNineButton];
+const sectionButtons = [chTenButton, chEightButton, chNineButton];
 
 // Load flashcards from a JSON file
 async function loadFlashcards(section) {
@@ -69,9 +69,9 @@ function showNextCard(cards, currentIndex) {
 
 // Event listeners for button clicks
 
-sectionOneButton.addEventListener('click', () => {
-    loadFlashcards('flashcards-section-one.json');
-    setActiveButton(sectionOneButton);
+chTenButton.addEventListener('click', () => {
+    loadFlashcards('flashcards-ch-ten.json');
+    setActiveButton(chTenButton);
 });
 
 chEightButton.addEventListener('click', () => {

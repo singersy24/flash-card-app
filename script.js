@@ -15,15 +15,12 @@ const incorrectAnswersElement = document.getElementById('incorrect-answers');
 const reviewingLabel = document.getElementById('reviewing-label');
 
 // Event listeners for section buttons
-const sgOneButton = document.querySelector('.sg-one-button');
 const sectionOneButton = document.querySelector('.section-one-button');
-const sectionTwoButton = document.querySelector('.section-two-button');
-const labSevenButton = document.querySelector('.lab-7-button');
 const chEightButton = document.querySelector('.ch-8-button');
-const labNineButton = document.querySelector('.lab-9-button');
+const chNineButton = document.querySelector('.ch-9-button');
 
 // Add all section buttons to an array
-const sectionButtons = [sgOneButton, sectionOneButton, sectionTwoButton, labSevenButton, chEightButton, labNineButton];
+const sectionButtons = [sectionOneButton, chEightButton, chNineButton];
 
 // Load flashcards from a JSON file
 async function loadFlashcards(section) {
@@ -71,10 +68,6 @@ function showNextCard(cards, currentIndex) {
 }
 
 // Event listeners for button clicks
- sgOneButton.addEventListener('click', () => {
-     loadFlashcards('flashcards-ch-six.json');
-     setActiveButton(sgOneButton);
- });
 
 sectionOneButton.addEventListener('click', () => {
     loadFlashcards('flashcards-section-one.json');
@@ -86,14 +79,9 @@ chEightButton.addEventListener('click', () => {
   setActiveButton(chEightButton);
 });
 
-labSevenButton.addEventListener('click', () => {
-    loadFlashcards('flashcards-lab-seven.json');
-    setActiveButton(labSevenButton);
-});
-
-labNineButton.addEventListener('click', () => {
-    loadFlashcards('flashcards-lab-nine.json');
-    setActiveButton(labNineButton);
+chNineButton.addEventListener('click', () => {
+    loadFlashcards('flashcards-ch-nine.json');
+    setActiveButton(chNineButton);
 });
 
 // Function to set the active button

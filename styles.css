@@ -56,10 +56,7 @@ body {
 
 .dark-mode-toggle,
 .reset-button,
-.sg-one-button,
-.lab-7-button,
-.lab-8-button,
-.lab-9-button,
+.ch-9-button,
 .section-one-button,
 .ch-8-button {
     background-color: #888;
@@ -120,10 +117,7 @@ body {
 
     .dark-mode .dark-mode-toggle,
     .dark-mode .reset-button,
-    .dark-mode .sg-one-button,
-    .dark-mode .lab-7-button,
-    .dark-mode .lab-8-button,
-    .dark-mode .lab-9-button,
+    .dark-mode .ch-9-button,
     .dark-mode .section-one-button,
     .dark-mode .ch-8-button {
         background-color: #555; /* Darker button background in dark mode */
@@ -132,10 +126,7 @@ body {
 
     .dark-mode-toggle,
     .reset-button,
-    .sg-one-button,
-    .lab-7-button,
-    .lab-8-button,
-    .lab-9-button,
+    .ch-9-button,
     .section-one-button,
     .ch-8-button {
         margin: 0 5px;

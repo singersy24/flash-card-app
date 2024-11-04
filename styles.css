@@ -59,7 +59,8 @@ body {
 .ch-9-button,
 .ch-10-button,
 .lab-11-button,
-.ch-8-button {
+.ch-8-button,
+.lab-12-button {
     background-color: #888;
     color: white;
     padding: 10px;
@@ -121,7 +122,8 @@ body {
     .dark-mode .ch-9-button,
     .dark-mode .ch-10-button,
     .dark-mode .lab-11-button,
-    .dark-mode .ch-8-button {
+    .dark-mode .ch-8-button,
+    .dark-mode .lab-12-button {
         background-color: #555; /* Darker button background in dark mode */
         color: #f4f4f4; /* Light text color in dark mode */
     }
@@ -131,7 +133,8 @@ body {
     .ch-9-button,
     .ch-10-button,
     .lab-11-button,
-    .ch-8-button {
+    .ch-8-button,
+    .lab-12-button {
         margin: 0 5px;
         flex: 1;
         text-align: center;

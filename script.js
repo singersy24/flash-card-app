@@ -19,11 +19,10 @@ const chEightButton = document.querySelector('.ch-8-button');
 const chNineButton = document.querySelector('.ch-9-button');
 const chTenButton = document.querySelector('.ch-10-button');
 const labElevenButton = document.querySelector('.lab-11-button');
-
-
+const labTwelveButton = document.querySelector('.lab-12-button');
 
 // Add all section buttons to an array
-const sectionButtons = [chTenButton, chEightButton, chNineButton, labElevenButton];
+const sectionButtons = [chTenButton, chEightButton, chNineButton, labElevenButton, labTwelveButton];
 
 // Load flashcards from a JSON file
 async function loadFlashcards(section) {
@@ -90,6 +89,11 @@ chTenButton.addEventListener('click', () => {
 labElevenButton.addEventListener('click', () => {
   loadFlashcards('flashcards-lab-eleven.json');
   setActiveButton(labElevenButton);
+});
+
+labTwelveButton.addEventListener('click', () => {
+    loadFlashcards('flashcards-lab-twelve.json'); // Assuming you have a JSON file for Lab 12 cards
+    setActiveButton(labTwelveButton);
 });
 
 // Function to set the active button

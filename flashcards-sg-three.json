@@ -1,51 +1,51 @@
 [
     {
-        "term": "Joint between adjacent vertebrae",
-        "definition": "A cartilaginous joint known as an intervertebral disc, allowing slight movement and acting as a cushion."
+        "term": "A cartilaginous joint known as an intervertebral disc, allowing slight movement and acting as a cushion.",
+        "definition": "Joint between adjacent vertebrae"
     },
     {
-        "term": "The source of oxygen and nutrients for articular cartilage",
-        "definition": "Synovial fluid provides oxygen and nutrients to articular cartilage, as cartilage lacks its own blood supply."
+        "term": "Synovial fluid provides oxygen and nutrients to articular cartilage, as cartilage lacks its own blood supply.",
+        "definition": "The source of oxygen and nutrients for articular cartilage"
     },
     {
-        "term": "Reinforces a joint capsule",
-        "definition": "Ligaments and muscles surrounding a joint provide reinforcement and stability to the joint capsule."
+        "term": "Ligaments and muscles surrounding a joint.",
+        "definition": "Reinforces a joint capsule"
     },
     {
-        "term": "Coracohumeral ligament",
-        "definition": "A ligament in the shoulder joint that helps stabilize and support the joint, connecting the coracoid process to the humerus."
+        "term": "A ligament in the shoulder joint that helps stabilize and support the joint, connecting the coracoid process to the humerus.",
+        "definition": "Coracohumeral ligament"
     },
     {
-        "term": "Largest and most complex synovial joint",
-        "definition": "The knee joint, which allows complex movement and is stabilized by various ligaments and cartilage."
+        "term": "The knee joint",
+        "definition": "Largest and most complex synovial joint"
     },
     {
         "term": "Radial collateral ligament",
         "definition": "A ligament located in the elbow that stabilizes the lateral side of the joint."
     },
     {
-        "term": "A function of muscles",
-        "definition": "Muscles generate movement, maintain posture, stabilize joints, and produce heat."
+        "term": "Muscles generate movement, maintain posture, stabilize joints, and produce heat.",
+        "definition": "A function of muscles"
     },
     {
         "term": "The striated appearance",
         "definition": "Characteristic banded pattern of skeletal and cardiac muscle due to the alignment of sarcomeres."
     },
     {
-        "term": "An aponeurosis is",
-        "definition": "A flat, broad tendon that connects muscles to the parts they move or stabilize."
+        "term": "A flat, broad tendon that connects muscles to the parts they move or stabilize.",
+        "definition": "An aponeurosis is"
     },
     {
-        "term": "Skeletal muscle cells compared to smooth muscle cells",
-        "definition": "Skeletal muscle cells are striated, multinucleated, and voluntary, while smooth muscle cells are non-striated, uninucleated, and involuntary."
+        "term": "Skeletal muscle cells are striated, multinucleated, and voluntary, while smooth muscle cells are non-striated, uninucleated, and involuntary.",
+        "definition": "Skeletal muscle cells compared to smooth muscle cells"
     },
     {
         "term": "Muscle fiber",
         "definition": "A single muscle cell, which is long, cylindrical, and multinucleated in skeletal muscle."
     },
     {
-        "term": "Cross-bridges",
-        "definition": "Connections formed between actin and myosin filaments during muscle contraction, allowing force generation."
+        "term": "Cross-bridges"",
+        "definition": "Connections formed between actin and myosin filaments during muscle contraction, allowing force generation.
     },
     {
         "term": "Motor end plate",
@@ -72,16 +72,16 @@
         "definition": "A state of sustained muscle contraction with brief relaxation periods, occurring with less frequent stimuli."
     },
     {
-        "term": "A function of the nervous system",
-        "definition": "The nervous system is responsible for sensory input, integration, and motor output."
+        "term": "The nervous system is responsible for sensory input, integration, and motor output.",
+        "definition": "A function of the nervous system"
     },
     {
         "term": "Unipolar neurons",
         "definition": "Neurons with a single process that branches into two, primarily involved in sensory functions."
     },
     {
-        "term": "The function of sensory receptors",
-        "definition": "Sensory receptors detect changes in the environment and relay information to the nervous system."
+        "term": "Sensory receptors detect changes in the environment and relay information to the nervous system.",
+        "definition": "The function of sensory receptors"
     },
     {
         "term": "Guillain-Barre syndrome",
@@ -96,8 +96,8 @@
         "definition": "Neurons with one axon and multiple dendrites, the most common neuron type in the central nervous system."
     },
     {
-        "term": "Presynaptic neurons release neurotransmitters",
-        "definition": "Neurotransmitters are released by presynaptic neurons at synaptic terminals to communicate with postsynaptic cells."
+        "term": "Neurotransmitters are released by presynaptic neurons at synaptic terminals to communicate with postsynaptic cells.",
+        "definition": "Presynaptic neurons release neurotransmitters"
     },
     {
         "term": "Voltage-gated Na+ channels open",
@@ -116,23 +116,23 @@
         "definition": "The process of returning a depolarized cell membrane back to its resting potential."
     },
     {
-        "term": "The correct sequence of events that occurs along an axon after the membrane reaches threshold",
-        "definition": "1) Depolarization, 2) Action potential propagation, 3) Repolarization, and 4) Return to resting state."
+        "term": "1) Depolarization, 2) Action potential propagation, 3) Repolarization, and 4) Return to resting state.",
+        "definition": "The correct sequence of events that occurs along an axon after the membrane reaches threshold"
     },
     {
-        "term": "Modified amino acids",
-        "definition": "Neurotransmitters derived from amino acids, such as dopamine and serotonin."
+        "term": "Neurotransmitters derived from amino acids, such as dopamine and serotonin.",
+        "definition": "Modified amino acids"
     },
     {
         "term": "Reuptake",
         "definition": "The process by which neurotransmitters are absorbed back into the presynaptic neuron after transmission."
     },
     {
-        "term": "Decreases the membrane permeability of nerve fibers to sodium",
-        "definition": "A mechanism by which nerve excitability is reduced, often through drugs or anesthetics that block sodium channels."
+        "term": "A mechanism by which nerve excitability is reduced, often through drugs or anesthetics that block sodium channels.",
+        "definition": "Decreases the membrane permeability of nerve fibers to sodium"
     },
     {
-        "term": "Neurotransmitter is most likely released when a person uses a drug that creates a sense of well-being",
-        "definition": "Dopamine is commonly released, associated with pleasure and reward sensations."
+        "term": "Dopamine",
+        "definition": "Neurotransmitter that creates a sense of well-being"
     }
 ]

@@ -18,11 +18,12 @@ const reviewingLabel = document.getElementById('reviewing-label');
 const chEightButton = document.querySelector('.ch-8-button');
 const chNineButton = document.querySelector('.ch-9-button');
 const chTenButton = document.querySelector('.ch-10-button');
+const sgThreeButton = document.querySelector('.sg-3-button');
 const labElevenButton = document.querySelector('.lab-11-button');
 const labTwelveButton = document.querySelector('.lab-12-button');
 
 // Add all section buttons to an array
-const sectionButtons = [chTenButton, chEightButton, chNineButton, labElevenButton, labTwelveButton];
+const sectionButtons = [chTenButton, chEightButton, chNineButton, labElevenButton, labTwelveButton, sgThreeButton];
 
 // Load flashcards from a JSON file
 async function loadFlashcards(section) {
@@ -84,6 +85,11 @@ chNineButton.addEventListener('click', () => {
 chTenButton.addEventListener('click', () => {
     loadFlashcards('flashcards-ch-ten.json');
     setActiveButton(chTenButton);
+});
+
+sgThreeButton.addEventListener('click', () => {
+    loadFlashcards('flashcards-sg-three.json');
+    setActiveButton(sgThreeButton);
 });
 
 labElevenButton.addEventListener('click', () => {

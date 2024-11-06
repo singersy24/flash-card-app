@@ -59,6 +59,7 @@ body {
 .ch-9-button,
 .ch-10-button,
 .lab-11-button,
+.sg-3-button,
 .ch-8-button,
 .lab-12-button {
     background-color: #888;
@@ -121,6 +122,7 @@ body {
     .dark-mode .reset-button,
     .dark-mode .ch-9-button,
     .dark-mode .ch-10-button,
+    .dark-mode .sg-3-button,
     .dark-mode .lab-11-button,
     .dark-mode .ch-8-button,
     .dark-mode .lab-12-button {
@@ -133,6 +135,7 @@ body {
     .ch-9-button,
     .ch-10-button,
     .lab-11-button,
+    .sg-3-button,
     .ch-8-button,
     .lab-12-button {
         margin: 0 5px;

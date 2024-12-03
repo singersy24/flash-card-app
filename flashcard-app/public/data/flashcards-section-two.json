@@ -1,0 +1,206 @@
+[
+    {
+        "term": "Tissue",
+        "definition": "A group of cells that are similar in structure and perform a common function."
+    },
+    {
+        "term": "Histology",
+        "definition": "The microscopic study of the structure and function of tissues."
+    },
+    {
+        "term": "Epithelial Tissue",
+        "definition": "Covers body surfaces, lines internal organs and cavities, and forms glands."
+    },
+    {
+        "term": "Connective Tissue",
+        "definition": "Supports, binds, and protects other tissues and organs; includes bone, blood, and cartilage."
+    },
+    {
+        "term": "Muscle Tissue",
+        "definition": "Composed of cells that have the ability to contract and generate force for movement."
+    },
+    {
+        "term": "Nervous Tissue",
+        "definition": "Contains neurons and neuroglia; responsible for transmitting nerve impulses."
+    },
+    {
+        "term": "Intercellular Junctions",
+        "definition": "Structures that connect the cell membranes of adjacent cells, such as tight junctions, desmosomes, and gap junctions."
+    },
+    {
+        "term": "Tight Junction",
+        "definition": "A type of intercellular junction where adjacent cell membranes fuse, preventing the passage of substances between cells."
+    },
+    {
+        "term": "Desmosome",
+        "definition": "A type of intercellular junction that acts like a 'spot weld' to hold cells together, providing mechanical strength."
+    },
+    {
+        "term": "Gap Junction",
+        "definition": "An intercellular junction with tubular channels that allow direct communication between the cytoplasm of adjacent cells."
+    },
+    {
+        "term": "Simple Squamous Epithelium",
+        "definition": "A single layer of flat cells that facilitates diffusion and filtration; found in air sacs of lungs and capillaries."
+    },
+    {
+        "term": "Simple Cuboidal Epithelium",
+        "definition": "A single layer of cube-shaped cells involved in secretion and absorption; lines kidney tubules and glands."
+    },
+    {
+        "term": "Simple Columnar Epithelium",
+        "definition": "A single layer of elongated cells; functions in protection, secretion, and absorption; lines the uterus and digestive tract."
+    },
+    {
+        "term": "Microvilli",
+        "definition": "Tiny, finger-like projections on epithelial cells that increase surface area for absorption."
+    },
+    {
+        "term": "Goblet Cell",
+        "definition": "A specialized epithelial cell that secretes mucus to protect and lubricate surfaces."
+    },
+    {
+        "term": "Pseudostratified Columnar Epithelium",
+        "definition": "Appears layered due to nuclei at different levels but is a single layer; often ciliated; lines respiratory passages."
+    },
+    {
+        "term": "Stratified Squamous Epithelium",
+        "definition": "Multiple layers of flat cells that protect underlying tissues; forms the outer layer of skin and lines cavities."
+    },
+    {
+        "term": "Keratinization",
+        "definition": "The process where cells fill with keratin protein, die, and form a tough, protective layer."
+    },
+    {
+        "term": "Transitional Epithelium",
+        "definition": "Specialized to stretch; lines the urinary bladder and ureters."
+    },
+    {
+        "term": "Glandular Epithelium",
+        "definition": "Composed of cells specialized to produce and secrete substances into ducts or body fluids."
+    },
+    {
+        "term": "Exocrine Gland",
+        "definition": "A gland that secretes its products into ducts that open onto surfaces."
+    },
+    {
+        "term": "Endocrine Gland",
+        "definition": "A gland that secretes hormones directly into the bloodstream."
+    },
+    {
+        "term": "Merocrine Gland",
+        "definition": "Secretes products by exocytosis without losing cellular material; includes salivary and sweat glands."
+    },
+    {
+        "term": "Apocrine Gland",
+        "definition": "Loses small portions of its cell bodies during secretion; examples include mammary glands."
+    },
+    {
+        "term": "Holocrine Gland",
+        "definition": "Releases entire cells filled with secretory products; an example is sebaceous glands."
+    },
+    {
+        "term": "Fibroblast",
+        "definition": "The most common type of fixed cell in connective tissue; produces fibers by secreting proteins."
+    },
+    {
+        "term": "Macrophage",
+        "definition": "A wandering cell specialized for phagocytosis; clears foreign particles from tissues."
+    },
+    {
+        "term": "Mast Cell",
+        "definition": "A large cell near blood vessels; releases heparin to prevent blood clotting and histamine to promote inflammation."
+    },
+    {
+        "term": "Collagen Fiber",
+        "definition": "Thick, thread-like fibers with great tensile strength; found in tendons and ligaments."
+    },
+    {
+        "term": "Elastic Fiber",
+        "definition": "Composed of elastin protein; stretchy and flexible fibers found in vocal cords and air passages."
+    },
+    {
+        "term": "Reticular Fiber",
+        "definition": "Thin collagen fibers forming delicate supportive networks in tissues like the spleen."
+    },
+    {
+        "term": "Areolar Connective Tissue",
+        "definition": "Forms delicate, thin membranes; binds skin to underlying organs and fills spaces between muscles."
+    },
+    {
+        "term": "Adipose Tissue",
+        "definition": "Stores fat, insulates, and cushions organs; found beneath the skin and around kidneys and heart."
+    },
+    {
+        "term": "Dense Regular Connective Tissue",
+        "definition": "Contains closely packed collagen fibers; forms tendons and ligaments; poor blood supply slows healing."
+    },
+    {
+        "term": "Dense Irregular Connective Tissue",
+        "definition": "Thicker, interwoven collagen fibers; found in the dermis and provides strength in multiple directions."
+    },
+    {
+        "term": "Cartilage",
+        "definition": "A rigid connective tissue providing support and frameworks; cells are chondrocytes in lacunae."
+    },
+    {
+        "term": "Hyaline Cartilage",
+        "definition": "Most common type; has fine collagen fibers; found on ends of bones, nose, and respiratory passages."
+    },
+    {
+        "term": "Elastic Cartilage",
+        "definition": "Contains elastic fibers; provides flexible framework for the external ear and parts of the larynx."
+    },
+    {
+        "term": "Fibrocartilage",
+        "definition": "Very tough with many collagen fibers; acts as a shock absorber in intervertebral discs and knees."
+    },
+    {
+        "term": "Bone Tissue",
+        "definition": "Most rigid connective tissue; supports and protects; contains mineral salts and collagen."
+    },
+    {
+        "term": "Osteocyte",
+        "definition": "A mature bone cell located in a lacuna within the bone matrix."
+    },
+    {
+        "term": "Blood",
+        "definition": "Connective tissue composed of cells suspended in plasma; transports substances throughout the body."
+    },
+    {
+        "term": "Serous Membrane",
+        "definition": "Lines body cavities not open to the outside; secretes serous fluid for lubrication."
+    },
+    {
+        "term": "Mucous Membrane",
+        "definition": "Lines cavities and tubes open to the outside; secretes mucus for protection."
+    },
+    {
+        "term": "Cutaneous Membrane",
+        "definition": "Another term for skin; covers the external surface of the body."
+    },
+    {
+        "term": "Synovial Membrane",
+        "definition": "Composed entirely of connective tissue; lines joint cavities and secretes synovial fluid."
+    },
+    {
+        "term": "Skeletal Muscle Tissue",
+        "definition": "Voluntary muscle attached to bones; striated with multiple nuclei."
+    },
+    {
+        "term": "Smooth Muscle Tissue",
+        "definition": "Involuntary muscle found in walls of hollow organs; spindle-shaped cells without striations."
+    },
+    {
+        "term": "Cardiac Muscle Tissue",
+        "definition": "Found only in the heart; involuntary, striated, branched cells connected by intercalated discs."
+    },
+    {
+        "term": "Neuron",
+        "definition": "A nerve cell that senses changes and transmits nerve impulses; composed of dendrites, a cell body, and an axon."
+    },
+    {
+        "term": "Neuroglia",
+        "definition": "Supporting cells in nervous tissue; nourish neurons and help with signal transmission."
+    }
+]

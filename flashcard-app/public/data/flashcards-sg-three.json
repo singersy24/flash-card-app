@@ -1,0 +1,138 @@
+[
+    {
+        "term": "A cartilaginous joint known as an intervertebral disc, allowing slight movement and acting as a cushion.",
+        "definition": "Joint between adjacent vertebrae"
+    },
+    {
+        "term": "Synovial fluid provides oxygen and nutrients to articular cartilage, as cartilage lacks its own blood supply.",
+        "definition": "The source of oxygen and nutrients for articular cartilage"
+    },
+    {
+        "term": "Ligaments and muscles surrounding a joint.",
+        "definition": "Reinforces a joint capsule"
+    },
+    {
+        "term": "A ligament in the shoulder joint that helps stabilize and support the joint, connecting the coracoid process to the humerus.",
+        "definition": "Coracohumeral ligament"
+    },
+    {
+        "term": "The knee joint",
+        "definition": "Largest and most complex synovial joint"
+    },
+    {
+        "term": "Radial collateral ligament",
+        "definition": "A ligament located in the elbow that stabilizes the lateral side of the joint."
+    },
+    {
+        "term": "Muscles generate movement, maintain posture, stabilize joints, and produce heat.",
+        "definition": "A function of muscles"
+    },
+    {
+        "term": "The striated appearance",
+        "definition": "Characteristic banded pattern of skeletal and cardiac muscle due to the alignment of sarcomeres."
+    },
+    {
+        "term": "A flat, broad tendon that connects muscles to the parts they move or stabilize.",
+        "definition": "An aponeurosis is"
+    },
+    {
+        "term": "Skeletal muscle cells are striated, multinucleated, and voluntary, while smooth muscle cells are non-striated, uninucleated, and involuntary.",
+        "definition": "Skeletal muscle cells compared to smooth muscle cells"
+    },
+    {
+        "term": "Muscle fiber",
+        "definition": "A single muscle cell, which is long, cylindrical, and multinucleated in skeletal muscle."
+    },
+    {
+        "term": "Cross-bridges",
+        "definition": "Connections formed between actin and myosin filaments during muscle contraction, allowing force generation."
+    },
+    {
+        "term": "Motor end plate",
+        "definition": "The region of a muscle fiber membrane where it interfaces with a motor neuron, containing receptors for neurotransmitters."
+    },
+    {
+        "term": "Muscle fiber contraction",
+        "definition": "The process where muscle fibers shorten in response to stimuli, due to actin and myosin filament interaction."
+    },
+    {
+        "term": "Recruitment",
+        "definition": "The process of activating additional motor units to increase the force of muscle contraction."
+    },
+    {
+        "term": "Latent period",
+        "definition": "The brief time between the application of a stimulus and the beginning of muscle contraction."
+    },
+    {
+        "term": "Fused tetany",
+        "definition": "A sustained muscle contraction without relaxation, resulting from continuous, rapid stimuli."
+    },
+    {
+        "term": "Partial tetany",
+        "definition": "A state of sustained muscle contraction with brief relaxation periods, occurring with less frequent stimuli."
+    },
+    {
+        "term": "The nervous system is responsible for sensory input, integration, and motor output.",
+        "definition": "A function of the nervous system"
+    },
+    {
+        "term": "Unipolar neurons",
+        "definition": "Neurons with a single process that branches into two, primarily involved in sensory functions."
+    },
+    {
+        "term": "Sensory receptors detect changes in the environment and relay information to the nervous system.",
+        "definition": "The function of sensory receptors"
+    },
+    {
+        "term": "Guillain-Barre syndrome",
+        "definition": "An autoimmune disorder where the body's immune system attacks the peripheral nerves, causing muscle weakness and paralysis."
+    },
+    {
+        "term": "Bipolar neurons",
+        "definition": "Neurons with one axon and one dendrite, commonly found in sensory systems such as vision and smell."
+    },
+    {
+        "term": "Multipolar neurons",
+        "definition": "Neurons with one axon and multiple dendrites, the most common neuron type in the central nervous system."
+    },
+    {
+        "term": "Neurotransmitters are released by presynaptic neurons at synaptic terminals to communicate with postsynaptic cells.",
+        "definition": "Presynaptic neurons release neurotransmitters"
+    },
+    {
+        "term": "Voltage-gated Na+ channels open",
+        "definition": "A key event in action potential initiation, allowing sodium ions to enter the neuron and depolarize the membrane."
+    },
+    {
+        "term": "Thick and myelinated",
+        "definition": "Axons that are covered in a myelin sheath, facilitating faster transmission of electrical impulses."
+    },
+    {
+        "term": "Thin and unmyelinated",
+        "definition": "Axons that lack a myelin sheath, resulting in slower electrical impulse conduction."
+    },
+    {
+        "term": "Repolarized",
+        "definition": "The process of returning a depolarized cell membrane back to its resting potential."
+    },
+    {
+        "term": "1) Depolarization, 2) Action potential propagation, 3) Repolarization, and 4) Return to resting state.",
+        "definition": "The correct sequence of events that occurs along an axon after the membrane reaches threshold"
+    },
+    {
+        "term": "Neurotransmitters derived from amino acids, such as dopamine and serotonin.",
+        "definition": "Modified amino acids"
+    },
+    {
+        "term": "Reuptake",
+        "definition": "The process by which neurotransmitters are absorbed back into the presynaptic neuron after transmission."
+    },
+    {
+        "term": "A mechanism by which nerve excitability is reduced, often through drugs or anesthetics that block sodium channels.",
+        "definition": "Decreases the membrane permeability of nerve fibers to sodium"
+    },
+    {
+        "term": "Dopamine",
+        "definition": "Neurotransmitter that creates a sense of well-being"
+    }
+]

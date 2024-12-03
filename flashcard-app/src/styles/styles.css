@@ -1,0 +1,169 @@
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 60px; /* Ensure space for bottom buttons on mobile */
+}
+
+.flashcard {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Center the flashcard horizontally */
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    transition: all 0.3s;
+    font-size: 1.2em;
+    display: none; /* Initially hide all flashcards */
+}
+
+.term {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 20px;
+    display: none; /* Initially hide the term */
+}
+
+.definition {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+.button-container {
+    display: none; /* Initially hide the buttons */
+    margin-top: 20px;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Adjust as needed */
+    display: block;
+    margin: 0 auto;
+}
+
+.dark-mode {
+    background-color: #333 !important;
+    color: #f4f4f4;
+}
+
+.dark-mode .flashcard {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+.dark-mode-toggle,
+.reset-button,
+.ch-9-button,
+.ch-10-button,
+.lab-11-button,
+.sg-3-button,
+.ch-8-button,
+.lab-12-button {
+    background-color: #888;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    font-size: 0.9em;
+    margin: 5px;
+}
+
+/* Active and Inactive Button Styling */
+.active-button {
+    background-color: #007bff; /* Blue color for active button */
+    color: white;
+}
+
+.inactive-button {
+    background-color: #888; /* Gray color for inactive buttons */
+    color: white;
+}
+
+/* Flexbox layout for the counters */
+#counters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#counters > div {
+    text-align: center;
+    margin: 0 10px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    #button-container {
+        position: fixed;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        background-color: #f8f9fa; /* Light background to ensure visibility */
+        border-top: 1px solid #ddd; /* Subtle border to separate from content */
+        z-index: 1000;
+    }
+
+    .dark-mode #button-container {
+        background-color: #444; /* Dark background for the bottom container in dark mode */
+        border-top: 1px solid #333; /* Darker border in dark mode */
+    }
+
+    .dark-mode .dark-mode-toggle,
+    .dark-mode .reset-button,
+    .dark-mode .ch-9-button,
+    .dark-mode .ch-10-button,
+    .dark-mode .sg-3-button,
+    .dark-mode .lab-11-button,
+    .dark-mode .ch-8-button,
+    .dark-mode .lab-12-button {
+        background-color: #555; /* Darker button background in dark mode */
+        color: #f4f4f4; /* Light text color in dark mode */
+    }
+
+    .dark-mode-toggle,
+    .reset-button,
+    .ch-9-button,
+    .ch-10-button,
+    .lab-11-button,
+    .sg-3-button,
+    .ch-8-button,
+    .lab-12-button {
+        margin: 0 5px;
+        flex: 1;
+        text-align: center;
+    }
+
+    body {
+        margin-bottom: 100px; /* Make space for the button bar */
+    }
+
+    /* Adjust flashcard size for landscape mode */
+    .flashcard {
+        max-width: 90%; /* Make the flashcard wider in landscape */
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* For larger screens (desktop), keep the buttons at the top */
+@media (min-width: 601px) {
+    #button-container {
+        position: static;
+        display: block;
+    }
+
+    .flashcard {
+        max-width: 600px; /* Increase max-width for larger images */
+    }
+}

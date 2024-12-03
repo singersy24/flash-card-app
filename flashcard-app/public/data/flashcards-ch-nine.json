@@ -1,0 +1,182 @@
+[
+    {
+        "term": "Skeletal Muscle",
+        "definition": "Muscle tissue attached to bones, responsible for voluntary movements and posture maintenance."
+    },
+    {
+        "term": "Smooth Muscle",
+        "definition": "Involuntary muscle found in the walls of internal organs, controlling movements like digestion."
+    },
+    {
+        "term": "Cardiac Muscle",
+        "definition": "Muscle of the heart, characterized by involuntary contractions and rhythmic beating."
+    },
+    {
+        "term": "Neuromuscular Junction",
+        "definition": "The synapse between a motor neuron and a muscle fiber, facilitating muscle contraction."
+    },
+    {
+        "term": "Sarcomere",
+        "definition": "The functional unit of muscle contraction within myofibrils, consisting of actin and myosin filaments."
+    },
+    {
+        "term": "Actin",
+        "definition": "A protein in thin filaments within muscle cells that interacts with myosin for muscle contraction."
+    },
+    {
+        "term": "Myosin",
+        "definition": "A motor protein in thick filaments that generates force by pulling on actin filaments during contraction."
+    },
+    {
+        "term": "Sliding Filament Model",
+        "definition": "Describes how muscle contraction occurs as actin and myosin filaments slide past one another, shortening the sarcomere."
+    },
+    {
+        "term": "Motor Unit",
+        "definition": "A motor neuron and all the muscle fibers it innervates, functioning together in muscle contraction."
+    },
+    {
+        "term": "Isotonic Contraction",
+        "definition": "A type of muscle contraction where the muscle changes length, producing movement at a joint."
+    },
+    {
+        "term": "Isometric Contraction",
+        "definition": "A muscle contraction where the muscle does not change length and no movement is produced."
+    },
+    {
+        "term": "Tendon",
+        "definition": "A connective tissue that attaches muscle to bone, transmitting the force of muscle contractions."
+    },
+    {
+        "term": "Perimysium",
+        "definition": "Connective tissue that surrounds muscle fascicles, aiding in muscle organization and protection."
+    },
+    {
+        "term": "Fascicle",
+        "definition": "A bundle of muscle fibers within a muscle, surrounded by perimysium."
+    },
+    {
+        "term": "Epimysium",
+        "definition": "The outer layer of connective tissue surrounding an entire muscle, providing structural support."
+    },
+    {
+        "term": "Muscle Tone",
+        "definition": "The continuous, passive partial contraction of muscles, helping maintain posture."
+    },
+    {
+        "term": "Synergist",
+        "definition": "A muscle that assists the prime mover in performing an action."
+    },
+    {
+        "term": "Antagonist",
+        "definition": "A muscle that opposes or reverses a particular movement, providing balance and control."
+    },
+    {
+        "term": "Prime Mover (Agonist)",
+        "definition": "The muscle primarily responsible for a specific movement."
+    },
+    {
+        "term": "Calcium Ions",
+        "definition": "Ions released by the sarcoplasmic reticulum that trigger muscle contraction by binding to troponin."
+    },
+    {
+        "term": "ATP (Adenosine Triphosphate)",
+        "definition": "Provides the energy necessary for muscle contractions."
+    },
+    {
+        "term": "Creatine Phosphate",
+        "definition": "A molecule that stores energy in muscle cells, helping regenerate ATP during intense activity."
+    },
+    {
+        "term": "Oxygen Debt",
+        "definition": "The amount of oxygen required to restore muscle tissue to its resting state after exertion."
+    },
+    {
+        "term": "Myoglobin",
+        "definition": "A protein in muscle cells that binds to oxygen, providing a reserve for aerobic respiration."
+    },
+    {
+        "term": "Muscle Fatigue",
+        "definition": "Occurs when a muscle loses its ability to contract due to prolonged activity and metabolic changes."
+    },
+    {
+        "term": "Heat Production",
+        "definition": "By-product of muscle contraction, contributing to body temperature regulation."
+    },
+    {
+        "term": "Threshold Stimulus",
+        "definition": "The minimal level of stimulation required to cause a muscle fiber to contract."
+    },
+    {
+        "term": "Twitch",
+        "definition": "A single, short contraction of a muscle fiber following a brief stimulation."
+    },
+    {
+        "term": "Summation",
+        "definition": "Increased muscle contraction strength due to rapid, repeated stimulation."
+    },
+    {
+        "term": "Tetanic Contraction",
+        "definition": "A sustained muscle contraction without relaxation, caused by rapid stimulation."
+    },
+    {
+        "term": "Fast-Twitch Fibers",
+        "definition": "Muscle fibers that contract quickly but fatigue rapidly, suited for short bursts of power."
+    },
+    {
+        "term": "Slow-Twitch Fibers",
+        "definition": "Muscle fibers that contract slowly but sustain activity longer, adapted for endurance."
+    },
+    {
+        "term": "Peristalsis",
+        "definition": "Wave-like muscle contractions that move food through the digestive system."
+    },
+    {
+        "term": "Intercalated Discs",
+        "definition": "Specialized connections between cardiac muscle cells, allowing coordinated contractions."
+    },
+    {
+        "term": "Origin",
+        "definition": "The fixed attachment point of a muscle to bone."
+    },
+    {
+        "term": "Insertion",
+        "definition": "The attachment point of a muscle to the bone that moves."
+    },
+    {
+        "term": "Compartment Syndrome",
+        "definition": "A painful condition resulting from increased pressure in a muscle compartment, reducing blood flow."
+    },
+    {
+        "term": "Rigor Mortis",
+        "definition": "Postmortem stiffening of muscles due to calcium influx and lack of ATP."
+    },
+    {
+        "term": "Muscular Hypertrophy",
+        "definition": "Increase in muscle size resulting from exercise and increased workload on muscles."
+    },
+    {
+        "term": "Troponin",
+        "definition": "A protein in thin filaments that binds calcium ions to initiate muscle contraction."
+    },
+    {
+        "term": "Tropomyosin",
+        "definition": "A protein in muscle that blocks binding sites on actin filaments during rest."
+    },
+    {
+        "term": "Myofibril",
+        "definition": "A bundle of contractile filaments within a muscle fiber, composed of sarcomeres."
+    },
+    {
+        "term": "Sarcoplasmic Reticulum",
+        "definition": "A network within muscle cells that stores and releases calcium ions to trigger contractions."
+    },
+    {
+        "term": "Transverse Tubules (T-Tubules)",
+        "definition": "Channels in muscle cells that conduct impulses deep into the cell, facilitating contractions."
+    },
+    {
+        "term": "Muscle Cramps",
+        "definition": "Involuntary, sustained muscle contractions caused by electrolyte imbalance or overstimulation."
+    }
+]

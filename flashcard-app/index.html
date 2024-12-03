@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy Flashcards</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="text-center" id="button-container">
+        <button class="btn btn-dark dark-mode-toggle">Toggle Dark Mode</button>
+        <button class="btn btn-secondary reset-button">Reset</button>
+        <!-- Add section buttons -->
+        <button class="btn btn-primary ch-8-button">Ch 8</button>
+        <button class="btn btn-primary ch-9-button">Ch 9</button>
+        <button class="btn btn-primary ch-10-button">Ch 10</button>
+        <button class="btn btn-primary sg-3-button">Sg 3</button>
+        <button class="btn btn-primary lab-11-button">Lab 11</button>
+        <button class="btn btn-primary lab-12-button">Lab 12</button>
+    </div>
+    <div class="text-center">
+        <h2 class="mb-4">Anatomy Flashcards</h2>
+        <p class="lead">Click on each card to reveal the term.</p>
+        <div id="counters" class="mb-3 d-flex justify-content-center">
+            <div class="mx-3">
+                <p>Total Cards: <span id="total-cards">0</span></p>
+            </div>
+            <div class="mx-3">
+                <p>Correct Answers: <span id="correct-answers">0</span></p>
+            </div>
+            <div class="mx-3">
+                <p>Incorrect Answers: <span id="incorrect-answers">0</span></p>
+            </div>
+            <div class="mx-3">
+                <p id="reviewing-label" class="font-weight-bold text-warning" style="display:none;">Reviewing Missed Cards</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="flashcards-container" class="d-flex flex-column align-items-center"></div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

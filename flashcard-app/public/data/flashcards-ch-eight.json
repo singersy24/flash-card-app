@@ -1,0 +1,254 @@
+[
+    {
+        "term": "Joint (Articulation)",
+        "definition": "A connection between two bones that allows for movement and provides mechanical support."
+    },
+    {
+        "term": "Fibrous Joint",
+        "definition": "A joint where bones are connected by dense connective tissue rich in collagen fibers, allowing little or no movement."
+    },
+    {
+        "term": "Cartilaginous Joint",
+        "definition": "A joint where bones are connected by cartilage, permitting limited movement."
+    },
+    {
+        "term": "Synovial Joint",
+        "definition": "A freely movable joint characterized by a fluid-filled joint cavity enclosed by a joint capsule."
+    },
+    {
+        "term": "Synarthrotic Joint",
+        "definition": "An immovable joint."
+    },
+    {
+        "term": "Amphiarthrotic Joint",
+        "definition": "A slightly movable joint."
+    },
+    {
+        "term": "Diarthrotic Joint",
+        "definition": "A freely movable joint."
+    },
+    {
+        "term": "Syndesmosis",
+        "definition": "A type of fibrous joint where bones are connected by a ligament or interosseous membrane."
+    },
+    {
+        "term": "Suture",
+        "definition": "An immovable fibrous joint found between the flat bones of the skull."
+    },
+    {
+        "term": "Gomphosis",
+        "definition": "A fibrous joint where a conical process fits into a socket, such as a tooth in its alveolus."
+    },
+    {
+        "term": "Synchondrosis",
+        "definition": "A cartilaginous joint where bones are joined by hyaline cartilage."
+    },
+    {
+        "term": "Symphysis",
+        "definition": "A cartilaginous joint where bones are connected by a pad of fibrocartilage."
+    },
+    {
+        "term": "Articular Cartilage",
+        "definition": "A thin layer of hyaline cartilage covering the ends of bones in synovial joints."
+    },
+    {
+        "term": "Joint Capsule",
+        "definition": "A sleeve-like structure that encloses a synovial joint, consisting of an outer fibrous layer and an inner synovial membrane."
+    },
+    {
+        "term": "Synovial Membrane",
+        "definition": "The inner lining of the joint capsule that secretes synovial fluid."
+    },
+    {
+        "term": "Synovial Fluid",
+        "definition": "A lubricating fluid that reduces friction between the articular cartilages during movement."
+    },
+    {
+        "term": "Meniscus",
+        "definition": "A crescent-shaped pad of fibrocartilage in some synovial joints that improves fit between articulating bones."
+    },
+    {
+        "term": "Bursa",
+        "definition": "A small fluid-filled sac that reduces friction between moving structures in a joint."
+    },
+    {
+        "term": "Ball-and-Socket Joint",
+        "definition": "A synovial joint where a spherical head fits into a cup-like socket, allowing movement in all directions."
+    },
+    {
+        "term": "Condylar Joint",
+        "definition": "A synovial joint where an oval condyle fits into an elliptical cavity, permitting movement in two planes."
+    },
+    {
+        "term": "Plane Joint",
+        "definition": "A synovial joint with flat articulating surfaces that allow sliding or twisting movements."
+    },
+    {
+        "term": "Hinge Joint",
+        "definition": "A synovial joint where a convex surface fits into a concave surface, allowing movement in one plane like a door hinge."
+    },
+    {
+        "term": "Pivot Joint",
+        "definition": "A synovial joint where a cylindrical surface rotates within a ring of bone and ligament, permitting rotational movement."
+    },
+    {
+        "term": "Saddle Joint",
+        "definition": "A synovial joint where articulating surfaces are shaped like saddle seats, allowing movement in two planes."
+    },
+    {
+        "term": "Flexion",
+        "definition": "A movement that decreases the angle between two body parts."
+    },
+    {
+        "term": "Extension",
+        "definition": "A movement that increases the angle between two body parts."
+    },
+    {
+        "term": "Hyperextension",
+        "definition": "Extension of a joint beyond its normal range of motion."
+    },
+    {
+        "term": "Dorsiflexion",
+        "definition": "Movement at the ankle that brings the foot closer to the shin."
+    },
+    {
+        "term": "Plantar Flexion",
+        "definition": "Movement at the ankle that points the foot downward away from the shin."
+    },
+    {
+        "term": "Abduction",
+        "definition": "Moving a limb away from the midline of the body."
+    },
+    {
+        "term": "Adduction",
+        "definition": "Moving a limb toward the midline of the body."
+    },
+    {
+        "term": "Rotation",
+        "definition": "Turning a bone around its own longitudinal axis."
+    },
+    {
+        "term": "Circumduction",
+        "definition": "Moving a limb in a circular motion, combining flexion, extension, abduction, and adduction."
+    },
+    {
+        "term": "Supination",
+        "definition": "Rotation of the forearm so the palm faces upward or forward."
+    },
+    {
+        "term": "Pronation",
+        "definition": "Rotation of the forearm so the palm faces downward or backward."
+    },
+    {
+        "term": "Inversion",
+        "definition": "Turning the sole of the foot inward."
+    },
+    {
+        "term": "Eversion",
+        "definition": "Turning the sole of the foot outward."
+    },
+    {
+        "term": "Protraction",
+        "definition": "Moving a body part forward parallel to the ground."
+    },
+    {
+        "term": "Retraction",
+        "definition": "Moving a body part backward parallel to the ground."
+    },
+    {
+        "term": "Elevation",
+        "definition": "Raising a body part vertically."
+    },
+    {
+        "term": "Depression",
+        "definition": "Lowering a body part vertically."
+    },
+    {
+        "term": "Ligament",
+        "definition": "A band of dense connective tissue that connects bones and supports joints."
+    },
+    {
+        "term": "Origin",
+        "definition": "The fixed attachment point of a muscle."
+    },
+    {
+        "term": "Insertion",
+        "definition": "The movable attachment point of a muscle."
+    },
+    {
+        "term": "Shoulder Joint",
+        "definition": "A ball-and-socket joint between the humerus and scapula, allowing a wide range of motion."
+    },
+    {
+        "term": "Rotator Cuff",
+        "definition": "A group of muscles and tendons that stabilize the shoulder joint."
+    },
+    {
+        "term": "Elbow Joint",
+        "definition": "A hinge joint between the humerus and ulna, and a pivot joint between the humerus and radius."
+    },
+    {
+        "term": "Hip Joint",
+        "definition": "A ball-and-socket joint between the femur and the pelvis, designed for stability and weight-bearing."
+    },
+    {
+        "term": "Knee Joint",
+        "definition": "A complex hinge joint involving the femur, tibia, and patella, allowing flexion and extension."
+    },
+    {
+        "term": "Anterior Cruciate Ligament (ACL)",
+        "definition": "A key ligament that helps stabilize the knee joint."
+    },
+    {
+        "term": "Menisci",
+        "definition": "C-shaped fibrocartilaginous discs in the knee that absorb shock."
+    },
+    {
+        "term": "Bursitis",
+        "definition": "Inflammation of a bursa, causing pain and restricted movement."
+    },
+    {
+        "term": "Arthritis",
+        "definition": "Inflammation of joints resulting in pain and stiffness."
+    },
+    {
+        "term": "Osteoarthritis",
+        "definition": "A degenerative joint disease caused by the breakdown of cartilage."
+    },
+    {
+        "term": "Rheumatoid Arthritis",
+        "definition": "An autoimmune disorder causing chronic inflammation of joints."
+    },
+    {
+        "term": "Gout",
+        "definition": "A form of arthritis characterized by severe pain due to uric acid crystal accumulation."
+    },
+    {
+        "term": "Synovial Fluid Analysis",
+        "definition": "A diagnostic test examining joint fluid to detect diseases."
+    },
+    {
+        "term": "Sprain",
+        "definition": "An injury involving the stretching or tearing of ligaments."
+    },
+    {
+        "term": "Ankylosis",
+        "definition": "Abnormal stiffness or immobility of a joint due to fusion of the bones."
+    },
+    {
+        "term": "Ligamentum Capitis",
+        "definition": "A ligament of the hip joint connecting the femur to the acetabulum."
+    },
+    {
+        "term": "Acetabular Labrum",
+        "definition": "A ring of cartilage that deepens the socket of the hip joint."
+    },
+    {
+        "term": "Labrum",
+        "definition": "A fibrocartilaginous rim attached to the margin of a joint cavity."
+    },
+    {
+        "term": "Osteoporosis",
+        "definition": "A condition characterized by decreased bone mass, leading to fragile bones."
+    }
+]
